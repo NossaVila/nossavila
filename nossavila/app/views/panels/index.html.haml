@@ -1,0 +1,18 @@
+%thead
+
+%tbody
+
+  %div{:id => "container"}
+    - @categories.each do |category|
+
+      %div{:class => "pricetab"}
+        %h1= category
+        %div{:class => "price"}
+          %h2= category
+        %div{:class => "infos"}
+          %h3 info 1
+          %h3 info 2
+          %h3 info 3
+        %div{:class => "pricefooter"}
+          %span{:class => "button"}= link_to "B1", panels_path
+          %span{:class => "button"}= link_to "B2", panels_path
