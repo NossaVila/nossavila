@@ -47,7 +47,7 @@ body{
     min-height:500px;
     margin:3% auto 0 auto;
 }
-.pricetab{
+.categorybox {
     width:20%;
     min-width:220px;
     background: linear-gradient(#555, #444);
@@ -55,7 +55,7 @@ body{
     margin-top:.2%;
     box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
 }
-.pricetabmid{
+.categoryboxselected{
     width:20%;
     min-width:220px;
     background: linear-gradient( #F9B84A, #ff9547);
@@ -63,7 +63,7 @@ body{
     box-shadow:0 0  15px rgba(0, 0, 0, 1);
     position:relative;
 }
-.priceheader{
+.categoryheader{
     width:100%;
     height:60px;
     background-image: -o-linear-gradient(bottom ,#444 , #555);
@@ -73,15 +73,15 @@ body{
     background-image: linear-gradient(to bottom , #444 , #555);
     box-shadow:0 2px 12px rgba(0, 0, 0, .5);
 }
-.price{
+.categorytitle{
     width:120px;
     height:120px;
-    border-radius:50%;
+    border:50%;
     border:1px solid #ff9547;
     margin:5% auto 0 auto;
     text-align:center;
 }
-.pricemid{
+.categorytitleselected{
     width:120px;
     height:120px;
     border-radius:50%;
@@ -92,13 +92,13 @@ body{
 .infos{
     margin-top:10%;
 }
-.pricefooter{
+.categoryfooter{
     width:100%;
     height:50px;
     margin-top:10%;
     background:#333;
 }
-.pricefootermid{
+.categoryfooterselected{
     width:100%;
     height:50px;
     margin-top:10%;
@@ -170,7 +170,7 @@ h3{
 .button:hover{
     width:60%;
 }
-.buttonmid{
+.buttonselected{
     width:50%;
     height:50px;
     margin:0 auto 0 auto;
@@ -182,6 +182,6 @@ h3{
     -ms-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
-.buttonmid:hover{
+.buttonselected:hover{
     width:60%;
 }
