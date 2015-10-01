@@ -185,3 +185,16 @@ h3{
 .buttonselected:hover{
     width:60%;
 }
+
+
+/* services page */
+
+nav{
+    float: left;
+    background:#ff4e1c;
+}
+
+.servicecard{
+    margin-left: 10%;
+    max-height:10%;
+}
