@@ -1,5 +1,9 @@
+# /spec/models/service_spec.rb
+
 require 'spec_helper'
 
-describe Service do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Service, :pending => true do
+  it "is invalid without a title"
+  it "is invalid without a description"
+  
 end

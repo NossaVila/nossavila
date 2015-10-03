@@ -7,12 +7,11 @@
       %tbody
         - @categories.each do |cat|
           %tr
-            %td= link_to "#{cat}", services_path
+            %td{:class => "button"}= link_to "#{cat}", services_path
             =#ai passar como parametro a categoria a ser buscada
                 
   %div{:class => "servicescontainer"}
     - @services.each do |service| 
-      #depois precisa ver se os servicos da categoria em q o usuario esta navegando vao ser armazenados nessa variavel mesmo.
       %div{:class => "servicecard"}
         %h2{:class => "cardtitle"}= service.title
         %p{:class => "carddescription"}= service.description
