@@ -1,20 +1,21 @@
-%thead
-    %hi{:class => "title"} Nossa Vila
+%head
+  %h1{:class => "title"} Nossa Vila
     
-%tbody
-
-    %nav
-        %tr
-            - @categories.each do |cat|
-                %th= link_to "#{cat}", services_path
-                #ai passar como parametro a categoria a ser buscada
+%body
+  %nav
+    %table
+      %tbody
+        - @categories.each do |cat|
+          %tr
+            %td= link_to "#{cat}", services_path
+            =#ai passar como parametro a categoria a ser buscada
                 
-    %div{:class => "servicescontainer"}
-        - @services.each do |service| 
-            #depois precisa ver se os servicos da categoria em q o usuario esta navegando vao ser armazenados nessa variavel mesmo.
-            %div{:class => "servicecard"}
-                %h2{:class => "cardtitle"}= service.title
-                %p{:class => "carddescription"}= service.description
-                %h3{:class => "cardowner"}= service.user
+  %div{:class => "servicescontainer"}
+    - @services.each do |service| 
+      #depois precisa ver se os servicos da categoria em q o usuario esta navegando vao ser armazenados nessa variavel mesmo.
+      %div{:class => "servicecard"}
+        %h2{:class => "cardtitle"}= service.title
+        %p{:class => "carddescription"}= service.description
+        %h3{:class => "cardowner"}= service.user
                 
                 

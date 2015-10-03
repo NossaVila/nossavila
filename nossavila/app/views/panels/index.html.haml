@@ -1,18 +1,18 @@
 %thead
-
+  %h1{:class => "title"} Nossa Vila
 %tbody
 
   %div{:id => "container"}
     - @categories.each do |category|
-
-      %div{:class => "categorybox"}
-        %h1= category
-        %div{:class => "categorytitle"}
-          %h2= category
-        %div{:class => "infos"}
-          %h3 info 1
-          %h3 info 2
-          %h3 info 3
-        %div{:class => "categoryfooter"}
-          %span{:class => "button"}= link_to "B1", panels_path
-          %span{:class => "button"}= link_to "B2", panels_path
+     
+      %a{:href => panels_path}
+        %div{:class => "categorybox"}
+          %h1= category
+          %div{:class => "categorytitle"}
+            %h2= category
+          %div{:class => "infos"}
+            %h3 info 1
+            %h3 info 2
+            %h3 info 3
+          %div{:class => "categoryfooter"}
+          

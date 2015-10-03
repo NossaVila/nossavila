@@ -1,4 +1,5 @@
 class Service < ActiveRecord::Base
-  attr_accessible :title, :description, :category, :created_at, :updated_at
-  belongs_to :user
+  validates :title, length: {in: 2..16}
+  validates :description, length: {in: 10..132}
+  belongs_to :user, class_name: 'User'
 end

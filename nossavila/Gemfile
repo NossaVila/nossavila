@@ -44,8 +44,10 @@ group :development, :test do
   # RSpec for unit tests
   gem "rspec-rails", "~> 2.8"
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
+  # gem 'documentos_br' ta dando erro essa gema
+  gem 'correios-cep'
 end
-
 group :test do
   gem 'shoulda-matchers'
 end
