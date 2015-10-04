@@ -1,28 +1,25 @@
-== README
+# Nossa Vila
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Overview
 
-Things you may want to cover:
+Plataforma que facilita a integração entre moradores de uma determinada localidade através de troca online de serviços e fornecimento de informações de estabelecimentos da região.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Funcionalidades:
+- conta para usuário (morador da região)
+- cadastro de serviços oferecido pelos moradores
+- cadastro de serviços oferecidos à comunidade (escolas, hospitais, etc)
+- busca de serviços
+- busca de informações (endereço e telefone) de estabelecimentos da região
+- avaliação/opinião acerca dos serviços
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Ficha técnica
+
+* Ruby version: 1.9.3
+* Rais version: 4.2.0
+# Instalação
+
+1. Clone o repositório
+2. Rode de 'bundle install'
+3. Acesso à aplicação em [ainda não disponivel]
+
