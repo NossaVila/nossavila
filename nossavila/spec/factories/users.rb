@@ -3,7 +3,7 @@ FactoryGirl.define do
     f.first_name { Faker::Name.first_name }
     f.last_name { Faker::Name.last_name }
     f.username { Faker::Name.name }
-    f.password { Faker::Internet.password(min_length = 6, max_length = 10) }
+    f.password { Faker::Internet.password(min_length = 8, max_length = 16) }
     f.address { Faker::Address.street_name }
     f.house_number { Faker::Address.building_number }
     f.cep { Faker::Number(8) }
