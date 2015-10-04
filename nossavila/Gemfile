@@ -48,8 +48,5 @@ group :development, :test do
   # gem 'documentos_br' ta dando erro essa gema
   gem 'correios-cep'
 end
-group :test do
-  # shoulda-matchers tests common functionalities, such as validations, associations, and controller responses
-  gem 'shoulda-matchers'
-end
+
 
