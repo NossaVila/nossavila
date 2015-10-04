@@ -5,4 +5,4 @@ IME-USP 2015
 
 Grupo: emaX
 
-Mais informação do projeto em /nossavila/README.rdoc
+Mais informações do projeto em /nossavila/README.rdoc
