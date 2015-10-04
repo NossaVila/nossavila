@@ -1,6 +1,6 @@
-# Nossa Vila
+= Nossa Vila
 
-### Overview
+== Overview
 
 Plataforma que facilita a integração entre moradores de uma determinada localidade através de troca online de serviços e fornecimento de informações de estabelecimentos da região.
 
@@ -13,11 +13,12 @@ Funcionalidades:
 - avaliação/opinião acerca dos serviços
 
 
-### Ficha técnica
+== Ficha técnica
 
 * Ruby version: 1.9.3
 * Rais version: 4.2.0
-# Instalação
+
+== Instalação
 
 1. Clone o repositório
 2. Rode de 'bundle install'
