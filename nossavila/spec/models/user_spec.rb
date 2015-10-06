@@ -43,14 +43,14 @@ describe User do
         FactoryGirl.build(:user, cpf: nil).should_not be_valid
     end
     it "has a valid email" do
-        FactoryGirl.create(:user).email.should be_true
+        FactoryGirl.create(:user).email.should be_truthy
     end
     it "is invalid with a duplicate email address" do 
         FactoryGirl.create(:user, first_name: "John", email: "tester@example.com")
         FactoryGirl.build(:user, first_name: "Mary", email: "tester@example.com").should_not be_valid
         end
     it "should have a valid cpf number" do
-        FactoryGirl.create(:user, cpf: 36909492870).is_valid_cpf?.should be_true
+        FactoryGirl.create(:user, cpf: 36909492870).is_valid_cpf?.should be_truthy
     end
     # métodos de instância
     it "return user's full name as a string" do
