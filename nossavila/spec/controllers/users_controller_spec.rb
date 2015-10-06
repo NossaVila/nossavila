@@ -2,29 +2,34 @@
 require 'spec_helper'
 
 describe UsersController, :pending => true do
+    
+    let(:valid_attributes) { FactoryGirl.build(:user).attributes }
+    let(:invalid_attributes) { FactoryGirl.build(:user, password: nil) }
 
-    describe 'create a new user account' do
-        it 'calls create on account when POST create is called'
-        it 'creates a new user with the given attributes'
-        it 'saves the new user account'
-        
-        context 'when the user account saves successfully' do
+    describe 'GET show' do
+    end
+
+    describe 'POST new' do
+        context 'when parameters are valid' do
+            it 'creates a new user with the given attributes' do
+                expect{ post :new, { :user => valid_attributes } }.to_change{User}.by(1)
+            end
             it 'sets a flash[:notice] message' do
-                flash[:notice].should eq('Conta criada com sucesso.')
+                flash[:notice].should eq('Conta criada com sucesso')
             end
             it 'redirects to main page'
         end
         
-        context 'when the user account fails to save' do
-            it 'sets a flash[:notice] message' do
+        context 'when the parameters are invalid' do
+            it 'sets an error flash[:notice] message' do
                 flash[:notice].should eq('Falha ao criar conta')
             end
-            it 'redirects to create account'
+            it 'redirects to create account' # re-render?
         end
         
     end
     
-    describe 'update user info' do
+    describe 'GET update' do
         it 'changes the given attributes of user'
         it 'saves user with new attribute updated'
         
@@ -39,9 +44,10 @@ describe UsersController, :pending => true do
         end
     end
     
-    describe 'destroy user account' do
+    describe 'DELETE destroy' do
         it 'removes the user from db'
         it 'redirects to initial page with a flash[:notice] message'
     end
     
+    # login e logout
 end

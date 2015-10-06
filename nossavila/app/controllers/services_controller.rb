@@ -5,7 +5,8 @@ class ServicesController < ApplicationController
   end
 
   def show
-  
+    id = params[:id]
+    @service = Service.find(id)
   end
 
 end

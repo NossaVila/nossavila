@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
    def show
-       
-   end
-   
-   def create
-       
+      
    end
    
    def update
@@ -14,4 +10,17 @@ class UsersController < ApplicationController
    def destroy
        
    end
+   
+   def new
+      
+   end
+   
+   def login
+      
+   end
+   
+   def logout
+      
+   end
+   
 end

@@ -1,0 +1,23 @@
+%h1{:class => "subtitle"} Novo Usuário
+
+= form_tag users_path do
+
+  = label :user, :first_name, "Nome"
+  = text_field :user, 'name'
+      
+  = label :user, :last_name, "Sobrenome"
+  = text_field :user, 'last_name'
+      
+  = label :user, :cep, "CEP"
+  = text_field :user, 'cep'
+      
+  = label :user, :address, "Endereço"
+  = text_field :user, 'address'
+      
+  = label :user, :housenumber, "Número pondéano"
+  = text_field :user, 'housenumber'
+      
+  = label :user, :email, "E-mail"
+  = text_field :user, 'email'
+    
+  = submit_tag 'Criar usuário'
