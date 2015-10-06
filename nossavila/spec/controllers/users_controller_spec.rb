@@ -1,10 +1,6 @@
 # spec/controllers/users_controller_spec.rb
 require 'spec_helper'
 
-
-# estudar mock para usar aqui
-# Mock the models and stub their methods (Rspec style guide about controllers)
-
 describe UsersController, :pending => true do
     #  let(:.....) { mock_model(.......) }
     
