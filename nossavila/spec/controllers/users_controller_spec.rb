@@ -2,8 +2,7 @@
 require 'spec_helper'
 
 describe UsersController, :pending => true do
-    #  let(:.....) { mock_model(.......) }
-    
+
     describe 'create a new user account' do
         it 'calls create on account when POST create is called'
         it 'creates a new user with the given attributes'
@@ -11,15 +10,18 @@ describe UsersController, :pending => true do
         
         context 'when the user account saves successfully' do
             it 'sets a flash[:notice] message' do
-            # CODE!
-            flash[:notice].should eq('Conta criada com sucesso.') # improve this!
+                flash[:notice].should eq('Conta criada com sucesso.')
             end
-            
-            it 'redirects to main page' # or user profile?
+            it 'redirects to main page'
         end
         
-        context 'when the user account fails to save'
-        # CODE
+        context 'when the user account fails to save' do
+            it 'sets a flash[:notice] message' do
+                flash[:notice].should eq('Falha ao criar conta')
+            end
+            it 'redirects to create account'
+        end
+        
     end
     
     describe 'update user info' do
@@ -41,6 +43,5 @@ describe UsersController, :pending => true do
         it 'removes the user from db'
         it 'redirects to initial page with a flash[:notice] message'
     end
-    
     
 end

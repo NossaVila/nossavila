@@ -5,10 +5,18 @@ class User < ActiveRecord::Base
     validates :cep, length: { is: 8 }, presence: true, format: { with: /\d{5}-?\d{3}/ }
     validates :username, length: { in: 5..12 }, uniqueness: true, presence: true
     #has_secure_password
-    validates :password, length: { minimum: 8 }, allow_nil: true
+    validates :password, length: { minimum: 8 }, presence: true
     validates :address, length: {minimum: 5}, presence: true
     validates :housenumber, numericality: { only_integer: true }
     validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
     validates :cpf, uniqueness: true, presence: true
     has_many :services
+    
+    def name
+        self.first_name + " " + self.last_name
+    end
+    
+    def is_valid_cpf?
+        self.cpf % 11
+    end
 end
