@@ -3,6 +3,13 @@ class UsersController < ApplicationController
       
    end
    
+   def create
+      User.create!(params[:user]) unless params[:user][:password] != params[:user][:confirm_password]
+            
+      redirect_to users_path  
+      
+   end
+   
    def update
        
    end

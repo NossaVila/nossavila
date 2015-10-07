@@ -3,13 +3,14 @@
     
 %body
   %div{:id => "container"}
-    %nav
-      %table
-        %tbody
-          - @categories.each do |cat|
-            %tr
-              %td{:class => "button"}= link_to "#{cat}", services_path
-              =#ai passar como parametro a categoria a ser buscada
+    %div{:class => "navcontainer"}
+      %nav
+        %table
+          %tbody
+            - @categories.each do |cat|
+              %tr
+                %td{:class => "button"}= link_to "#{cat}", services_path
+                =#ai passar como parametro a categoria a ser buscada
                 
     %div{:class => "servicescontainer"}
       - @services.each do |service| 
@@ -17,6 +18,6 @@
           %div{:class => "servicecard"}
             %h2{:class => "cardtitle"}= service.title
             %p{:class => "carddescription"}= service.description
-            %h3{:class => "cardowner"}= service.user
+            %h3{:class => "cardowner"}= service.user.first_name
                 
               

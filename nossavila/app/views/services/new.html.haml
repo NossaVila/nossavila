@@ -1,0 +1,16 @@
+%h1{:class => "title"} Nossa Vila
+
+%div{:id => "container"}
+    %div{:class => "center"}
+        %h1{:class => "subtitle"} Novo Serviço
+
+        = form_tag services_path do
+
+            = label :service, :title, "Título"
+            = text_field :service, 'title'
+  
+            = label :service, :description, "Descrição"
+            = text_area :service, 'description'
+  
+            = label :service, :category, "Categorias"
+            = select :service, :category, @categories

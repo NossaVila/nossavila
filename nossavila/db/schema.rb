@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003224703) do
+ActiveRecord::Schema.define(version: 20151007125100) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string  "name"
+    t.integer "supercategory_id"
+  end
+
+  add_index "categories", ["supercategory_id"], name: "index_categories_on_supercategory_id"
+
+  create_table "categories_services", id: false, force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "service_id"
+  end
+
+  add_index "categories_services", ["category_id", "service_id"], name: "index_categories_services_on_category_id_and_service_id"
+  add_index "categories_services", ["service_id"], name: "index_categories_services_on_service_id"
 
   create_table "services", force: :cascade do |t|
     t.string   "title"
@@ -22,19 +37,5 @@ ActiveRecord::Schema.define(version: 20151003224703) do
   end
 
   add_index "services", ["user_id"], name: "index_services_on_user_id"
-
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "cep"
-    t.string   "username"
-    t.string   "password"
-    t.string   "address"
-    t.string   "cpf"
-    t.integer  "housenumber"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
 end

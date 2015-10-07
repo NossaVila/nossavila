@@ -1,9 +1,10 @@
+%h1{:class => "title"} Nossa Vila
 %h1{:class => "subtitle"} Novo Usuário
 
 = form_tag users_path do
 
   = label :user, :first_name, "Nome"
-  = text_field :user, 'name'
+  = text_field :user, 'first_name'
       
   = label :user, :last_name, "Sobrenome"
   = text_field :user, 'last_name'
@@ -19,5 +20,11 @@
       
   = label :user, :email, "E-mail"
   = text_field :user, 'email'
+  
+  = label :user, :password, "Senha"
+  = password_field :user, 'password'
+  
+  = label :user, :confirm_password, "Confirme sua senha"
+  = password_field :user, 'confirm_password'
     
   = submit_tag 'Criar usuário'
