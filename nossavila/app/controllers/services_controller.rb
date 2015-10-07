@@ -9,9 +9,6 @@ class ServicesController < ApplicationController
     @service = Service.find(id)
   end
 
-  def create
-  
-  end
   
   def new
     @categories = Category.all

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+ 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   #devise :database_authenticatable, :registerable,
@@ -13,7 +14,7 @@ class User < ActiveRecord::Base
     validates :password, length: { minimum: 8 }, presence: true
     validates :address, length: {minimum: 5}, presence: true
     validates :housenumber, numericality: { only_integer: true }
-    validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
+    validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z])+   a\.[a-z]+\z/i }
     validates :cpf, uniqueness: true, presence: true
     
       

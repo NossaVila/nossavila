@@ -7,13 +7,12 @@ describe UsersController, :pending => true do
     let(:invalid_attributes) { FactoryGirl.build(:user, password: nil).attributes }
 
     describe 'GET show' do
-        it "assigns the requested user to @user" do
-            contact = Factory(:contact)
+        it 'assigns the requested user to @user' do
             get :show, user => valid_attributes
             assigns(:user).should eq(user)
         end
   
-        it "renders the show view" do
+        it 'renders the show template' do
             get :show, user => valid_attributes
             expect(response).to render_template("show")
         end
@@ -86,9 +85,9 @@ describe UsersController, :pending => true do
         it 'sets a flash[:notice] message' do
             flash[:notice].should eq('Usuário removido com sucesso')
         end
-            it 'redirects to main page' do
-                response.should redirect_to(root_path)
-            end
+        it 'redirects to main page' do
+            response.should redirect_to(root_path)
+        end
     end
     
 end
