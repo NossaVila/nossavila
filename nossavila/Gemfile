@@ -35,7 +35,11 @@ gem 'devise' # Gema para autenticação
 
 gem 'correios-cep'
 
+group :test do
+  # Easier test writing
+  gem "shoulda-matchers", "~> 2.8.0"
 
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

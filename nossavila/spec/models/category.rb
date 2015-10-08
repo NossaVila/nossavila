@@ -11,10 +11,9 @@ describe Category, :pending => true do
     end
     
     describe 'relations' do
-        it 'should have many services' do
-        end
-        it 'should have many subcategories' do
-        end
+        it { should have_many(:services) }
+        it { is_expected.to have_many(:subcategories).class_name('Category').with_foreign_key(:supercategory_id) }
+        it { should belong_to(:supercategory).class_name('Person') }
     end
     
     describe 'attributes' do
