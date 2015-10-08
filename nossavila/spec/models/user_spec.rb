@@ -30,7 +30,7 @@ describe User do
     it 'is invalid without a cep' do 
         FactoryGirl.build(:user, cep: nil).should_not be_valid
     end
-    it 'is invalid if cep lenght is not eight' do
+    it 'is invalid if cep length is not eight' do
         FactoryGirl.build(:user, cep: 131313).should_not be_valid
     end
     it 'is invalid without an email' do

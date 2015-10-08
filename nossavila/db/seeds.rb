@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-ginueapig = User.create(:first_name => 'John', :last_name => 'Titor', :username => 'lola', :password => 'casteli', :address => 'sorocaba', :housenumber => '013', :cep => '04348120', :cpf => '42944702831',
-            :email => 'kul@hotmail.com')
+ginueapig = User.create!(:first_name => 'John', :last_name => 'Titor', :username => 'lolaass', :encrypted_password => 'casteliasa', :address => 'sorocaba', :housenumber => '013', :cep => '04348120', :cpf => '42944702831',
+            :email => 'kuddddl@hotmail.com')
 services = [{:title => 'Pintor - Atendo a domicilio', 
             :description => 'Tenha sua casa pintada por um renomado pintor do Jabaquara, da melhor e mais renomada classe de pintores. E voce nem precisa sair da sua casa', 
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => ginueapig},

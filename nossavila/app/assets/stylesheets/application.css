@@ -44,6 +44,8 @@ p{
 }
 .center{
     margin: auto 5% auto 5%;
+       margin: 0 auto;
+    max-width:600px;
 }
 #container{
     width:100%;
