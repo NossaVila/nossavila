@@ -8,9 +8,15 @@
 </head>
 <body>
 
+<ul class="hmenu">
+  <%= render 'devise/menu/registration_items' %>
+  <%= render 'devise/menu/login_items' %>
+</ul>
 
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
+<%= render 'layouts/logo.html.haml' %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 

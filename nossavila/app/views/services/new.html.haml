@@ -1,4 +1,4 @@
-%h1{:class => "title"} Nossa Vila
+%head
 
 %div{:id => "container"}
     %div{:class => "center"}
@@ -6,11 +6,14 @@
 
         = form_tag services_path do
 
-            = label :service, :title, "Título"
-            = text_field :service, 'title'
+            = label :service, :title, "Título", :class => "fieldnew"
+            = label :service, :category, "Categorias", :class => "categorylabel"
+            - @categories.each do |cat|
+                = check_box :service, "categories[]", cat, :class => "categorycheckbox"
+                
+            = text_field :service, 'title', :class => "fieldnew"
   
-            = label :service, :description, "Descrição"
-            = text_area :service, 'description', :rows => 15, :cols => 40
+            = label :service, :description, "Descrição", :class => "fieldnew"
+            = text_area :service, 'description', :rows => 15, :cols => 40, :class => "fieldnew"
   
-            = label :service, :category, "Categorias"
-            = select :service, :category, @categories
+            

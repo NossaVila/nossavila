@@ -1,6 +1,5 @@
 %head
-  %h1{:class => "title"} Nossa Vila
-    
+
 %body
   %div{:id => "container"}
     %div{:class => "navcontainer"}
@@ -9,15 +8,20 @@
           %tbody
             - @categories.each do |cat|
               %tr
-                %td{:class => "button"}= link_to "#{cat}", services_path
+                %td{:class => "btn"}
+                  %a{:href => services_path(:category => cat.id), :class => "link"}
+                    %h3= cat.name
                 =#ai passar como parametro a categoria a ser buscada
                 
     %div{:class => "servicescontainer"}
+      %div{:class => "btn"}
+        %a{:href => new_service_path, :class => "link"}
+          %h3 Criar novo Serviço
+      %br
       - @services.each do |service| 
         %a{:href => service_path(service)}
           %div{:class => "servicecard"}
             %h2{:class => "cardtitle"}= service.title
             %p{:class => "carddescription"}= service.description
-            %h3{:class => "cardowner"}= service.user.first_name
+            %h4{:class => "cardowner"}= service.user.first_name
                 
-              

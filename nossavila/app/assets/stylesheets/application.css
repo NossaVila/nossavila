@@ -1,5 +1,6 @@
 /* General */
-h1,h2,h3,h4,h5,h6{cursor:pointer;}
+
+/*h1,h2,h3,h4,h5,h6{cursor:pointer;} WHAT THE HECK IS IT ? */ 
 
 /* Body */
 body{
@@ -10,7 +11,8 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: #e7e2e2;
+   /* background: #e7e2e2;*/
+   background:#dfe3ef;
 }
 h1{
     font-size:18px;
@@ -18,34 +20,43 @@ h1{
     text-align:center;
     line-height:3;
 }
+
 h2{
    text-align:center;
     font-size:42px;
     color:#fff;
 }
 h3{
-    font-size:14px;
+    font-size:28px;
     font-weight:normal;
     text-align:center;
     color:#fff;
-    line-height:1;
+    margin:0;
+    /*line-height:1;*/
 }
 
 a{
     text-decoration: none;
 }
 p{
-   font-family:verdana;
+   font-family:Tahoma, Geneva, sans-serif;
     color:#fff;    
-    font-size:16px;
+    font-size:20px;
     font-weight:normal;
     text-align:left;
+    color:#180521;
     margin:auto; 
 }
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+
 .center{
     margin: auto 5% auto 5%;
        margin: 0 auto;
     max-width:600px;
+    
 }
 #container{
     width:100%;
@@ -83,7 +94,13 @@ p{
     margin:5% auto 0 auto;
     text-align:center;
 }
-
+.categorycheckbox{
+    float:right;
+}
+.categorylabel{
+    float:right;
+    width:25%;
+}
 .infos{
     margin-top:10%;
 }
@@ -129,28 +146,22 @@ sub{
     text-decoration:none;
     line-height:3;
 }
-.buttonmid a{
-    color:#fff;
-    font-size:14px;
-    font-weight:bold;
-    text-decoration:none;
-    line-height:3;
-}
 
 /* Buttons */
 .button{
     /*min-width:40px;*/
     max-width:70px;
-    width:20%;
+    width:100%;
     height:10%;
     margin:0 auto 0 auto;
-    background:#ff9547;
+    background:#5E72FF;
     text-align:center;
     cursor:pointer;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
+    
 }
 .button:hover{
     width:5%;
@@ -160,7 +171,7 @@ sub{
 
 nav{
     float: left;
-    background:#ff4e1c;
+    background:#8B94A8;
     
     width:95%;
     min-width:70px;
@@ -170,6 +181,11 @@ nav{
     width:30%;
     float:left;
 }
+.link{
+    width:100%;
+    margin:0;
+    height:100%;
+}
 .servicescontainer{
     float:left;
     max-width:70%;
@@ -178,7 +194,9 @@ nav{
 .servicecard{
     overflow:hidden;
     max-height:20%;
-    background: linear-gradient(#555, #444);
+   /* background: #0452CC;*/
+    /*background: #2A2B2E;*/
+    background:#ffffff;
     box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
     margin:auto;
     margin-bottom:3%;
@@ -188,7 +206,8 @@ nav{
     /*padding: 3%;*/
    text-align:center;
     font-size:28px;
-    color:#fff;
+    font-family:roboto;
+    color:#180521;
 }
 
 .carddescription{
@@ -197,10 +216,61 @@ nav{
     margin-left:2%;
 }
 
+.cardowner{
+    text-align: right;
+    color:#180521;
+    margin:0;
+    
+}
+
+.fieldnew{
+    margin:0;
+    padding:0;
+    width:70%;
+    float:left;
+    
+}
+
+.logo{
+    height: 250px;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
  
 form label{
-    display: block;
+    /*display: block;*/
     line-height: 25px;
     font-weight: bold;
     color: black;
+    margin:0;
+    padding:0;
+    width:70%;
+    float:left;
+}
+
+.btn {
+  
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 19px;
+  background: #686A6F;
+  padding: 10px 20px 10px 20px;
+  border: solid #6C6F75 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #A7ACB5;
+  text-decoration: none;
+}
+
+ul.hmenu {
+  list-style: none; 
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;  
 }

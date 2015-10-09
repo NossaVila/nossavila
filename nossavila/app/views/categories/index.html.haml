@@ -5,11 +5,11 @@
   %div{:id => "container"}
     - @categories.each do |category|
      
-      %a{:href => categories_path}
+      %a{:href => categories_path(:root => category.name)}
         %div{:class => "categorybox"}
-          %h1= category
+          %h1= category.name
           %div{:class => "categorytitle"}
-            %h2= category
+            %h2= category.name
           %div{:class => "infos"}
             %h3 info 1
             %h3 info 2

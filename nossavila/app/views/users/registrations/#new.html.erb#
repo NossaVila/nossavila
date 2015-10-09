@@ -1,0 +1,39 @@
+<%= render :partial => 'layouts/logo' %>
+<h2>Sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.label :username, "Nome de usuário" %><br />
+    <%= f.text_field :username, autofocus: true, :class => "fieldnew"%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :cep, "CEP" %><br />
+    <%= f.text_field :email, :class => "fieldnew"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "Email" %><br />
+    <%= f.email_field :email, :class => "fieldnew"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Senha" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" , :class => "fieldnew"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirme sua senha" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" , :class => "fieldnew"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registrar-se" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
