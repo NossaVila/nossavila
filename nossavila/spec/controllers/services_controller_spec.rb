@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ServicesController, type: :controller do
+describe ServicesController do
 
 	let(:valid_attributes) {
     {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente'}
@@ -11,12 +11,11 @@ RSpec.describe ServicesController, type: :controller do
     let(:valid_session) { {} }
     
     let(:user) { [FactoryGirl.build(:user)] }
-
-
+    
   describe "GET #index" do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
-      get :index, {}, valid_session, { :user => user }
+      get :index, {}, valid_session
       expect(assigns(:services)).to eq([service])
     end
   end
@@ -25,8 +24,8 @@ RSpec.describe ServicesController, type: :controller do
   describe "GET #show" do
     it "assigns the requested service  as @service" do
       service = Service.create! valid_attributes
-      get :show, {:id => service.to_param}, valid_session
-      expect(assigns(:service)).to eq(service)
+      get :show, {}, valid_session
+      expect(assigns(:services)).to eq(service)
     end
   end
 
@@ -48,7 +47,15 @@ RSpec.describe ServicesController, type: :controller do
 
     it { is_expected.to render_template(:new) }
   end
-
+  
+  describe "GET #edit" do
+    it "assigns the requested service as @service" do
+      service = Service.create! valid_attributes
+      get :edit, {:service => valid_attributes}, valid_session
+      expect(assigns(:service)).to eq(service)
+    end
+  end
+    
   describe "POST #create" do
     context "with valid params" do
       it "creates a new service" do
@@ -75,7 +82,7 @@ RSpec.describe ServicesController, type: :controller do
         expect(assigns(:service)).to be_a_new(Service)
       end
 
-      it "re-renders the 'new' template" do
+      it "renders the 'new' template" do
         post :create, {:service => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
@@ -92,7 +99,6 @@ RSpec.describe ServicesController, type: :controller do
         service = Service.create! valid_attributes
         put :update, {:id => service.to_param, :service => new_attributes}, valid_session
         service.reload
-        skip("Add assertions for updated state")
       end
 
       it "assigns the requested service as @service" do
@@ -115,10 +121,10 @@ RSpec.describe ServicesController, type: :controller do
         expect(assigns(:service)).to eq(service)
       end
 
-      it "re-renders the 'update' template" do
+      it "renders the 'edit' template" do
         service = Service.create! valid_attributes
         put :update, {:id => service.to_param, :service => invalid_attributes}, valid_session
-        expect(response).to render_template("update")
+        expect(response).to render_template("edit")
       end
     end
   end

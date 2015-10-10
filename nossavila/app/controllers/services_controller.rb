@@ -3,15 +3,23 @@ class ServicesController < ApplicationController
 
 
   def index
+    if params[:category].nil?
+      @services = Service.all
+    end
+    
     unless (params[:category].nil?)
       @category = Category.find(params[:category])
     else
       @category = Category.find_by(name: "root")
     end
+    
     @categories = Category.where.not(name: "root")
     @services = @category.services unless(@category.nil?)
   end
 
+  def edit
+  end
+  
   def show
     id = params[:id]
     @service = Service.find(id)
@@ -51,7 +59,7 @@ class ServicesController < ApplicationController
       redirect_to service_path(@service)
     else 
       flash[:notice] = 'Falha ao atualizar serviço'
-      render :action => "update"
+      render :action => "edit"
     end
   end
   

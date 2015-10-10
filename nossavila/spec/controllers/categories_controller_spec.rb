@@ -1,27 +1,23 @@
 require 'spec_helper'
 
-describe CategoriesController, :pending=> true do
-
+describe CategoriesController do
+    
+    let(:valid_attributes) { {name: 'Transportes', supercategory_id: '1' } }
+    let(:valid_session) { {} }
+    
     describe 'GET index' do
-        it 'renders the "index" template' do
-            expect(response).to render_template("index")
-        end
-        it 'loads all of the categories into @categories' do
-            categoryA = FactoryGirl.build(:category)
-            categoryB = FactoryGirl.build(:category)
-            get :index
-            expect(assigns(:categories)).to match_array([categoryA, categoryB])
+        it "assigns all categories as @categories" do
+            category = Category.create! valid_attributes
+            get :index, {}, valid_session
+            expect(assigns(:categories)).to eq([category])
         end
     end
-    describe 'GET show' do
-        it 'assigns the requested category to @category' do
-            get :show, category => FactoryGirl(:category)
-            assigns(:category).should eq(category)
-        end
-  
-        it 'renders the "show" template' do
-            get :show, category => FactoryGirl(:category)
-            expect(response).to render_template("show")
+    
+    describe "GET #show" do
+        it "assigns the requested category  as @category" do
+           category = Category.create! valid_attributes
+           get :show, {:id => category.to_param} , valid_session
+           expect(assigns(:category)).to eq(category)
         end
     end
 end
