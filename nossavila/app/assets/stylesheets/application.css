@@ -1,4 +1,3 @@
-
 body{
     font-family: arial, verdana;
     -webkit-touch-callout: none;
@@ -125,7 +124,7 @@ table{
     color:#484848; 
     font-size:24px;
     font-weight:normal;
-    text-align:left;
+    text-align:center;
     text-transform:uppercase;
     text-shadow: 1px 2px 5px rgba(0,0,5,0.2);
     margin:auto;
@@ -215,13 +214,13 @@ nav{
     text-align: right;
     color:#180521;
     margin:0;
-    
 }
 
 .fieldnew{
     margin:0;
     padding:0;
-    float:left;
+    display:inline;
+    /* breaks inline forms */
 }
 
 .submitlink{
@@ -237,31 +236,34 @@ nav{
 form label{
     line-height: 28px;
     font-family:arial;
-    font-size:12px;
+    font-weight:bold;
+    font-size:14px;
     color: #333333;
     margin:0;
     padding:0;
+    /* width:25%; */
+    /* display:inline; */
 }
-
-.formleft{
-    width:26%;
-    float:left;
-    margin-bottom:2%;
-}
-.inleft{
-    text-align:right;
-    float:right;
-    width:100%;
-}
-.formright{
-    width:73%;
-    float:right;
-    margin-right:2px;
-}
-.inright{
-    float:left;
-    margin:2% 0 3% 0;
-}
+/*  */
+/* .formleft{ */
+/*     width:26%; */
+/*     float:left; */
+/*     margin-bottom:2%; */
+/* } */
+/* .inleft{ */
+/*     text-align:right; */
+/*     float:right; */
+/*     width:100%; */
+/* } */
+/* .formright{ */
+/*     width:73%; */
+/*     float:right; */
+/*     margin-right:2px; */
+/* } */
+/* .inright{ */
+/*     float:left; */
+/*     margin:2% 0 3% 0; */
+/* } */
 .card{
     overflow:hidden;
     max-height:500%;
@@ -273,12 +275,22 @@ form label{
     margin-bottom:3%;
     padding:2% 4% 1% 2%;
 }
-#user_last_name, #user_first_name, #user_email, #user_cep, #user_cpf, #user_password, #user_password_confirmation, #user_address{
-    margin-bottom:8px;
-    width:60%;
+
+.users_page .field {
+    /* display:inline; */
+    /* up: breaks the line button */
+    margin: 0;
+    padding: 0;
 }
-#user_password{
-    width:60%
+.users_page p {
+    display:inline;
+}
+#user_last_name, #user_first_name, #user_email, #user_cep, #user_cpf, #user_password, #user_password_confirmation, #user_address{
+    /* display:inline; */
+    /* display:block; */
+    /* float:right; */
+    margin-bottom:8px;
+    width:100%;
 }
 label.fieldpass:before, .fieldpass:before{
     content:"*";
@@ -292,8 +304,23 @@ em, i{
     font-size:10px;
     margin-top:-8px;
 }
+
+.users_page .btn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #000000;
+  padding: 5px 10px 5px 10px;
+  border:none;
+  text-decoration: none;
+}
+
+.users_page .btn:hover {
+  background: #5e5e5e;
+  text-decoration: none;
+}
+
 .btn {
-  
   font-family: Arial;
   color: #ffffff;
   font-size: 19px;
