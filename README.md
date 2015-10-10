@@ -1,10 +1,10 @@
 # nossavila
+
 ![nossavila logo](https://raw.github.com/NossaVila/nossavila/master/nossavila/app/assets/images/nossavillalogo.gif)
 
 Projeto de Software como Serviço (SaaS) da disciplina de Laboratório de Programação II
 
 IME-USP 2015
-
 Grupo: emaX
 
 Mais informações do projeto em /nossavila/README.rdoc

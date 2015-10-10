@@ -11,12 +11,11 @@ describe ServicesController do
     let(:valid_session) { {} }
     
     let(:user) { [FactoryGirl.build(:user)] }
-
-
+    
   describe "GET #index" do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
-      get :index, {}, valid_session, { :user => user }, { :user_id => user.id }
+      get :index, {}, valid_session
       expect(assigns(:services)).to eq([service])
     end
   end
@@ -25,7 +24,7 @@ describe ServicesController do
   describe "GET #show" do
     it "assigns the requested service  as @service" do
       service = Service.create! valid_attributes
-      get :show, {:id => service.to_param}, valid_session
+      get :show, {}, valid_session
       expect(assigns(:services)).to eq(service)
     end
   end

@@ -1,47 +1,98 @@
-.container.center
-  %h2.subtitle Registre-se
+-# .container.center
+-#   %h2.subtitle Registre-se
+-#   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#     = devise_error_messages!
+-#     .fieldnew
+-#       = f.label :first_name
+-#       %br/
+-#       = f.text_field :first_name, autofocus: true, :class => "fieldnew"
+-#     .fieldnew
+-#       = f.label :last_name
+-#       %br/
+-#       = f.text_field :last_name, :class => "fieldnew"
+-#     .fieldnew
+-#       = f.label :cpf, "CPF"
+-#       %br/
+-#       = f.text_field :cpf, :class => "fieldnew"
+-#     .fieldnew
+-#       = f.label :address
+-#       %br/
+-#       = f.text_field :address, :class => "fieldnew"
+-#     .fieldnew
+-#       = f.label :cep, "CEP"
+-#       %br/
+-#       = f.text_field :cep, :class => "fieldnew"
+-#     .fieldnew
+-#       = f.label :email
+-#       %br/
+-#       = f.email_field :email, :class => "fieldnew"
+.container.center.card
+  %h2.subtitle Registrar
+  %hr
+  %br/
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
-    .fieldnew
-      = f.label :first_name
+    .formleft
+      .inleft
+        = f.label :first_name
+        %br/
+        = f.label :last_name
+        %br/
+        = f.label :cpf, "CPF"
+        %br/
+        = f.label :address
+        %br/
+        = f.label :cep, "CEP"
+        %br/      
+        = f.label :email
+        %br/
+        = f.label :password, :class => "fieldcurrpass"
+        %br/
+        = f.label :password_confirmation
+        .actions
+          = f.submit "Registrar-se", :class => "submitlink"
+          -# %br/
+          -# %br/
+          -# = render "users/shared/links"
+
+    .formright
+      = f.text_field :first_name, autofocus: true
+      = f.text_field :last_name    
+      = f.text_field :cpf
+      = f.text_field :address
+      = f.text_field :cep
+      = f.email_field :email
+      = f.password_field :password, autocomplete: "off" 
       %br/
-      = f.text_field :first_name, autofocus: true, :class => "fieldnew"
-    .fieldnew
-      = f.label :last_name
+      = f.password_field :password_confirmation, autocomplete: "off" 
       %br/
-      = f.text_field :last_name, :class => "fieldnew"
-    .fieldnew
-      = f.label :cpf, "CPF"
       %br/
-      = f.text_field :cpf, :class => "fieldnew"
-    .fieldnew
-      = f.label :address
       %br/
-      = f.text_field :address, :class => "fieldnew"
-    .fieldnew
-      = f.label :cep, "CEP"
+    - if @minimum_password_length
       %br/
-      = f.text_field :cep, :class => "fieldnew"
-    .fieldnew
-      = f.label :email
-      %br/
-      = f.email_field :email, :class => "fieldnew"
+      %em{:class => "fieldcurrpass"} no minimo #{@minimum_password_length} caracteres
+
     -# não vamos lidar com username por enquanto
     -#.fieldnew
     -#  = f.label :username, "Nome de usuário"
     -#  %br/
-    -#  = f.text_field :username, :class => "fieldnew"
-    .fieldnew
-      = f.label :password
-      - if @minimum_password_length
-        %em (no minimo #{@minimum_password_length} caracteres)
-      %br/
-      = f.password_field :password, autocomplete: "off" , :class => "fieldnew"
-    .fieldnew
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off" , :class => "fieldnew"
-    .actions.fieldnew
-      = f.submit "Registrar-se"
-    .fieldnew
-      = render "users/shared/links"
+
+    -# -#  = f.text_field :username, :class => "fieldnew"
+    -# .fieldnew
+    -#   = f.label :password
+    -#   - if @minimum_password_length
+    -#     %em (no minimo #{@minimum_password_length} caracteres)
+    -#   %br/
+    -#   = f.password_field :password, autocomplete: "off" , :class => "fieldnew"
+    -# .fieldnew
+    -#   = f.label :password_confirmation
+    -#   %br/
+    -#   = f.password_field :password_confirmation, autocomplete: "off" , :class => "fieldnew"
+    -# .actions.fieldnew
+    -#   = f.submit "Registrar-se"
+    -# .fieldnew
+    -#   = render "users/shared/links"
+
+    -# LUKETIS
+    -#  = f.text_field :username
+    
