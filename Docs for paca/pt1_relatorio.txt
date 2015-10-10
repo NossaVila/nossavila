@@ -1,0 +1,19 @@
+- Programando no Cloud9:
+  O grupo optou por desenvolver o projeto no C9 pela facilidade de acesso ao
+  workspace (acesso pela Rede Linux, onde não é possível utilizar a VM), pela
+  facilidade para programar em pares e acompanhar em tempo real as modificações
+  feitas pelos outros colegas.
+  Dificuldades com a C9: rodar a aplicação consome toda a memória e aumenta bastante
+  o uso da cpu. Logo nossa aplicação foi morta várias vezes quando precisamos rodar
+  e não tínhamos acesso à VM para facilitar as coisas. Porém, com muita paciência e 
+  colaboração, o trabalho tem sido realizado.
+  Questão de commits: dificuldade em relação a boa distribuição de commits. Usamos
+  o workspace associado à conta do Lucas, portanto todos os commits estão associados
+  ao user 'luketis'. Para tentar equilibrar a situação, alteramos o campo 'author'
+  para realizar commits envolvendo os outros integrantes. Mante-los distribuidos
+  foi uma tarefa árdua, dado que estávamos trabalhando ao mesmo tempo e cada commit
+  modificou códigos escritos por todos os integrantes do grupo.
+  
+  
+- Bugs na criação de testes:
+  Problemas com as rotas

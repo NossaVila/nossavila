@@ -7,13 +7,15 @@
         = form_tag services_path do
 
             = label :service, :title, "Título", :class => "fieldnew"
-            = label :service, :category, "Categorias", :class => "categorylabel"
-            - @categories.each do |cat|
-                = check_box :service, "categories[]", cat, :class => "categorycheckbox"
+            = label :service, :categories, "Categorias", :class => "categorylabel"
+            %div{:class => "categorylabel"}
+                - @categories.each do |cat|
+                    = label :service, :category, cat.name
+                    = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil) 
                 
             = text_field :service, 'title', :class => "fieldnew"
   
             = label :service, :description, "Descrição", :class => "fieldnew"
             = text_area :service, 'description', :rows => 15, :cols => 40, :class => "fieldnew"
   
-            
+            = submit_tag "Criar"

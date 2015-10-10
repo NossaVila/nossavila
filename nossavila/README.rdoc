@@ -2,7 +2,7 @@
 
 == Overview
 
-Plataforma que facilita a integração entre moradores de uma determinada localidade através de troca online de serviços e fornecimento de informações de estabelecimentos da região.
+NossaVila é uma plataforma que facilita a integração entre moradores de uma determinada localidade através de troca online de serviços e fornecimento de informações de estabelecimentos da região.
 
 Funcionalidades:
 - conta para usuário (morador da região)
@@ -18,9 +18,23 @@ Funcionalidades:
 * Ruby version: 1.9.3
 * Rais version: 4.2.0
 
+
 == Instalação
 
-1. Clone o repositório
-2. Rode de 'bundle install'
-3. Acesso à aplicação em [ainda não disponivel]
+1. Clone o repositório - 'git clone https://github.com/NossaVila/nossavila.git'
+2. Rode 'bundle install'
+3. abra o diretório ~NossaVila/nossavila
 
+4.1. Para iniciar a aplicação rode 'rails server'
+4.2. Para rodar os testes Rspec, rode 'rspec'
+
+
+== Applicação na web
+
+ Acesso à aplicação em [link para cloud ainda não disponivel]
+
+
+== Considerações finais
+
+ O projeto está na fase 1 de 3.
+ Previsão de conclusão: Dez/2015
