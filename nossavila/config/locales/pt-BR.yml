@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      user: "Usuário"
+    attributes:
+      user:
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
+        current_password: "Senha stual"
+        remember_me: "Lembre-se de mim"
+        address: "Endereço"
+        first_name: "Nome"
+        last_name: "Sobrenome"

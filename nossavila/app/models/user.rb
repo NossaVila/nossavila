@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   validates :first_name, length: {minimum: 2, maximum: 30}, presence: true
   validates :last_name, length: {minimum: 3, maximum: 30}, presence: true
   # cep: save only numbers
-  validates :cep, length: { is: 8 }, presence: true, format: { with: /\d{5}-?\d{3}/ }
+  # validates :cep, length: { s: 8 }, presence: true, format: { with: /\d{5}-?\d{3}/ }
+  validates :cep, presence: true, format: { with: /\d{5}-?\d{3}/ }
   # validates :username, length: { in: 5..12 }, uniqueness: true, presence: true
   # has_secure_password
   # validates :password, length: { minimum: 8 }, presence: true

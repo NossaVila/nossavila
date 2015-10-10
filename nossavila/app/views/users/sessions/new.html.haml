@@ -21,6 +21,19 @@
       - if devise_mapping.rememberable?
         = f.check_box :remember_me
       %br/
+
+  -#     .fieldnew
+  -#       = f.password_field :password, autocomplete: "off"
+  -#   - if devise_mapping.rememberable?
+  -#     .field
+  -#       .fieldnew
+  -#         = f.check_box :remember_me
+  -#       = f.label "Mantenha-me conectado"
+  -#   .actions.fieldnew
+  -#     = f.submit "Log in"
+  -# .fieldnew
+  -#   = render "users/shared/links"
+
       %br/
       %br/
       %br/
