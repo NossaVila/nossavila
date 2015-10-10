@@ -7,7 +7,7 @@ Grupo: emaX
 
 Mais informações do projeto em /nossavila/README.rdoc
 
-== Autores
+Autores
 
 - Bruno Pasqualotto Cavalar
 - Felipe Silva Felix 

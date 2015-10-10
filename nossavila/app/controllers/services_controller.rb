@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
       redirect_to service_path(@service)
     else 
       flash[:notice] = 'Falha ao atualizar serviço'
-      render :action => "update"
+      render :action => "edit"
     end
   end
   

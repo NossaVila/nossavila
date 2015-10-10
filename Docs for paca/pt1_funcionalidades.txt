@@ -1,0 +1,5 @@
+Funcionalidades implementadas na entrega 1:
+
+- Cadastro de serviço
+- Cadastro de usuário
+
