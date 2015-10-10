@@ -1,5 +1,5 @@
 # nossavila
-![alt tag](https://raw.github.com/NossaVila/nossavila/blob/master/nossavila/app/assets/images/nossavillalogo.gif)
+![nossavila logo](https://raw.github.com/NossaVila/nossavila/master/nossavila/app/assets/images/nossavillalogo.gif)
 
 Projeto de Software como Serviço (SaaS) da disciplina de Laboratório de Programação II
 
