@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
 
 
@@ -16,7 +17,11 @@ class ServicesController < ApplicationController
     @service = Service.find(id)
   end
   
-  def new 
+  def new
+    unless(user_signed_in?)
+      store_location_for(:user, new_service_path)
+      redirect_to new_user_session_path, :notice => "É necessário estar logado para criar um serviço"
+    end
     @categories = Category.where.not(name: "root")
     @services = Service.all
     @service = Service.new
@@ -25,6 +30,11 @@ class ServicesController < ApplicationController
   def create
     @categories = Category.all
     @service = Service.new(service_params)
+    @service.user << current_user
+    params[:service][:categories].each do |category|
+      cat = Category.find_by(name: category)
+      cat.services << @service
+    end
     if @service.save
       flash[:notice] = 'Novo serviço criado com sucesso'
       redirect_to service_path(@service)
