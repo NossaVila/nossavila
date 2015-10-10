@@ -1,11 +1,10 @@
-%div{:id => "container"}
+.container
   - @categories.each do |category|
-     
     %a{:href => categories_path(:root => category.name)}
-      %div{:class => "categorybox"}
+      .categorybox
         %h1= category.name
-        %div{:class => "categorytitle"}
+        .categorytitle
           %h2= category.name
-        %div{:class => "infos"}
-        %div{:class => "categoryfooter"}
+        .infos
+        .categoryfooter"
           
