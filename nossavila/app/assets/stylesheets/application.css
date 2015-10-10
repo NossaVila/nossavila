@@ -267,16 +267,15 @@ form label{
   text-decoration: none;
 }
 
-ul.hmenu {
+ul.navigation-list {
   list-style: none; 
   margin: 0 0 2em;
   padding: 0;
 }
 
-ul.hmenu li {
+ul.navigation-list li {
   display: inline;  
 }
-
 
 #navigation {
     position:fixed;
