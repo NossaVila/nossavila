@@ -17,7 +17,7 @@ describe CategoriesController do
         it "assigns the requested category  as @category" do
            category = Category.create! valid_attributes
            get :show, {:id => category.to_param}, valid_session
-           expect(assigns(:category)).to eq(category)
+           expect(assigns(:categories)).to eq(category)
         end
     end
 end

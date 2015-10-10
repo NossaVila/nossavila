@@ -16,7 +16,7 @@ describe ServicesController do
   describe "GET #index" do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
-      get :index, {}, valid_session, { :user => user }
+      get :index, {}, valid_session, { :user => user }, { :user_id => user.id }
       expect(assigns(:services)).to eq([service])
     end
   end
@@ -26,7 +26,7 @@ describe ServicesController do
     it "assigns the requested service  as @service" do
       service = Service.create! valid_attributes
       get :show, {:id => service.to_param}, valid_session
-      expect(assigns(:service)).to eq(service)
+      expect(assigns(:services)).to eq(service)
     end
   end
 
