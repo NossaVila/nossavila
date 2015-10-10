@@ -4,5 +4,5 @@
     %p{:class => "carddescription"}= @service.description
     %h3{:class => "cardowner"}= @service.user.first_name
     
-  = link_to 'Editar', edit_service_path(@services)
+  = link_to 'Editar', edit_service_path(@service)
   = link_to 'Voltar', services_path

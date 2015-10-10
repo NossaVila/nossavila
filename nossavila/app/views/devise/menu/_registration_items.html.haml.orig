@@ -1,0 +1,9 @@
+-# views/devise/menu/_login_items.html.erb
+<<<<<<< HEAD
+- if user_signed_in? 
+=======
+- if user_signed_in?
+>>>>>>> 6a6ab7d4e4cb4523c98e57c3e5beabd9729ee160
+  %li= link_to 'Editar conta', edit_user_registration_path
+- else
+  %li= link_to 'Registrar', new_user_registration_path

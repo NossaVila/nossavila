@@ -1,0 +1,17 @@
+.container.center.card
+  %h3{:class => "subtitle"} Atualizar Serviço
+  %hr
+  = form_tag service_path(@service), :method => :put do
+    .fieldnewleft
+      = label :service, :title, "Título", :class => "fieldnew"
+      = text_field :service, 'title', :class => "fieldnew", :input_html => { :value =>  @service.title}
+      = label :service, :description, "Descrição", :class => "fieldnew"
+      = text_area :service, 'description', :rows => 15, :cols => 40, :class => "fieldnew", :input_html => { :value =>  @service.description}
+      = submit_tag "Atualizar", :class => "fieldnew"
+      
+    .categorylabel
+      = label :service, :categories, "Categorias"
+      %br
+      - @categories.each do |cat|
+        = label :service, :category, cat.name
+        = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)

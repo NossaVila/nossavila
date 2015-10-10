@@ -17,9 +17,6 @@ class ServicesController < ApplicationController
     @services = @category.services unless(@category.nil?)
   end
 
-  def edit
-  end
-  
   def show
     id = params[:id]
     @service = Service.find(id)
@@ -39,9 +36,12 @@ class ServicesController < ApplicationController
     @categories = Category.all
     @service = Service.new(service_params)
     @service.user = current_user
-    params[:service][:categories].each do |category|
-      cat = Category.find_by(name: category)
-      cat.services << @service
+    Category.find_by(name: "root").services << @service
+    unless(params[:service][:categories].nil?)
+      params[:service][:categories].each do |category|
+        cat = Category.find_by(name: category)
+        cat.services << @service
+      end
     end
     if @service.save
       flash[:notice] = 'Novo serviço criado com sucesso'
@@ -51,10 +51,16 @@ class ServicesController < ApplicationController
       render :action => "new"
     end
   end
-  
-  def update
+
+  def edit
+    @categories = Category.where.not(name: "root")
     @service = Service.find params[:id]
-    if @service.update_attributes(service_params)
+  end
+
+  def update
+    @categories = Category.where.not(name: "root")
+    @service = Service.find params[:id]
+    if @service.update_attributes!(service_params)
       flash[:notice] = 'Dados atualizados com sucesso'
       redirect_to service_path(@service)
     else 
