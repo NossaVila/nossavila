@@ -1,8 +1,4 @@
-/* General */
 
-/*h1,h2,h3,h4,h5,h6{cursor:pointer;} WHAT THE HECK IS IT ? */ 
-
-/* Body */
 body{
     font-family: arial, verdana;
     -webkit-touch-callout: none;
@@ -149,7 +145,6 @@ sub{
     line-height:3;
 }
 
-/* Buttons */
 .button{
     /*min-width:40px;*/
     max-width:70px;
@@ -196,8 +191,6 @@ nav{
 .servicecard{
     overflow:hidden;
     max-height:20%;
-   /* background: #0452CC;*/
-    /*background: #2A2B2E;*/
     background:#ffffff;
     box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
     margin:auto;
@@ -228,11 +221,12 @@ nav{
 .fieldnew{
     margin:0;
     padding:0;
-    width:70%;
     float:left;
-    
 }
 
+.submitlink{
+    float:right;
+}
 .logo{
     height: 250px;
     width: 250px;
@@ -241,16 +235,63 @@ nav{
 }
  
 form label{
-    /*display: block;*/
-    line-height: 25px;
-    font-weight: bold;
-    color: black;
+    line-height: 28px;
+    font-family:arial;
+    font-size:12px;
+    color: #333333;
     margin:0;
     padding:0;
-    width:70%;
-    float:left;
 }
 
+.formleft{
+    width:26%;
+    float:left;
+    margin-bottom:2%;
+}
+.inleft{
+    text-align:right;
+    float:right;
+    width:100%;
+}
+.formright{
+    width:73%;
+    float:right;
+    margin-right:2px;
+}
+.inright{
+    float:left;
+    margin:2% 0 3% 0;
+}
+.card{
+    overflow:hidden;
+    max-height:500%;
+    max-width:500px;
+    background:#F9F9F9;
+    box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+    border:0.5px solid black;
+    margin:auto;
+    margin-bottom:3%;
+    padding:2% 4% 1% 2%;
+}
+#user_last_name, #user_first_name, #user_email, #user_cep, #user_cpf, #user_password, #user_password_confirmation, #user_address{
+    margin-bottom:8px;
+    width:60%;
+}
+#user_password{
+    width:60%
+}
+label.fieldpass:before, .fieldpass:before{
+    content:"*";
+    color:purple;
+}
+label.fieldcurrpass:before, .fieldcurrpass:before{
+    content:"*";
+    color:red;
+}
+em, i{
+    font-size:10px;
+    margin-top:-8px;
+}
 .btn {
   
   font-family: Arial;

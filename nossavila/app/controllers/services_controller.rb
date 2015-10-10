@@ -30,7 +30,7 @@ class ServicesController < ApplicationController
   def create
     @categories = Category.all
     @service = Service.new(service_params)
-    @service.user << current_user
+    @service.user = current_user
     params[:service][:categories].each do |category|
       cat = Category.find_by(name: category)
       cat.services << @service
