@@ -2,15 +2,13 @@
   %h2.subtitle Login
   %br/
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
+    .fieldnew
       = f.label :email
-      .fieldnew
-        = f.email_field :email, autofocus: true
+      = f.email_field :email, autofocus: true
     -# %br/
-    .field
+    .fieldnew
       = f.label :password
-      .fieldnew
-        = f.password_field :password, autocomplete: "off"
+      = f.password_field :password, autocomplete: "off"
     -# %br/
     -# - if devise_mapping.rememberable?
     -#   .field
@@ -19,6 +17,7 @@
     -#     = f.label :remember_me
     %br/
     .actions.fieldnew
+      %br/
       = f.submit "Login", :class => "btn"   
   -# .fieldnew
   -#   %br/
