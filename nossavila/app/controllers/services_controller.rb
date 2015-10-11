@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
-
-
   def index
     if params[:category].nil?
       @services = Service.all
@@ -53,8 +51,8 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @categories = Category.where.not(name: "root")
     @service = Service.find params[:id]
+    @categories = Category.where.not(name: "root")
   end
 
   def update
