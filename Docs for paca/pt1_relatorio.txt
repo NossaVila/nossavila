@@ -1,7 +1,7 @@
 Integrantes:    nome   /   nUSP
 
 - Bruno Pasqualotto Cavalar     8941172
-- Felipe Silva Felix            8941042
+- Felipe Silva Felix            8941092
 - Lucas de Carvalho Dias        8941241
 - Larissa de Oliveira Penteado  8941338
 - Thais Lima de Sousa           8941220
@@ -25,5 +25,7 @@ Integrantes:    nome   /   nUSP
   modificou códigos escritos por todos os integrantes do grupo.
   
   
-- Bugs na criação de testes:
-  Problemas com as rotas
+- criação de testes:
+  Os testes foram reescritos após optarmos por instalar a gem devise.
+  Outros problemas surgiram após 
+  
