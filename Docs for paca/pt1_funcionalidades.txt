@@ -4,3 +4,4 @@ Funcionalidades implementadas na entrega 1:
 - Cadastro de usuário
 - Acesso à página de um serviço
 - Seleção de uma categoria de serviços
+- Log in do usuário

@@ -33,6 +33,12 @@ Funcionalidades:
 
  Acesse a aplicação em http://www.nossavilla.vai.la
 
+== Autores:
+ Bruno Pasqualotto Cavalar
+ Felipe Silva Felix
+ Larissa de Oliveira Penteado
+ Lucas de Carvalho Dias
+ Thais Lima de Sousa
 
 == Considerações finais
 

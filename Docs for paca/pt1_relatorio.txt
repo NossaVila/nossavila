@@ -27,5 +27,3 @@ Integrantes:    nome   /   nUSP
   
 - criação de testes:
   Os testes foram reescritos após optarmos por instalar a gem devise.
-  Outros problemas surgiram após 
-  
