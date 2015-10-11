@@ -220,19 +220,14 @@ nav{
 .fieldnewleft{
     margin:0;
     padding:0;
-    /* display:inline; */
+    display:inline;
     /* breaks inline forms */
     float:left;
     width:70%;
 }
-.fieldnew{
-    margin:0;
-    padding:0;
-    display:inline;
-    /* breaks inline forms */
-    float:left;
-    width:100%;
-}
+/* .fieldnew{ */
+/*    width:100%; */
+/* } */
 
 .submitlink{
     float:right;
@@ -255,29 +250,29 @@ form label{
     /* width:25%; */
     /* display:inline; */
 }
-
-.formleft{
-    width:26%;
-    float:left;
-    margin-bottom:2%;
-}
-.inleft{
-    text-align:right;
-    float:right;
-    width:100%;
-}
-.formright{
-    width:73%;
-    float:right;
-    margin-right:2px;
-}
-.inright{
-    float:left;
-    margin:2% 0 3% 0;
-}
+/*  */
+/* .formleft{ */
+/*     width:26%; */
+/*     float:left; */
+/*     margin-bottom:2%; */
+/* } */
+/* .inleft{ */
+/*     text-align:right; */
+/*     float:right; */
+/*     width:100%; */
+/* } */
+/* .formright{ */
+/*     width:73%; */
+/*     float:right; */
+/*     margin-right:2px; */
+/* } */
+/* .inright{ */
+/*     float:left; */
+/*     margin:2% 0 3% 0; */
+/* } */
 .card{
     overflow:hidden;
-    /* max-height:500px; */
+    max-height:500px;
     max-width:500px;
     background:#F9F9F9;
     box-shadow:1px 1px 5px rgba(0, 0, 0, .5);

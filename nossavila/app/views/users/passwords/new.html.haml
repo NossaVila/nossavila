@@ -1,0 +1,11 @@
+.container.center.card.users_page
+  %h2 Esqueceu sua senha?
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true , :class => "fieldnew"
+    .actions
+      = f.submit "Envie-me instruções de recuperação de senha"
+  = render "users/shared/links"

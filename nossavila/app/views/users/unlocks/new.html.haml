@@ -1,0 +1,12 @@
+.container.center.card.users_page
+  %h2 Reenviar instruções de desbloqueio
+  = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      %br/
+      .fieldnew
+        = f.email_field :email, autofocus: true , :class => "fieldnew"
+    .actions
+      = f.submit "Reenviar instruções de desbloqueio"
+  = render "users/shared/links"

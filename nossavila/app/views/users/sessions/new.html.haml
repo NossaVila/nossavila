@@ -1,40 +1,24 @@
-.container.center.card
-  %h2.subtitle Entrar
-  %hr
+.container.center.card.users_page
+  %h2.subtitle Login
   %br/
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .formleft
-      .inleft
-        = f.label :email
-        %br/
-        = f.label :password, "Senha"
-        %br/
-        = f.label :remember_me, "Lembrar"
-        %br/
-        .actions.submitlink
-          = f.submit "Entrar"
-  
-    .formright
+    .fieldnew
+      = f.label :email
       = f.email_field :email, autofocus: true
+    -# %br/
+    .fieldnew
+      = f.label :password
       = f.password_field :password, autocomplete: "off"
+    -# %br/
+    -# - if devise_mapping.rememberable?
+    -#   .field
+    -#     .fieldnew
+    -#       = f.check_box :remember_me
+    -#     = f.label :remember_me
+    %br/
+    .actions.fieldnew
       %br/
-      - if devise_mapping.rememberable?
-        = f.check_box :remember_me
-      %br/
-
-  -#     .fieldnew
-  -#       = f.password_field :password, autocomplete: "off"
-  -#   - if devise_mapping.rememberable?
-  -#     .field
-  -#       .fieldnew
-  -#         = f.check_box :remember_me
-  -#       = f.label "Mantenha-me conectado"
-  -#   .actions.fieldnew
-  -#     = f.submit "Log in"
+      = f.submit "Login", :class => "btn"   
   -# .fieldnew
+  -#   %br/
   -#   = render "users/shared/links"
-
-      %br/
-      %br/
-      %br/
-  = render "users/shared/links"
