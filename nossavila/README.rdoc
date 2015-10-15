@@ -15,7 +15,7 @@ Funcionalidades:
 
 == Ficha técnica
 
-* Ruby version: 1.9.3
+* Ruby version: 2.2.2
 * Rais version: 4.2.0
 
 
