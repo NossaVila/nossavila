@@ -23,7 +23,10 @@ class ServicesController < ApplicationController
   def new
     unless(user_signed_in?)
       store_location_for(:user, new_service_path)
-      redirect_to new_user_session_path, :notice => "É necessário estar logado para criar um serviço"
+      flash[:partial] = "noticepartial"
+      flash[:state] = "red"
+      flash[:text] = "É necessário estar logado para criar um serviço"
+      redirect_to new_user_session_path
     end
     @categories = Category.where.not(name: "root")
     @services = Service.all
@@ -41,11 +44,14 @@ class ServicesController < ApplicationController
         cat.services << @service
       end
     end
+    flash[:partial] = "noticepartial"
     if @service.save
-      flash[:notice] = 'Novo serviço criado com sucesso'
+      flash[:state] = "green"
+      flash[:text] = "Novo serviço criado com sucesso"
       redirect_to service_path(@service)
     else
-      flash[:notice] = 'Falha ao criar serviço'
+      flash[:state] = "red"
+      flash[:text] = "Falha ao criar serviço"
       render :action => "new"
     end
   end
@@ -56,13 +62,16 @@ class ServicesController < ApplicationController
   end
 
   def update
+  	flash[:partial] = "noticepartial"
     @categories = Category.where.not(name: "root")
     @service = Service.find params[:id]
     if @service.update_attributes!(service_params)
-      flash[:notice] = 'Dados atualizados com sucesso'
+      flash[:state] = "green"
+      flash[:text] = 'Dados atualizados com sucesso'
       redirect_to service_path(@service)
     else 
-      flash[:notice] = 'Falha ao atualizar serviço'
+      flash[:state] = "red"
+      flash[:text] = 'Falha ao atualizar serviço'
       render :action => "edit"
     end
   end
@@ -70,7 +79,8 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-    flash[:notice] = 'Serviço removido'
+    flash[:state] = "green"
+    flash[:text] = 'Serviço removido'
     redirect_to services_path
   end
   

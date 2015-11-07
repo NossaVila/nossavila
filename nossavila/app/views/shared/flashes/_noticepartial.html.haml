@@ -1,0 +1,6 @@
+.login-needed-flash
+  .login-needed-flash-container
+    - if(flash[:state] == "green")
+      %h3.flash-green= flash[:text]
+    - else
+      %h3.flash-red= flash[:text]
