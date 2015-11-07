@@ -364,9 +364,9 @@ ul.navigation-list li {
     height: 35px;
     text-align: center;
     padding-top: 15px;
-    -webkit-box-shadow: 0px 0px 8px 0px #000000;
-    -moz-box-shadow: 0px 0px 8px 0px #000000;
-    box-shadow: 0px 0px 8px 0px #000000;
+    -webkit-box-shadow: 0 0 8px 0 #000000;
+    -moz-box-shadow: 0 0 8px 0 #000000;
+    box-shadow: 0 0 8px 0 #000000;
     background-color: rgba(1, 1, 1, 0.8);
     color:rgba(1, 1, 1, 0.8);
 }
@@ -383,6 +383,44 @@ ul.navigation-list li {
     color: grey;
 }
 
-#session {
-	display: none;
+/* FLASH PARTIALS */
+.login-needed-flash{
+	width:100%;
+	margin: 5px 0 5px 0;
+}
+
+.login-needed-flash-container{
+	max-width:400px;
+	background:#F9F9F9;
+	padding: 5px;
+	margin: auto;
+	border:0.5px solid black;
+	-webkit-box-box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+	-moz-box-box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+	box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+}
+
+.flash-red, .flash-green{
+	font-size:20px;
+	color:#484848;	
+	margin-bottom:10px;
+}
+
+.flash-red::before{
+	content:"!";
+	color:#FF1000;						
+	font-size:50px;
+	margin-right:10px;
+}
+
+.flash-green::before{
+	content:"v";
+	color:#00FF3D;						
+	font-size:50px;
+	margin-right:10px;
+}
+
+.consimage{
+  float:left; 
+  margin-left:40px;
 }

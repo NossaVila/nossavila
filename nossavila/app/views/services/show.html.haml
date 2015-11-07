@@ -1,8 +1,11 @@
+-if(flash[:partial])
+  = render partial: "shared/flashes/#{flash[:partial]}"
 .center.container
   .servicecard
     %h2{:class => "cardtitle"}= @service.title
     %p{:class => "carddescription"}= @service.description
-    %h3{:class => "cardowner"}= @service.user.first_name unless user.first_name.nil?
-    
-  = link_to 'Editar', edit_service_path(@service)
+    %h3{:class => "cardowner"}= @service.user.first_name
+  
+  - if(current_user == @service.user && user_signed_in?)  
+    = link_to 'Editar', edit_service_path(@service)
   = link_to 'Voltar', services_path

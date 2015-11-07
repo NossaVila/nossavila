@@ -1,4 +1,6 @@
 #container
+  -if(flash[:partial])
+    = render partial: "shared/flashes/#{flash[:partial]}"
   .navcontainer
     %nav
       %table
