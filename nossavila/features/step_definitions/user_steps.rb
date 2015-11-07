@@ -9,7 +9,7 @@ Given(/^I am not a logged in user$/) do
     Capybara.current_driver = current_driver
   end
 end
-
+=begin
 Given(/^I am a registered user$/) do
   email = 'armando@man.net'
   password = 'armando1234'
@@ -20,7 +20,7 @@ Given(/^I am a registered user$/) do
   cep = "05508090"
   @user = User.create(:first_name => first_name, :last_name => last_name, :email => email, :cpf => cpf, :address => address, :cep => cep, :password => password, :password_confirmation => password)
 end  
-
+=end
 =begin   
   Given /^I am a registered user$/ do
     email = 'armando@man.net'
@@ -56,12 +56,6 @@ Given(/^I am a logged in user$/) do
   login_as(@current_user, :scope => :user)
 end
 
-Given(/^I am a logged in user with "([^"]*)" email and "([^"]*)" password$/) do |email, password|
-  visit '/users/sign_in'
-  fill_in "user_email", with: email
-  fill_in "user_password", with: password
-  click_button("Login")
-end
 
 Given(/^I log out$/) do
     logout

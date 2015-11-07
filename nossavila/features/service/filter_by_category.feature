@@ -29,8 +29,8 @@ Background: Services have been added to the database
   And I check the "Construção Civil" category
   And I press "Criar" 
   Given I am on the Criar novo serviço page
-  When I fill in "service_title" with "Fotográfo"
-  And I fill in "descrition" with "Fotos Artísticas e Profissionais"
+  When I fill in "service_title" with "Fotógrafo"
+  And I fill in "service_description" with "Fotos Artísticas e Profissionais"
   And I check the "Educação Pública" category
   And I press "Criar"  
   Given I am on the Criar novo serviço page
@@ -42,19 +42,19 @@ Background: Services have been added to the database
   And I am on the NossaVilla home page
   
 Scenario: filter the services list by category
-  When I press "Construção Civil" 
+  When I follow "Construção Civil" 
   Then I should see "Pintor"
   And I should see "Predeira Artística"
   And I should not see "Fotográfo"
   And I should not see "Aulas particulares de latim"
   And I should not see "Aulas de Matemática"
-  When I press "Educação Privada"
+  When I follow "Educação Privada"
   Then I should see "Aulas particulares de latim"
   And I should see "Aulas de Matemática"
   And I should not see "Pintor"
   And I should not see "Fotógrafo"
   And I should not see "Pedreira Artística"
-  When I press "Educação Pública"
+  When I follow "Educação Pública"
   Then I should see "Fotógrafo"
   And I should not see "Pintor"
   And I should not see "Aulas particulares de latim"

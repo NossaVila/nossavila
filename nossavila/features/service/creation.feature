@@ -10,9 +10,8 @@ Feature: Create services
       |name            |
       |Educação Privada|
     
-    Given I am a registered user
   Scenario: I am a logged in user and I add 'Aulas de canto' service
-    Given I am a logged in user with "armando@man.net" email and "armando1234" password
+    Given I am a logged in user
     And I am on the NossaVilla home page
     And I follow "Criar novo Serviço" 
     When I fill in "service_title" with "Aulas de canto"
@@ -29,7 +28,7 @@ Feature: Create services
     And I am on the user sign in page
     
   Scenario: I am a logged in user and I enter with invalid fields
-    Given I am a logged in user with "armando@man.net" email and "armando1234" password
+    Given I am a logged in user
     And I am on the Criar novo serviço page
     When I fill in "service_title" with ""
     And I press "Criar"
