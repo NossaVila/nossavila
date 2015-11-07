@@ -39,6 +39,7 @@ group :test do
   # Easier test writing
   gem "shoulda-matchers", "~> 2.8.0"
   gem 'cucumber'
+  gem 'cucumber-rails'
 
 end
 
