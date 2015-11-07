@@ -378,3 +378,6 @@ ul.navigation-list li {
     color: grey;
 }
 
+#session {
+	display: none;
+}

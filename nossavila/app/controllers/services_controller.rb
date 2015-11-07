@@ -33,21 +33,28 @@ class ServicesController < ApplicationController
   def create
     @categories = Category.all
     @service = Service.new(service_params)
-    @service.user = current_user
-    Category.find_by(name: "root").services << @service
-    unless(params[:service][:categories].nil?)
-      params[:service][:categories].each do |category|
-        cat = Category.find_by(name: category)
-        cat.services << @service
+    begin
+      @service.user = current_user
+      Category.find_by(name: "root").services << @service
+      unless(params[:service][:categories].nil?)
+        params[:service][:categories].each do |category|
+          cat = Category.find_by(name: category)
+          cat.services << @service
+        end
       end
-    end
-    if @service.save
-      flash[:notice] = 'Novo serviço criado com sucesso'
-      redirect_to service_path(@service)
-    else
+      if @service.save
+        flash[:notice] = 'Novo serviço criado com sucesso'
+        redirect_to service_path(@service)
+      else
+        flash[:notice] = 'Falha ao criar serviço'
+        render :action => "new"
+      end
+    rescue ActiveRecord::RecordInvalid => e
       flash[:notice] = 'Falha ao criar serviço'
       render :action => "new"
     end
+    
+    
   end
 
   def edit

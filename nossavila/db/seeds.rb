@@ -5,8 +5,8 @@ ariel = User.create!(:first_name => 'Ariel', :last_name => 'Tales', :username =>
 andersvaldo = User.create!(:first_name => 'Andersvaldo', :last_name => 'Faria', :username => 'aloelalala', :password => 'casteliaso', :address => 'Rua dos Guapares', :cep => '04348120', :cpf => '86777640207', :email => 'cilinaldok@hotmail.com')
 root = Category.create!({:name => "root"})
 edu = Category.create!({:name => "educação", :supercategory => root})
-edup = Category.create!({:name => "educaçao-privada", :supercategory => edu})
-categories = [{:name => "educaçao-pública", :supercategory => edu}, {:name => "lazer", :supercategory => root}]
+edup = Category.create!({:name => "Educação Privada", :supercategory => edu})
+categories = [{:name => "Educação Pública", :supercategory => edu}, {:name => "lazer", :supercategory => root}]
 cons = Category.create!({:name => "Construção Civil", :supercategory => root})
 doms = Category.create!({:name => "Doméstico", :supercategory => root})
 logs = Category.create!({:name => "Logística", :supercategory => root})

@@ -3,32 +3,58 @@ Feature: Filter the Services list by category
   So that I can quickly find the service
   I want to see services that match only the specific categories
   
-Background: Services have been added to the database
   
-  Given the following services exist:
-  | title                       | description                                            |category        |
-  | Pintor                      |Dez anos de experiencia, faço qualquer textura de parede|Construção Civil|
-  | Aulas particulares de latim |Descubra o significado das frases que vocẽ sempre quis  |Educação Privada|
-  | Predeira Artística          |Trabalhos da construção civil que demandam mais cuidado |Construção Civil|
-  | Fotográfo                   |Fotos Artísticas e Profissionais                        |Educação Pública|
-  | Aulas de Matemática         |Aulas de matemática básica para alunos de Ensino Médio  |Educação Privada|
- 
+Background: Services have been added to the database
+    
+  Given the following categories exist:
+  |name            |
+  |Educação Pública|
+  |Educação Privada|
+  |Construção Civil|
+  
+  Given I am a logged in user 
+  Given I am on the Criar novo serviço page
+  When I fill in "service_title" with "Pintor"
+  And I fill in "service_description" with "Dez anos de experiencia, faço qualquer textura de parede"
+  And I check the "Construção Civil" category
+  And I press "Criar" 
+  Given I am on the Criar novo serviço page
+  When I fill in "service_title" with "Aulas particulares de latim"
+  And I fill in "service_description" with "Descubra o significado das frases que você sempre quis" 
+  And I check the "Educação Privada" category
+  And I press "Criar" 
+  Given I am on the Criar novo serviço page
+  When I fill in "service_title" with "Predeira Artística"
+  And I fill in "service_description" with "Trabalhos da construção civil que demandam mais cuidado"
+  And I check the "Construção Civil" category
+  And I press "Criar" 
+  Given I am on the Criar novo serviço page
+  When I fill in "service_title" with "Fotográfo"
+  And I fill in "descrition" with "Fotos Artísticas e Profissionais"
+  And I check the "Educação Pública" category
+  And I press "Criar"  
+  Given I am on the Criar novo serviço page
+  When I fill in "service_title" with "Aulas de Matemática"
+  And I fill in "service_description" with "Aulas de matemática básica para alunos de Ensino Médio" 
+  And I check the "Educação Privada" category
+  And I press "Criar" 
+
   And I am on the NossaVilla home page
   
 Scenario: filter the services list by category
-  When I press the "Construção Civil" button
+  When I press "Construção Civil" 
   Then I should see "Pintor"
   And I should see "Predeira Artística"
   And I should not see "Fotográfo"
   And I should not see "Aulas particulares de latim"
   And I should not see "Aulas de Matemática"
-  When I press the "Educação Privada" button
+  When I press "Educação Privada"
   Then I should see "Aulas particulares de latim"
   And I should see "Aulas de Matemática"
   And I should not see "Pintor"
   And I should not see "Fotógrafo"
   And I should not see "Pedreira Artística"
-  When I press the "Educação Pública" button
+  When I press "Educação Pública"
   Then I should see "Fotógrafo"
   And I should not see "Pintor"
   And I should not see "Aulas particulares de latim"
