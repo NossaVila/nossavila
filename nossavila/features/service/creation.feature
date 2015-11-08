@@ -25,7 +25,7 @@ Feature: Create services
   Scenario: I am not a logged user and I try to create a new service
     Given I am on the Criar novo serviço page
     Then I should see "É necessário estar logado para criar um serviço"
-    And I am on the user sign in page
+    And I should be redirected to the user sign in page
     
   Scenario: I am a logged in user and I enter with invalid fields
     Given I am a logged in user
@@ -33,4 +33,4 @@ Feature: Create services
     When I fill in "service_title" with ""
     And I press "Criar"
     Then I should see "Falha ao criar serviço"
-    And I am on the Criar novo serviço page
+    And I should be redirected to the Criar novo serviço page

@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the (NossaVilla )?home\s?page$/ then '/services'
     when /^the services page$/ then '/services'
-    
+
     when /^the new user page$/ then '/users/sign_up'
     
     when/^the Criar novo serviço page$/ then '/services/new'

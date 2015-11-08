@@ -19,3 +19,5 @@ Feature: Update user information
       Given I fill in "user_last_name" with "Fox"
       And I press "Atualizar"
       Then I should see "Senha atual não pode ficar em branco"
+      And I should be redirected to the update user page
+    

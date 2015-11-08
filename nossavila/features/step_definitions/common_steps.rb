@@ -44,3 +44,7 @@ end
 When(/^(?:|I )check "([^"]*)"$/) do |field|
   check(field)
 end
+
+When(/^I should be redirected to (.+)$/) do |page_name|
+    visit path_to(page_name)
+end

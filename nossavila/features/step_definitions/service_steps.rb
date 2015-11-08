@@ -8,9 +8,9 @@ Given(/the following services exist:/) do |services_table|
     end
 end
 
-When(/^I should be redirected to the (.+) page$/) do |url|
-    expect(response).to redirect_to(url)
-end
+# When(/^I should be redirected to the (.+) page$/) do |url|
+#     expect(response).to redirect_to(url)
+# end
 
 Given(/^the following categories exist:$/) do |categories_table|
     root = Category.create!({:name => "root"})
