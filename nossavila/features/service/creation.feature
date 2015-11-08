@@ -32,5 +32,5 @@ Feature: Create services
     And I am on the Criar novo serviço page
     When I fill in "service_title" with ""
     And I press "Criar"
-    Then I should see "Falha ao criar serviço"
+    And I should see "Falha ao criar serviço"
     And I should be redirected to the Criar novo serviço page

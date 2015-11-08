@@ -122,9 +122,9 @@ describe ServicesController do
 
     context "with invalid params" do
       it "assigns the service as @service" do
-        service = Service.create! valid_attributes
-        put :update, {:id => service.to_param, :service => invalid_attributes}
-        expect(assigns(:service)).to eq(service)
+      service = Service.create! valid_attributes
+      put :update, {:id => service.to_param, :service => invalid_attributes}
+      expect(assigns(:service)).to eq(service)
       end
 
       it "renders the 'edit' template" do

@@ -30,3 +30,7 @@ When(/^(?:|I )check the "([^"]*)" category$/) do |field|
         check(field)
     end
 end
+
+Then(/it should raise an error$/) do
+    expect{page}.to raise_exception(/A validação falhou/)
+end
