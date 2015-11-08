@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
     else
       @root = Category.find_by(name: params[:root])
     end
-    @categories = @root.subcategories
+    @categories = @root.subcategories unless @root.nil?
     if(@categories[0].nil?)
       redirect_to services_path(:category => @root.id)
     end
