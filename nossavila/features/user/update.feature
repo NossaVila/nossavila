@@ -15,3 +15,7 @@ Feature: Update user information
       And I press "Atualizar"
       Then I should see " A sua conta foi atualizada com sucesso"
       
+    Scenario: without fillin in the current password
+      Given I fill in "user_last_name" with "Fox"
+      And I press "Atualizar"
+      Then I should see "Senha atual não pode ficar em branco"
