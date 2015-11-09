@@ -38,11 +38,13 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     begin
       @service.user = current_user
-      Category.find_by(name: "root").services << @service
-      unless(params[:service][:categories].nil?)
-        params[:service][:categories].each do |category|
-          cat = Category.find_by(name: category)
-          cat.services << @service
+      if @service.valid?
+       Category.find_by(name: "root").services << @service
+        unless(params[:service][:categories].nil?)
+          params[:service][:categories].each do |category|
+            cat = Category.find_by(name: category)
+            cat.services << @service
+          end
         end
       end
     end
@@ -69,7 +71,8 @@ class ServicesController < ApplicationController
   	flash[:partial] = "noticepartial"
     @categories = Category.where.not(name: "root")
     @service = Service.find params[:id]
-    if @service.update_attributes!(service_params)
+    
+    if @service.update_attributes(service_params)
       flash[:state] = "green"
       flash[:text] = 'Dados atualizados com sucesso'
       redirect_to service_path(@service)
