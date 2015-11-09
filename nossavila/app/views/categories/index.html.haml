@@ -1,10 +1,16 @@
-.container
-  - @categories.each do |category|
-    %a{:href => categories_path(:root => category.name)}
-      .categorybox
-        %h1= category.name
-        .categorytitle
-          %h2= category.name
-        .infos
-        .categoryfooter"
-          
+.category-container
+  .boxes
+    - @categories.each_slice(3).with_index do |slice, i|
+      .box-row
+        - slice.each_with_index do |category, j|
+          %div{:class => "hvr-shrink box box#{(i+j)%3+1}"}
+            %a{:class => "fill-div", :href => categories_path(:root => category.name)}
+              %h3= category.name.capitalize
+    - @categories.each_slice(3).with_index do |slice, i|
+      - if (i > 0) then break end
+      - i = 2
+      .box-row
+        - slice.each_with_index do |category, j|
+          %div{:class => "hvr-shrink box box#{(i+j)%3+1}"}
+            %a{:class => "fill-div", :href => categories_path(:root => category.name)}
+              %h3= category.name.capitalize
