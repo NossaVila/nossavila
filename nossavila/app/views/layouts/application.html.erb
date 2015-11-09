@@ -4,21 +4,37 @@
   <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
   <title>NossaVilla</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'categories', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'navigation', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'flash', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'hover', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<br><br>
-
+<body>  
+<div id="wrapper">
+  
+<div id="header">
 <%= render 'layouts/loginbar' %>
 <%= render 'layouts/logo' %>
+</div>
+
+<div id="body">
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
+</div>
+
+<div id="footer">
+  Nossa Villa 2015
+</div>
+
+
+</div>
 </body>
 </html>
-

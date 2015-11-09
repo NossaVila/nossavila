@@ -1,0 +1,58 @@
+.users_page .field {
+    /* display:inline; */
+    /* up: breaks the line button */
+    margin: 0;
+    padding: 0;
+}
+.users_page p {
+    display:inline;
+}
+#user_last_name, #user_first_name, #user_email, #user_cep, #user_cpf, #user_password, #user_password_confirmation, #user_address{
+    /* display:inline; */
+    /* display:block; */
+    /* float:right; */
+    margin-bottom:8px;
+    width:100%;
+}
+label.fieldpass:before, .fieldpass:before{
+    content:"*";
+    color:purple;
+}
+label.fieldcurrpass:before, .fieldcurrpass:before{
+    content:"*";
+    color:red;
+}
+em, i{
+    font-size:10px;
+    margin-top:-8px;
+}
+
+.users_page .btn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #000000;
+  padding: 5px 10px 5px 10px;
+  border:none;
+  text-decoration: none;
+}
+
+.users_page .btn:hover {
+  background: #5e5e5e;
+  text-decoration: none;
+}
+
+.btn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 19px;
+  background: #686A6F;
+  padding: 10px 20px 10px 20px;
+  border: solid #6C6F75 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #A7ACB5;
+  text-decoration: none;
+}

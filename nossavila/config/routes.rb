@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :services
   resources :home
-  root 'services#index'
+  root 'categories#index'
 end
