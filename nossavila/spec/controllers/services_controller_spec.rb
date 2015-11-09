@@ -20,9 +20,8 @@ describe ServicesController do
     end
   end
 
-
   describe "GET #show" do
-    it "assigns the requested service  as @service" do
+    it "assigns the requested service as @service" do
       service = Service.create! valid_attributes
       get :show, {:id => service.to_param}, valid_session
       expect(assigns(:service)).to eq(service)
