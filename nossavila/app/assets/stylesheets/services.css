@@ -1,3 +1,12 @@
+.searchbtn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 19px;
+  background: #686A6F;
+  padding: 10px 20px 10px 20px;
+  border: solid #6C6F75 2px;
+  text-decoration: none;
+}
 .btnnav {
   font-family: Arial;
   color: #ffffff;
@@ -16,4 +25,23 @@
 .btnnavchild.show{
   background: #9DA6BB;
   display:block;
+}
+
+.triangle{
+  float:right;
+    width: 0; 
+    height: 0;
+}
+.expandible{
+  float:right;
+}
+div.collapse>div.triangle{
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+}
+div.expand>div.triangle{
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
 }

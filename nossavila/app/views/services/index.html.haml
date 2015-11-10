@@ -2,7 +2,7 @@
   .navcontainer
     %nav
       = form_tag services_path, :method => :get do
-        .btn.searchbtn
+        .searchbtn
           = submit_tag "Buscar"
         %table
           %tbody
@@ -11,14 +11,17 @@
                 %td{:class => "btnnav", :id => "#{cat.name}"}
                   = label :service, :category, cat.name.capitalize
                   = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
-                  .btnnavchilds{:id => "#{cat.name}", :style => "display: none"}
-                    %table
-                      %tbody
-                        - cat.subcategories.each do |subcat|    
-                          %tr
-                            %td{:class => "btnnavchild"}
-                              = label :service, :category, subcat.name
-                              = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
+                  - if(cat.subcategories.any?)
+                    .expandible.expand{:id => "#{cat.name}"}
+                      .triangle
+                    .btnnavchilds{:id => "#{cat.name}", :style => "display: none"}
+                      %table
+                        %tbody
+                          - cat.subcategories.each do |subcat|    
+                            %tr
+                              %td{:class => "btnnavchild"}
+                                = label :service, :category, subcat.name
+                                = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
               
   .servicescontainer
     %a{:href => new_service_path, :class => "link"}

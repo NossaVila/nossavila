@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :address, length: {minimum: 5}, presence: true
   # validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z])+   a\.[a-z]+\z/i }
   validates :cpf, uniqueness: true, presence: true
-  
+  has_many :services
   def name
     self.first_name + " " + self.last_name
   end

@@ -3,7 +3,6 @@ class ServicesController < ApplicationController
   
   def index
     @categories = []
-    
     unless (params[:category].nil?)
       @categories << Category.find(params[:category])
     else
@@ -15,9 +14,8 @@ class ServicesController < ApplicationController
         @categories << Category.find_by(name: "root")
       end
     end
-    @navcategories = Category.where.not(name: "root")
+    @navcategories = Category.find_by(name: "root").subcategories
     @services = []
-    
     @categories.each do |category|
       unless(category.nil?)
         category.services.each do |service| 
@@ -25,7 +23,6 @@ class ServicesController < ApplicationController
         end
       end
     end
-
   end
 
   def show
@@ -48,15 +45,13 @@ class ServicesController < ApplicationController
   def create
     @categories = Category.all
     @service = Service.new(service_params)
-    begin
-      @service.user = current_user
-      if @service.valid?
-       Category.find_by(name: "root").services << @service
-        unless(params[:service][:categories].nil?)
-          params[:service][:categories].each do |category|
-            cat = Category.find_by(name: category)
-            cat.services << @service
-          end
+    @service.user = current_user
+    if @service.valid?
+      Category.find_by(name: "root").services << @service
+      unless(params[:service][:categories].nil?)
+        params[:service][:categories].each do |category|
+          cat = Category.find_by(name: category)
+          cat.services << @service
         end
       end
     end
@@ -69,8 +64,6 @@ class ServicesController < ApplicationController
       flash[:notice] = "Falha ao criar serviço"
       render :action => "new"
     end
-    
-    
   end
 
   def edit
