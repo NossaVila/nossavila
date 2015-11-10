@@ -8,7 +8,7 @@ class Company < ActiveRecord::Base
     validates :phone_number, presence: true, length: { is: 8 }
     validates :area_code, presence:true, length: { is: 2 }
     validates :site, format: { with: /(.*).(.*)/ }
-    # /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/ }
+    # validates :site, format: { with: /(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/ }
     belongs_to :user, class_name: 'User'
     has_and_belongs_to_many :categories
 end

@@ -11,3 +11,10 @@ Integrantes:    nome   /   nUSP
  - dificuldades com cucumber e capybara: documentação não ajudou muito
  para criar os steps (apesar de o arquivo web_steps dar um bom suporte inicial).
  Stackoverflow foi de imensa ajuda.
+ 
+ -Começamos a implementar o modelo de estabelecimentos (company), porém, ele ain-
+ da está em contrução e, portanto, alguns dos testes estão falhando (pois o con-
+ troller e as views ainda não foram completamente implementados). Apenas os tes-
+ tes de rspec para o model estão funcionando.
+ 
+ -
