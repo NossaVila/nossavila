@@ -42,7 +42,8 @@ Background: Services have been added to the database
   And I am on the NossaVilla home page
   
 Scenario: filter the services list by category
-  When I follow "Construção Civil" 
+  When I check the "Construção Civil" category
+  And I press "Buscar"
   Then I should see "Pintor"
   And I should see "Predeira Artística"
   And I should not see "Fotográfo"

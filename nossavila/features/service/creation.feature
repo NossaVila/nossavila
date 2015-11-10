@@ -11,8 +11,8 @@ Feature: Create services
     
   Scenario: I am a logged in user and I add 'Aulas de canto' service
     Given I am a logged in user
-    And I am on the NossaVilla home page
-    And I follow "Criar novo Serviço" 
+    And I am on the services page
+    And I follow "Criar Serviço" 
     When I fill in "service_title" with "Aulas de canto"
     And I fill in "service_description" with "Aprenda a cantar. Primeira aula gratuita"
     And I check the "Educação Privada" category
