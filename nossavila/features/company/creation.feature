@@ -11,7 +11,7 @@ Feature: register a company
   
     Given I am a logged in user
     And I am on the NossaVilla home page
-    And I follow "Registrar novo Estabelecimento" 
+    And I follow "Criar novo Estabelecimento" 
     When I fill in "company_name" with "Escola Austen"
     And I fill in "company_description" with "Colégio interno para garotas"
     And I fill in "company_address" with "Rua Chawton, 13"

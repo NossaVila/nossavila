@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # }
   resources :categories
   resources :services
+  resources :companies
   resources :home
   root 'categories#index'
 end

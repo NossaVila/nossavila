@@ -1,0 +1,11 @@
+-if(flash[:partial])
+  = render partial: "shared/flashes/#{flash[:partial]}"
+.center.container
+  .companycard
+    %h2{:class => "cardtitle"}= @company.name
+    %p{:class => "carddescription"}= @company.description
+    %h3{:class => "cardowner"}= @company.user.first_name
+  
+  - if(current_user == @company.user && user_signed_in?)  
+    = link_to 'Editar', edit_company_path(@company)
+  = link_to 'Voltar', companies_path
