@@ -11,6 +11,8 @@ cons = Category.create!({:name => "Construção Civil", :supercategory => root})
 doms = Category.create!({:name => "Doméstico", :supercategory => root})
 logs = Category.create!({:name => "Logística", :supercategory => root})
 trps = Category.create!({:name => "Transporte", :supercategory => root})
+Category.create!({:name => "Alimentação", :supercategory => root})
+Category.create!({:name => "Comércio", :supercategory => root})
 
 pintor = Service.create!(:title => 'Pintor - Disponível 7 dias por semana', 
             :description => 'Dez anos de experienca, faço qualquer textura de parede e até aceito desafios.', 
