@@ -1,14 +1,12 @@
-.container
-  %a{:href => categories_path}
-    .categorybox
-      %h1 Serviços
-      .categorytitle
-        %h2 Serviços
-      .infos
-  
-  %a{:href => new_category_path}      
-    .categorybox
-      %h1 Estabelecimentos
-      .categorytitle
-        %h2 Estabelecimentos
-      .infos
+.category-container
+  .category-table
+    //%div.category-header
+    //  %h3= "O que procura?"
+    .boxes
+      .box-row
+        %div{:class => "hvr-shrink box box#{1}"}
+          %a{:class => "fill-div", :href => categories_path(:type => "company")}
+            %h3 Estabelecimentos
+        %div{:class => "hvr-shrink box box#{2}"}
+          %a{:class => "fill-div", :href => categories_path(:type => "service")}
+            %h3 Serviços

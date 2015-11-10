@@ -1,15 +1,24 @@
 #container
-  -if(flash[:partial])
-    = render partial: "shared/flashes/#{flash[:partial]}"
   .navcontainer
     %nav
-      %table
-        %tbody
-          - @categories.each do |cat|
-            %tr
-              %td{:class => "btn"}
-                %a{:href => services_path(:category => cat.id), :class => "link"}
-                  %h3= cat.name
+      = form_tag services_path, :method => :get do
+        .btn.searchbtn
+          = submit_tag "Buscar"
+        %table
+          %tbody
+            - @navcategories.each do |cat|
+              %tr
+                %td{:class => "btnnav", :id => "#{cat.name}"}
+                  = label :service, :category, cat.name
+                  = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
+                  .btnnavchilds{:id => "#{cat.name}", :style => "display: none"}
+                    %table
+                      %tbody
+                        - cat.subcategories.each do |subcat|    
+                          %tr
+                            %td{:class => "btnnavchild"}
+                              = label :service, :category, subcat.name
+                              = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
               
   .servicescontainer
     .btn

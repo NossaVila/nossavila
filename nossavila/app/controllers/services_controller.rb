@@ -1,18 +1,27 @@
 # -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
   def index
-    if params[:category].nil?
-      @services = Service.all
-    end
-    
+    @categories = []
     unless (params[:category].nil?)
-      @category = Category.find(params[:category])
+      @categories = Category.find(params[:category])
     else
-      @category = Category.find_by(name: "root")
+      unless params[:service].nil? or params[:service][:categories].nil?
+        params[:service][:categories].each do |category|
+          @categories << Category.find_by(name: category)
+        end
+      else
+        @categories = Category.find_by(name: "root")
+      end
     end
-    
-    @categories = Category.where.not(name: "root")
-    @services = @category.services unless(@category.nil?)
+    @navcategories = Category.where.not(name: "root")
+    @services = []
+    @categories.each do |category|
+      unless(category.nil?)
+        category.services.each do |service| 
+        @services << service  
+        end
+      end
+    end
   end
 
   def show
@@ -23,9 +32,8 @@ class ServicesController < ApplicationController
   def new
     unless(user_signed_in?)
       store_location_for(:user, new_service_path)
-      flash[:partial] = "noticepartial"
+      flash[:notice] = "É necessário estar logado para criar um serviço"
       flash[:state] = "red"
-      flash[:text] = "É necessário estar logado para criar um serviço"
       redirect_to new_user_session_path
     end
     @categories = Category.where.not(name: "root")
@@ -48,14 +56,13 @@ class ServicesController < ApplicationController
         end
       end
     end
-    flash[:partial] = "noticepartial"
     if @service.save
       flash[:state] = "green"
-      flash[:text] = "Novo serviço criado com sucesso"
+      flash[:notice] = "Novo serviço criado com sucesso"
       redirect_to service_path(@service)
     else
       flash[:state] = "red"
-      flash[:text] = "Falha ao criar serviço"
+      flash[:notice] = "Falha ao criar serviço"
       render :action => "new"
     end
     
@@ -68,17 +75,16 @@ class ServicesController < ApplicationController
   end
 
   def update
-  	flash[:partial] = "noticepartial"
     @categories = Category.where.not(name: "root")
     @service = Service.find params[:id]
     
     if @service.update_attributes(service_params)
       flash[:state] = "green"
-      flash[:text] = 'Dados atualizados com sucesso'
+      flash[:notice] = 'Dados atualizados com sucesso'
       redirect_to service_path(@service)
     else 
       flash[:state] = "red"
-      flash[:text] = 'Falha ao atualizar serviço'
+      flash[:notice] = 'Falha ao atualizar serviço'
       render :action => "edit"
     end
   end
@@ -87,7 +93,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     @service.destroy
     flash[:state] = "green"
-    flash[:text] = 'Serviço removido'
+    flash[:notice] = 'Serviço removido'
     redirect_to services_path
   end
   
