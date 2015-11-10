@@ -1,5 +1,5 @@
-body{
-    font-family: arial, verdana;
+/*body{*/
+/*    font-family: arial, verdana;*/
     /* lucas, are you mad?
     MADLUKNESS - f.f
     -webkit-touch-callout: none;
@@ -12,14 +12,14 @@ body{
    /*background: #e7e2e2;*/
     /*background:#dfe3ef; */
     /* background: #f5efff; */
-    background: #fff; 
+/*    background: #fff; */
     /*padding: 0;*/
     /*margin:0;*/
     
     /*footer things below*/
     /*margin: 0 0 50px;*/
     /*min-height:100%;*/
-}
+/*}*/
 h1{
     font-size:18px;
     color:#fff;
@@ -54,7 +54,7 @@ a.fill-div {
 
 p{
    font-family:Tahoma, Geneva, sans-serif;
-    color:#fff;    
+    /*color:#fff;    */
     font-size:20px;
     font-weight:normal;
     text-align:left;
@@ -78,6 +78,7 @@ table{
     /*padding:5%;*/
     max-width:1000px;
     margin:1% auto 0 auto;
+    display:table;
 }
 
 .title{
@@ -252,74 +253,3 @@ form label{
     padding:2% 4% 1% 2%;
 }
 
-/* footer things */
-
-/*footer {*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    bottom: 0;*/
-/*    height: 40px;*/
-/*    width: 100%;*/
-/*    background:#000;*/
-/*    -webkit-box-shadow: 0px 0px 8px 0px #000000;*/
-/*    -moz-box-shadow: 0px 0px 8px 0px #000000;*/
-/*    box-shadow: 0px 0px 8px 0px #000000;*/
-/*}*/
-
-/*other footer*/
-
-/*html, body {*/
-/*    height: 100%;*/
-/*}*/
-
-/*.wrapper {*/
-/*    min-height: 100%;*/
-/*    height: auto;*/
-/*    height: 100%;*/
-    /*margin: 0 auto -142px; */
-    /* the bottom margin is the negative value of the footer's height */
-/*}*/
-/*.footer, .push {*/
-    /*height: 142px; */
-    /* .push must be the same height as .footer */
-/*}*/
-
-/*p.footer {*/
-/*    margin:auto;*/
-/*    padding-top:12px;*/
-/*    font-size:14px;*/
-/*    color:#fff;*/
-/*    text-align: center;*/
-/*}*/
-
-/*new footer*/
-
-html, body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
-#wrapper {
-   background:#fff;
-   min-height:100%;
-   position:relative;
-}
-#header {
-    /*margin: 0 0 50px;*/
-    margin:0;
-}
-#body {
-   padding:10px;
-   padding-top:0px;
-   
-   /* Height of the footer */
-   padding-bottom:40px;   
-}
-#footer {
-   position:absolute;
-   text-align:center;
-   bottom:0;
-   width:100%;
-   height:40px;   /* Height of the footer */
-   background:#000;
-}

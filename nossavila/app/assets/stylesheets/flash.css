@@ -15,7 +15,7 @@
 	box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
 }
 
-.flash-red, .flash-green{
+.flash-red, .flash-green, .flash-null{
 	font-size:20px;
 	color:#484848;	
 	margin-bottom:10px;
