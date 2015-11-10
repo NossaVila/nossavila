@@ -255,3 +255,7 @@ form label{
     padding:2% 4% 1% 2%;
 }
 
+.alert{
+    color: red;
+    font-size: 20px;
+}
