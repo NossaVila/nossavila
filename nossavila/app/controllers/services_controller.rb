@@ -1,27 +1,31 @@
 # -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
+  
   def index
     @categories = []
+    
     unless (params[:category].nil?)
-      @categories = Category.find(params[:category])
+      @categories << Category.find(params[:category])
     else
       unless params[:service].nil? or params[:service][:categories].nil?
         params[:service][:categories].each do |category|
           @categories << Category.find_by(name: category)
         end
       else
-        @categories = Category.find_by(name: "root")
+        @categories << Category.find_by(name: "root")
       end
     end
     @navcategories = Category.where.not(name: "root")
     @services = []
+    
     @categories.each do |category|
       unless(category.nil?)
         category.services.each do |service| 
-        @services << service  
+          @services << service  
         end
       end
     end
+
   end
 
   def show
@@ -70,7 +74,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.find params[:id]
+    @service = Service.find paramsCategory[:id]
     @categories = Category.where.not(name: "root")
   end
 

@@ -9,7 +9,7 @@
             - @navcategories.each do |cat|
               %tr
                 %td{:class => "btnnav", :id => "#{cat.name}"}
-                  = label :service, :category, cat.name
+                  = label :service, :category, cat.name.capitalize
                   = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
                   .btnnavchilds{:id => "#{cat.name}", :style => "display: none"}
                     %table
@@ -21,9 +21,11 @@
                               = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
               
   .servicescontainer
-    .btn
-      %a{:href => new_service_path, :class => "link"}
-        %h3 Criar novo Serviço
+    %a{:href => new_service_path, :class => "link"}
+      .btn
+        %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+          Criar Serviço 
+
     %br
     - @services.each do |service| 
       %a{:href => service_path(service)}
