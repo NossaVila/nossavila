@@ -7,6 +7,10 @@ Feature: Update user information
     Background: I am a logged in user
       Given I am a logged in user
       And I am on the update user page
+      Given the following categories exist:
+         |name            |
+         |Educação Privada|
+  
     
     Scenario: with valid arguments
       Given I fill in "user_first_name" with "Armando"
@@ -15,7 +19,7 @@ Feature: Update user information
       And I press "Atualizar"
       Then I should see " A sua conta foi atualizada com sucesso"
       
-    Scenario: without fillin in the current password
+    Scenario: without filling in the current password
       Given I fill in "user_last_name" with "Fox"
       And I press "Atualizar"
       Then I should see "Senha atual não pode ficar em branco"

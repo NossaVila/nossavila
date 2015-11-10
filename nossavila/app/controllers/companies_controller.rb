@@ -1,13 +1,14 @@
 # estabelecimentos
 
-class  CompanyController < ApplicationController
+class  CompaniesController < ApplicationController
     
     def index
-        
+        @companies = Company.all
     end
     
     def show
-        @company = company 
+    id = params[:id]
+    @company = Company.find(id)
     end
     
     def new

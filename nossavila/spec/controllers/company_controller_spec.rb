@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CompanyController do
+describe CompaniesController do
     
     let(:valid_attributes) {
     FactoryGirl.build(:company, name: 'Doceria', description: 'compre felicidade') }
@@ -10,7 +10,7 @@ describe CompanyController do
     
     describe "GET #index" do
         it "assigns all companies as @companies" do
-            company = Company.create! valid_attributes
+            company = valid_attributes
             get :index, {}
             expect(assigns(:company)).to eq([company])
         end
@@ -18,7 +18,7 @@ describe CompanyController do
     
     describe "GET #show" do
         it "assigns the requested companies as @company" do
-          company = Company.create! valid_attributes
+          company = valid_attributes
          get :show, {:id => company.to_param}, valid_session
          expect(assigns(:company)).to eq(company)
         end
@@ -26,7 +26,7 @@ describe CompanyController do
     
   describe "GET #new" do
     it "assigns a new company as @company" do
-      company = Company.create! valid_attributes
+      company = valid_attributes
       get :new, {:id => company.to_param}, valid_session
       expect(assigns(:companies)).to eq([company])
       expect(assigns(:company)).to be_a_new(Company)
@@ -46,7 +46,7 @@ describe CompanyController do
   
   describe "GET #edit" do
     it "assigns the requested company as @company" do
-      company = Company.create! valid_attributes
+      company = valid_attributes
       get :edit, {:id => company.to_param}
       expect(assigns(:company)).to eq(company)
     end
@@ -97,19 +97,19 @@ describe CompanyController do
       }
 
       it "updates the requested company" do
-        company = Company.create! valid_attributes
+        company = valid_attributes
         put :update, {:id => company.to_param, :company => new_attributes}
         company.reload
       end
 
       it "assigns the requested company as @company" do
-        company = Company.create! valid_attributes
+        company =  valid_attributes
         put :update, {:id => company.to_param, :company => valid_attributes}
         expect(assigns(:company)).to eq(company)
       end
 
       it "redirects to the company" do
-        company = Company.create! valid_attributes
+        company =  valid_attributes
         put :update, {:id => company.to_param, :company => valid_attributes}
         expect(response).to redirect_to(company)
       end
@@ -117,13 +117,13 @@ describe CompanyController do
 
     context "with invalid params" do
       it "assigns the company as @company" do
-      company = Company.create! valid_attributes
+      company =  valid_attributes
       put :update, {:id => company.to_param, :company => invalid_attributes}
       expect(assigns(:company)).to eq(company)
       end
 
       it "renders the 'edit' template" do
-        company = Company.create! valid_attributes
+        company =  valid_attributes
         put :update, {:id => company.to_param, :company => invalid_attributes}
         expect(response).to render_template("edit")
       end
@@ -132,14 +132,14 @@ describe CompanyController do
 
   describe "DELETE #destroy" do
     it "destroys the requested company" do
-      company = Company.create! valid_attributes
+      company =  valid_attributes
       expect {
         delete :destroy, {:id => company.to_param}
       }.to change(Company, :count).by(-1)
     end
 
     it "redirects to the companies list" do
-      company = Company.create! valid_attributes
+      company = valid_attributes
       delete :destroy, {:id => company.to_param}
       expect(response).to redirect_to(companies_url)
     end

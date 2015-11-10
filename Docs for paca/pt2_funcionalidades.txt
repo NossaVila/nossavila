@@ -1,0 +1,2 @@
+Funcionalidades implementadas na Entrega 2:
+- C
