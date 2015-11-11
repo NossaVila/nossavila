@@ -259,7 +259,7 @@ form label{
     color: red;
     font-size: 18px;
     text-align: center;
-    box-shadow:1px 1px 5px rgba(0, 0, 0, .6);
+/*    box-shadow:1px 1px 5px rgba(0, 0, 0, .6);*/
     max-width:500px;
     border:0.5px solid black;
     margin-bottom: 10px;

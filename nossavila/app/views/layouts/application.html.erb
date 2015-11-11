@@ -27,7 +27,8 @@
     
     <div id="content">
       <%= render "shared/flashes/noticepartial" %>
-      <p class="alert"><%= alert %></p>
+      <%= render "shared/flashes/alertpartial" %>
+      
       <%= yield %>
     </div>
     
