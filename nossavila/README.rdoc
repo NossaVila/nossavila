@@ -26,7 +26,10 @@ Funcionalidades:
 3. abra o diretório ~NossaVila/nossavila
 
 4.1. Para iniciar a aplicação rode 'rails server'
-4.2. Para rodar os testes Rspec, rode 'rspec'
+
+4.2. Para iniciar os testes Rspec, rode 'rspec'
+
+4.3 Para iniciar os testes cucumber, rode 'bundle exec cucumber'
 
 
 == Applicação na web
