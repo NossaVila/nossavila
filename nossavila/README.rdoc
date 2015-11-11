@@ -36,5 +36,5 @@ Funcionalidades:
 
 == Considerações finais
 
- O projeto está na fase 1 de 3.
+ O projeto está na fase 2 de 3.
  Previsão de conclusão: Dez/2015
