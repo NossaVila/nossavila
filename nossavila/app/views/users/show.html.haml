@@ -1,4 +1,33 @@
-#container 
+#container
+  .barcontainer
+    .profilebar
+      %table
+        %tr
+          %td.profilecell-left
+            %h2 Nome:
+          %td.profilecell-right
+            %h2= current_user.first_name
+        %tr
+          %td.profilecell-left
+            %h2 Sobrenome:
+          %td.profilecell-right
+            %h2= current_user.last_name
+        %tr
+          %td.profilecell-left
+            %h2 Email:
+          %td.profilecell-right
+            %h2= current_user.email
+        - unless current_user.additional_info.nil?
+          - current_user.additional_info.each do |info|
+            %tr
+              %td.profilecell-left
+                %h2= info.title + ":"
+              %td.profilecell-right
+                %h2= info.information            
+        .btn
+          %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+            Adicionar Informação
+ 
   .servicescontainer
     %a{:href => new_service_path, :class => "link"}
       .btn
