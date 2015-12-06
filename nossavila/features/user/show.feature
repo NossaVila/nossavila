@@ -44,5 +44,4 @@ Feature: User Dashboard
     Given I am on the user dashboard page for "Armando"
     Then I should see "Armando"
     And I should see "Vader"
-    And I should see "05508-090"
     And I should see "armando@gmail.com"
