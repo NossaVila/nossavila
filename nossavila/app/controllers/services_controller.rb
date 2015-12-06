@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
-  
+  include ServicesHelper
   def index
     @categories = []
     unless (params[:category].nil?)
@@ -48,12 +48,7 @@ class ServicesController < ApplicationController
     @service.user = current_user
     if @service.valid?
       Category.find_by(name: "root").services << @service
-      unless(params[:service][:categories].nil?)
-        params[:service][:categories].each do |category|
-          cat = Category.find_by(name: category)
-          cat.services << @service
-        end
-      end
+      category_wrapper(@service, params[:service][:categories])
     end
     if @service.save
       flash[:state] = "green"
@@ -74,8 +69,8 @@ class ServicesController < ApplicationController
   def update
     @categories = Category.where.not(name: "root")
     @service = Service.find params[:id]
-    
     if @service.update_attributes(service_params)
+      category_wrapper(@service, params[:service][:categories])
       flash[:state] = "green"
       flash[:notice] = 'Dados atualizados com sucesso'
       redirect_to service_path(@service)
