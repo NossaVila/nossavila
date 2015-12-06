@@ -9,7 +9,7 @@ $(document).on('ready page:load', function() {
             $(this).addClass("expand");
             $(this).removeClass("collapse");
         }
-        $("#"+id+".btnnavchilds").slideToggle(500, function () {
+        $("#"+ id.substring(0, id.length - 8) +".btnnavchilds").slideToggle(500, function () {
             //$(this).text(function () {
                 //return $content.is(":visible") ? "Collapse" : "Expand";
              //});

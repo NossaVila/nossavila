@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # service steps
 
 # when I fill implementado em common_steps
@@ -13,15 +14,52 @@ end
 # end
 
 Given(/^the following categories exist:$/) do |categories_table|
-    root = Category.create!({:name => "root"})
-    categories_table.hashes.each do |category|
-    Category.create(category)
+    root = Category.find_by(:name => "root")
+    if root.nil?
+      root = Category.create!({:name => "root"})
     end
+    categories_table.hashes.each do |category|
+      cat = Category.create(category)
+    
+    end
+end
+
+Given(/^root has subcategory "([^"]*)"$/) do |subcategory|
+  root = Category.find_by(:name => "root")
+    if root.nil?
+      root = Category.create!({:name => "root"})
+    end
+  subcat = Category.find_by(:name => subcategory) 
+  root.subcategories << subcat
+  subcat.supercategory = root
+end
+
+Given(/^that "([^"]*)" is a subcategory of "([^"]*)"$/) do |subcat, cat|
+  category = Category.find_by(:name => cat)
+  subcategory = Category.find_by(:name => subcat)
+  category.subcategories << subcategory
+  subcategory.supercategory = category
 end
 
 When(/^(?:|I )check the "([^"]*)" category$/) do |field|
     if field == "Construção Civil" then
         check("service_categories_construo_civil")
+    elsif field == "Educação Pública" then
+        check("service_categories_educao_pblica")
+    elsif field == "Educação Privada"
+        check("service_categories_educao_privada")
+    else
+        check(field)
+    end
+end
+
+When(/^(?:|I )check the "([^"]*)" category in the navigation bar$/) do |field|
+  if field == "Construção Civil" then
+        within('table') do
+          within('tbody') do
+            check("service_categories_construo_civil")
+          end
+        end
     elsif field == "Educação Pública" then
         check("service_categories_educao_pblica")
     elsif field == "Educação Privada"

@@ -8,10 +8,15 @@ Background: Services have been added to the database
     
   Given the following categories exist:
   |name            |
+  |Educação        |
   |Educação Pública|
   |Educação Privada|
   |Construção Civil|
   
+  Given root has subcategory "Educação"
+  Given root has subcategory "Construção Civil"
+  Given that "Educação Privada" is a subcategory of "Educação"
+  And that "Educação Pública" is a subcategory of "Educação"
   Given I am a logged in user 
   Given I am on the Criar novo serviço page
   When I fill in "service_title" with "Pintor"
@@ -42,6 +47,7 @@ Background: Services have been added to the database
   And I am on the NossaVilla home page
   
 Scenario: filter the services list by category
+  Given I am on the services page
   When I check the "Construção Civil" category
   And I press "Buscar"
   Then I should see "Pintor"
@@ -49,7 +55,8 @@ Scenario: filter the services list by category
   And I should not see "Fotográfo"
   And I should not see "Aulas particulares de latim"
   And I should not see "Aulas de Matemática"
-  When I follow "Educação Privada"
+  When I click "educaotriangle"
+  And I check "Educação Privada"
   Then I should see "Aulas particulares de latim"
   And I should see "Aulas de Matemática"
   And I should not see "Pintor"
