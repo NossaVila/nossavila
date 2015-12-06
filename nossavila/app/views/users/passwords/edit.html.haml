@@ -1,0 +1,20 @@
+.container.center.card.users_page
+  %h2 Mudar senha
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    = f.hidden_field :reset_password_token
+    .field
+      = f.label :password, "Nova senha"
+      %br/
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+        %br/
+      = f.password_field :password, autofocus: true, autocomplete: "off"
+    .field
+      = f.label :password_confirmation, "Confirmar nova senha"
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off"
+    .actions
+      = f.submit "Mude minha senha"
+  = render "users/shared/links"

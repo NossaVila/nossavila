@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ServicesController do
 
 	let(:valid_attributes) {
-    {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1'}
+    {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1' }
     }
     
     let(:invalid_attributes) { {title: nil, description: nil } }
@@ -20,9 +20,8 @@ describe ServicesController do
     end
   end
 
-
   describe "GET #show" do
-    it "assigns the requested service  as @service" do
+    it "assigns the requested service as @service" do
       service = Service.create! valid_attributes
       get :show, {:id => service.to_param}, valid_session
       expect(assigns(:service)).to eq(service)
@@ -61,17 +60,20 @@ describe ServicesController do
     context "with valid params" do
       it "creates a new service" do
         expect {
+          root = Category.create!({:name => "root"})
           post :create, {:service => valid_attributes }
         }.to change(Service, :count).by(1)
       end
 
       it "assigns a newly created service as @service" do
+        root = Category.create!({:name => "root"})
         post :create, {:service => valid_attributes}
         expect(assigns(:service)).to be_a(Service)
         expect(assigns(:service)).to be_persisted
       end
 
       it "redirects to the created service" do
+        root = Category.create!({:name => "root"})
         post :create, {:service => valid_attributes}
         expect(response).to redirect_to(Service.last)
       end
@@ -79,11 +81,13 @@ describe ServicesController do
 
     context "with invalid params" do
       it "assigns a newly created but unsaved service as @service" do
+        root = Category.create!({:name => "root"})
         post :create, {:service => invalid_attributes}
         expect(assigns(:service)).to be_a_new(Service)
       end
 
       it "renders the 'new' template" do
+        root = Category.create!({:name => "root"})
         post :create, {:service => invalid_attributes} 
         expect(response).to render_template("new")
       end
@@ -117,9 +121,9 @@ describe ServicesController do
 
     context "with invalid params" do
       it "assigns the service as @service" do
-        service = Service.create! valid_attributes
-        put :update, {:id => service.to_param, :service => invalid_attributes}
-        expect(assigns(:service)).to eq(service)
+      service = Service.create! valid_attributes
+      put :update, {:id => service.to_param, :service => invalid_attributes}
+      expect(assigns(:service)).to eq(service)
       end
 
       it "renders the 'edit' template" do

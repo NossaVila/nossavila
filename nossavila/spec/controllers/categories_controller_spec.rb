@@ -8,8 +8,9 @@ describe CategoriesController do
     describe 'GET index' do
         it "assigns all categories as @categories" do
             category = Category.create! valid_attributes
+            root = Category.create!({:name => "root"})
             get :index, {}, valid_session
-            expect(assigns(:categories)).to eq([category])
+            expect(assigns(:categories)).to eq([])
         end
     end
     

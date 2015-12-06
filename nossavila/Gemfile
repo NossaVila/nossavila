@@ -38,7 +38,13 @@ gem 'correios-cep'
 group :test do
   # Easier test writing
   gem "shoulda-matchers", "~> 2.8.0"
-
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  
 end
 
 group :development, :test do
@@ -51,7 +57,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # RSpec for unit tests
-  gem "rspec-rails", "~> 2.8"
+  gem "rspec-rails", "~> 3.1"
   gem "factory_girl_rails", "~> 4.0"
   gem 'faker'
   

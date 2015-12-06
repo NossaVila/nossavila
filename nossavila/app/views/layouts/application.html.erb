@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
   <title>NossaVilla</title>
+  <%= stylesheet_link_tag    'reset', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'categories', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'services', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'navigation', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'flash', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'hover', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'footer', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<br><br>
-
-<%= render 'layouts/loginbar' %>
-<%= render 'layouts/logo' %>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<%= yield %>
-
+<body>  
+  <div id="wrapper">
+    
+    <div id="header">
+      <%= render 'layouts/loginbar' %>
+      <%= render 'layouts/logo' %>
+    </div>
+    
+    <div id="content">
+      <%= render "shared/flashes/noticepartial" %>
+      <%= render "shared/flashes/alertpartial" %>
+      
+      <%= yield %>
+    </div>
+    
+    <div id="footer">
+      <p> Nossa Villa 2015 </p>
+    </div>
+  </div>
 </body>
 </html>
-

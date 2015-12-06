@@ -1,0 +1,59 @@
+// .category-container
+//   .category-table
+//     //%div.category-header
+//     //  %h3= "O que procura?"
+//     .boxes
+//       .box-row
+//         %div{:class => "hvr-shrink box box#{1}"}
+//           %a{:class => "fill-div", :href => categories_path(:type => "company")}
+//             %h3 Estabelecimentos
+//         %div{:class => "hvr-shrink box box#{2}"}
+//           %a{:class => "fill-div", :href => categories_path(:type => "service")}
+//             %h3 Serviços
+
+
+// #services_container
+//   #services_table
+//     #services_filter_nav
+//       why, mr. anderson?
+//     #services_tab
+
+
+#container
+  .navcontainer
+    %nav
+      = form_tag services_path, :method => :get do
+        %table
+          %tbody
+            - @navcategories.each do |cat|
+              %tr
+                %td{:class => "btnnav", :id => "#{cat.name}"}
+                  = label :service, :category, cat.name.capitalize
+                  = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
+                  - if(cat.subcategories.any?)
+                    .expandible.expand{:id => "#{cat.name}"}
+                      .triangle
+                    .btnnavchilds{:id => "#{cat.name}", :style => "display: none"}
+                      %table
+                        %tbody
+                          - cat.subcategories.each do |subcat|    
+                            %tr
+                              %td{:class => "btnnavchild"}
+                                = label :service, :category, subcat.name
+                                = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
+        .searchbtn
+          = submit_tag "Buscar"
+              
+  .servicescontainer
+    %a{:href => new_service_path, :class => "link"}
+      .btn
+        %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+          Criar Serviço 
+
+    %br
+    - @services.each do |service| 
+      %a{:href => service_path(service)}
+        .servicecard
+          %h2{:class => "cardtitle"}= service.title
+          %p{:class => "carddescription"}= service.description
+          %h4{:class => "cardowner"}= service.user.first_name

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  
   devise_for :users
+  resources :users
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'
   # }
@@ -8,5 +10,7 @@ Rails.application.routes.draw do
   # }
   resources :categories
   resources :services
-  root 'services#index'
+  resources :companies
+  resources :home
+  root 'categories#index'
 end

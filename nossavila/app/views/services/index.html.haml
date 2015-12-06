@@ -1,24 +1,38 @@
-%div{:id => "container"}
-  %div{:class => "navcontainer"}
+#container
+  .navcontainer
     %nav
-      %table
-        %tbody
-          - @categories.each do |cat|
-            %tr
-              %td{:class => "btn"}
-                %a{:href => services_path(:category => cat.id), :class => "link"}
-                  %h3= cat.name
-              =#ai passar como parametro a categoria a ser buscada
-                
-  %div{:class => "servicescontainer"}
-    %div{:class => "btn"}
-      %a{:href => new_service_path, :class => "link"}
-        %h3 Criar novo Serviço
+      = form_tag services_path, :method => :get do
+        .searchbtn
+          = submit_tag "Buscar"
+        %table
+          %tbody
+            - @navcategories.each do |cat|
+              %tr
+                %td{:class => "btnnav", :id => "#{alpha_numeric_only(cat.name)}"}
+                  = label :service, :category, cat.name.capitalize
+                  = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
+                  - if(cat.subcategories.any?)
+                    .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
+                      .triangle
+                    .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
+                      %table
+                        %tbody
+                          - cat.subcategories.each do |subcat|    
+                            %tr
+                              %td{:class => "btnnavchild", :id => "#{alpha_numeric_only(subcat.name)}"}
+                                = label :service, :category, subcat.name
+                                = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
+              
+  .servicescontainer
+    %a{:href => new_service_path, :class => "link"}
+      .btn
+        %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+          Criar Serviço 
+
     %br
     - @services.each do |service| 
       %a{:href => service_path(service)}
-        %div{:class => "servicecard"}
+        .servicecard
           %h2{:class => "cardtitle"}= service.title
           %p{:class => "carddescription"}= service.description
           %h4{:class => "cardowner"}= service.user.first_name
-                

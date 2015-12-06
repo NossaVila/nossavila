@@ -1,0 +1,10 @@
+- if(notice)
+  .login-needed-flash
+    .login-needed-flash-container
+      - if(flash[:state] == "green")
+        %h3.flash-green= notice
+      - else 
+        - if(flash[:state] == "red")
+          %h3.flash-red= notice
+        - else
+          %h3.flash-null= notice

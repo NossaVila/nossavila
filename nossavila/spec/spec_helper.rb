@@ -62,4 +62,9 @@ end
 
 RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
+  
+    config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+  
 end

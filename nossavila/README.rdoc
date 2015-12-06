@@ -11,23 +11,32 @@ Funcionalidades:
 - busca de serviços
 - busca de informações (endereço e telefone) de estabelecimentos da região
 - avaliação/opinião acerca dos serviços
-
+- Painel
+- Melhoria do layout da home page
+- Seleção de categorias em camadas
+- Testes do Cucumber
+- Filtragem de busca
+- Estabelecimentos (iniciado / implementação parcial)
 
 == Ficha técnica
 
-* Ruby version: 1.9.3
+* Ruby version: 2.2.2
 * Rais version: 4.2.0
-
 
 == Instalação
 
 1. Clone o repositório - 'git clone https://github.com/NossaVila/nossavila.git'
-2. Rode 'bundle install'
-3. abra o diretório ~NossaVila/nossavila
+2. Entre com 'bundle install'
+3. Entre com bundle exec rake db:migrate
+4. Entre com bundle exec rake db:seed
+5. abra o diretório ~NossaVila/nossavila
 
-4.1. Para iniciar a aplicação rode 'rails server'
-4.2. Para rodar os testes Rspec, rode 'rspec'
+5.1. Para iniciar a aplicação entre com 'rails server'
+5.2. Para rodar os testes Rspec, entre com 'rspec'
+5.3. Para rodar os testes Cucumber, entre com 'cucumber'
+5.4. Para visualizar a aplicação no browser, digite 'localhost:3000' na barra do browser
 
+Obs: Assume-se que se tenha a versão do Rails e do Ruby corretas
 
 == Applicação na web
 
@@ -42,5 +51,5 @@ Funcionalidades:
 
 == Considerações finais
 
- O projeto está na fase 1 de 3.
+ O projeto está na fase 2 de 3.
  Previsão de conclusão: Dez/2015

@@ -1,0 +1,31 @@
+if(flash[:partial])
+  = render partial: "shared/flashes/#{flash[:partial]}"
+.container.center.card
+  %h3{:class => "subtitle"} Novo Estabelecimento
+  %hr
+  = form_tag companies_path do
+    .fieldnewleft
+      = label :company, :name, "Nome", :class => "fieldnew"
+      = text_field :company, 'name', :class => "fieldnew", :input_html => { :value =>  @company.name}
+      = label :company, :description, "Descrição", :class => "fieldnew"
+      = text_area :company, 'description', :rows => 15, :cols => 40, :class => "fieldnew", :input_html => { :value =>  @company.description}
+      = label :company, :address, "Endereço", :class => "fieldnew"
+      = text_field :company, 'address', :class => "fieldnew", :input_html => { :value =>  @company.address}
+      = label :company, :cep, "CEP", :class => "fieldnew"
+      = text_field :company, 'cep', :class => "fieldnew", :input_html => { :value =>  @company.cep}
+      = label :company, :cnpj, "CNPJ", :class => "fieldnew"
+      = text_field :company, 'cnpj', :class => "fieldnew", :input_html => { :value =>  @company.cnpj}
+      = label :company, :phone_number, "Telefone", :class => "fieldnew"
+      = text_field :company, 'phone_number', :class => "fieldnew", :input_html => { :value =>  @company.phone_number}
+      = label :company, :area_code, "DDD", :class => "fieldnew"
+      = text_field :company, 'area_code', :class => "fieldnew", :input_html => { :value =>  @company.area_code}
+      = label :company, :site, "Site", :class => "fieldnew"
+      = text_field :company, 'site', :class => "fieldnew", :input_html => { :value =>  @company.site}
+      = submit_tag "Criar", :class => "fieldnew"
+      
+    .categorylabel
+      = label :company, :categories, "Categorias"
+      %br
+      - @categories.each do |cat|
+        = label :company, :category, cat.name
+        = check_box(:company, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)

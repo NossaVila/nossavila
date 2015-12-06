@@ -1,11 +1,19 @@
-%div{:id => "container"}
-  - @categories.each do |category|
-     
-    %a{:href => categories_path(:root => category.name)}
-      %div{:class => "categorybox"}
-        %h1= category.name
-        %div{:class => "categorytitle"}
-          %h2= category.name
-        %div{:class => "infos"}
-        %div{:class => "categoryfooter"}
-          
+.category-container
+  .category-table
+    // %div.category-header
+    //   %h3= @root.name == "root" ? "Categorias" : @root.name.capitalize
+    .boxes
+      - @categories.sort_by{|category| category.name.capitalize}.each_slice(3).with_index do |slice, i|
+        .box-row
+          - slice.each_with_index do |category, j|
+            %div{:class => "hvr-shrink box box#{(i+j)%3+1}"}
+              %a{:class => "fill-div", :href => categories_path(:root => category.name)}
+                %h3= category.name.capitalize
+  
+      // - @categories.each_slice(3).with_index do |slice, i|
+      // - i += 2
+      //   .box-row
+      //     - slice.each_with_index do |category, j|
+      //       %div{:class => "hvr-shrink box box#{(i+j)%3+1}"}
+      //         %a{:class => "fill-div", :href => categories_path(:root => category.name)}
+      //           %h3= category.name.capitalize 

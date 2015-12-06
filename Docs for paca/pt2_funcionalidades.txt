@@ -1,0 +1,7 @@
+Funcionalidades implementadas na Entrega 2:
+- Painel
+- Melhoria do layout da home page
+- Seleção de categorias em camadas
+- Testes do Cucumber
+- Filtragem de busca
+- Estabelecimentos (iniciado / implementação parcial)
