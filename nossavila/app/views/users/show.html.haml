@@ -1,29 +1,28 @@
 #container
   .barcontainer
     .profilebar
-      %table
-        %tr
-          %td.profilecell-left
-            %h2 Nome:
-          %td.profilecell-right
-            %h2= current_user.first_name
-        %tr
-          %td.profilecell-left
-            %h2 Sobrenome:
-          %td.profilecell-right
-            %h2= current_user.last_name
-        %tr
-          %td.profilecell-left
-            %h2 Email:
-          %td.profilecell-right
-            %h2= current_user.email
-        - unless current_user.additional_informations.nil?
-          - current_user.additional_informations.each do |info|
-            %tr
-              %td.profilecell-left
-                %h2= info.title + ":"
-              %td.profilecell-right
-                %h2= info.information            
+      .profile-line
+        .profilecell-left
+          %h2 Nome:
+        .profilecell-right
+          %h2= current_user.first_name
+      .profile-line
+        .profilecell-left
+          %h2 Sobrenome:
+        .profilecell-right
+          %h2= current_user.last_name
+      .profile-line
+        .profilecell-left
+          %h2 Email:
+        .profilecell-right
+          %h2= current_user.email
+      - unless current_user.additional_informations.nil?
+        - current_user.additional_informations.each do |info|
+          .profile-line
+            .profilecell-left
+              %h2= info.title + ":"
+            .profilecell-right
+              %h2= info.information            
         .btn
           %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
             Adicionar Informação

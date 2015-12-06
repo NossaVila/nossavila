@@ -74,12 +74,26 @@ em, i{
     max-width:300px;
 }
 
-.profilecell-left{
+.profile-line{
+    width:100%;
+}
 
+.profilecell-left, .profilecell-right{
+    padding:10px 0 10px 0;
+    width:50%;
+    float: left;
+    height:20px;
+}
+
+.profilecell-left{
+    width: 32%;
 }
 
 div.profilecell-left>h2{
+    margin:auto;
     text-align:right;
+    font-size: 12px;
+    font-weight: 100;
 }
 
 .profilecell-right{
@@ -88,4 +102,7 @@ div.profilecell-left>h2{
 
 div.profilecell-right>h2{
     text-align:left;
+    font-size: 15px;
+    font-weight:bold;
+    margin-left:10px;
 }
