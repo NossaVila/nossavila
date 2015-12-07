@@ -1,7 +1,6 @@
 # estabelecimentos
 
 class  CompaniesController < ApplicationController
-=begin
     def index
         if params[:category].nil?
          @companies = Company.all
@@ -94,5 +93,4 @@ class  CompaniesController < ApplicationController
     def company_params
     params.require(:company).permit(:name, :description, :address, :cep, :cnpj, :phone_number, :area_code, :site, :user_id)
     end
-=end
 end

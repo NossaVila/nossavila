@@ -13,7 +13,11 @@ describe ServicesController do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
       root = Category.create(:name => "root")
-      get :index, {}
+      category = Category.create(:name => "Comercio")
+      root.subcategories << category
+      category.supercategory = root
+      category.services << service
+      get :index, {:category => category.to_param}
       expect(assigns(:services)).to eq([service])
     end
   end

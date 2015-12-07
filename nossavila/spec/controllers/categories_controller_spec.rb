@@ -19,6 +19,7 @@ describe CategoriesController do
         it "assigns the requested category  as @category" do
             root = Category.create!({:name => "root"})
             category = Category.create! valid_attributes
+            root.subcategories << category
             get :show, {:id => category.to_param} , valid_session
             expect(assigns(:category)).to eq(category)
         end
