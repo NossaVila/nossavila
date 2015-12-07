@@ -13,7 +13,7 @@
                   = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
                   - if(cat.subcategories.any?)
                     .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
-                      .triangle
+                      #triangle.triangle
                     .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
                       %table
                         %tbody

@@ -14,8 +14,10 @@ end
 
 When(/^(?:|I )click "([^"]*)"$/) do |link|
   if link == "Adicionar Informação" then
-    page.find("add-info").click
-  else
+    page.find("#add-info").click
+  elsif link == "educaotriangle" then
+    page.find("#triangle").click
+  else    
     page.find("#{link}").click
   end
 end

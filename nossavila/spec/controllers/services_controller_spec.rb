@@ -12,6 +12,7 @@ describe ServicesController do
   describe "GET #index" do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
+      root = Category.create(:name => "root")
       get :index, {}
       expect(assigns(:services)).to eq([service])
     end
