@@ -15,7 +15,7 @@ Feature: Create a new account
     And I fill in "user_last_name" with "Vader"
     And I fill in "user_cep" with "05508-090"
     And I fill in "user_address" with "Rua do Matão"
-    And I fill in "user_cpf" with "56328230320"
+    And I fill in "user_cpf" with "36909492897"
     And I fill in "user_email" with "armando@gmail.com"
     And I fill in "user_password" with "armando1234"
     And I fill in "user_password_confirmation" with "armando1234"

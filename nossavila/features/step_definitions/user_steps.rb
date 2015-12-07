@@ -22,7 +22,7 @@ Given(/^I am a logged in user$/) do
   password = 'armando1234'
   first_name = "Armando"
   last_name = "Vader"
-  cpf = "12345678910"
+  cpf = "36909492897"
   address = "Rua do Matão"
   cep = "05508090"
   @current_user = User.create(:first_name => first_name, :last_name => last_name, :email => email, :cpf => cpf, :address => address, :cep => cep, :password => password, :password_confirmation => password)

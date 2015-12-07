@@ -20,6 +20,6 @@ module ServicesHelper
     end
 
     def alpha_numeric_only(string)
-      return string.gsub(/[^0-9a-z ]/i, '')
+      return string.gsub(/[^0-9a-z]/i, '')
     end
 end

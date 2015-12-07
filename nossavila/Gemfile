@@ -22,18 +22,18 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+# verifica se um cpf/cnpj é válido
+gem 'cpf_utils'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise' # Gema para autenticação
-
 gem 'correios-cep'
+gem "codeclimate-test-reporter", group: :test  
 
 group :test do
   # Easier test writing
@@ -44,7 +44,6 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
-  
 end
 
 group :development, :test do

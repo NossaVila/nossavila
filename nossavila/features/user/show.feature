@@ -44,5 +44,14 @@ Feature: User Dashboard
     Given I am on the user dashboard page for "Armando"
     Then I should see "Armando"
     And I should see "Vader"
-    And I should see "05508-090"
     And I should see "armando@gmail.com"
+
+  Scenario: Adding additional information
+    Given I am on the user dashboard page for "Armando"
+    And I should see "Adicionar Informação"
+    Then I click "Adicionar Informação"
+    Then I fill in "additional_information_title" with "Telefone"
+    And I fill in "additional_information_information" with "5555555"
+    Then I press "Adicionar"
+    Then I should see "Telefone:"
+    And I should see "5555555"

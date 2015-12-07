@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109185031) do
+ActiveRecord::Schema.define(version: 20151206182910) do
+
+  create_table "additional_informations", force: :cascade do |t|
+    t.string  "title"
+    t.string  "information"
+    t.integer "user_id"
+  end
+
+  add_index "additional_informations", ["user_id"], name: "index_additional_informations_on_user_id"
 
   create_table "categories", force: :cascade do |t|
     t.string  "name"

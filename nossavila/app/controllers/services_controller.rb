@@ -62,7 +62,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.find paramsCategory[:id]
+    @service = Service.find params[:id]
     @categories = Category.where.not(name: "root")
   end
 

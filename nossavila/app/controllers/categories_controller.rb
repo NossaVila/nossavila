@@ -14,6 +14,6 @@ class CategoriesController < ApplicationController
 
   def show
     id = params[:id]
-    @category = Category.find_by(id)
+    @category = Category.find(id)
   end
 end

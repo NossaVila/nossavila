@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'cpf_utils'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -16,12 +17,12 @@ class User < ActiveRecord::Base
   # validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z])+   a\.[a-z]+\z/i }
   validates :cpf, uniqueness: true, presence: true
   has_many :services
+  has_many :additional_informations
   def name
     self.first_name + " " + self.last_name
   end
   
   def is_valid_cpf?
-    true
+    self.cpf.valid_cpf?
   end
-
 end

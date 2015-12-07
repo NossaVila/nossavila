@@ -40,7 +40,7 @@ describe User do
     end
     
     it 'should have a valid cpf number' do
-        FactoryGirl.build(:user, cpf: 36909492870).is_valid_cpf?.should be_truthy
+        FactoryGirl.build(:user, cpf: 36909492897).is_valid_cpf?.should be_truthy
     end
     
     # métodos de instância
