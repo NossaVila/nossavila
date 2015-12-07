@@ -48,6 +48,7 @@ Feature: User Dashboard
 
   Scenario: Adding additional information
     Given I am on the user dashboard page for "Armando"
+    And I should see "Adicionar Informação"
     Then I click "Adicionar Informação"
     Then I fill in "additional_information_title" with "Telefone"
     And I fill in "additional_information_information" with "5555555"

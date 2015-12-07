@@ -13,7 +13,11 @@ When(/^(?:|I )press "([^"]*)"$/) do |button|
 end
 
 When(/^(?:|I )click "([^"]*)"$/) do |link|
-  page.find("#{link}").click
+  if link == "Adicionar Informação" then
+    page.find("add-info").click
+  else
+    page.find("#{link}").click
+  end
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|

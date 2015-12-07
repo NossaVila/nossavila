@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'cpf_utils'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -22,7 +23,6 @@ class User < ActiveRecord::Base
   end
   
   def is_valid_cpf?
-    true
+    self.cpf.valid_cpf?
   end
-
 end

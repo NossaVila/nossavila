@@ -59,6 +59,7 @@ GEM
     correios-cep (0.4.0)
       log-me (= 0.0.8)
       ox (~> 2.2)
+    cpf_utils (1.2.1)
     cucumber (2.1.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.3.0)
@@ -225,6 +226,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   correios-cep
+  cpf_utils
   cucumber
   cucumber-rails
   cucumber-rails-training-wheels

@@ -1,16 +1,13 @@
 require 'spec_helper'
 
 describe ServicesController do
-
-	let(:valid_attributes) {
+  let(:valid_attributes) {
     {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1' }
-    }
-    
-    let(:invalid_attributes) { {title: nil, description: nil } }
-
-    let(:valid_session) { {} }
-    
-    let(:user) { [FactoryGirl.build(:user)] }
+  }
+  
+  let(:invalid_attributes) { {title: nil, description: nil } }
+  let(:valid_session) { {} }
+  let(:user) { [FactoryGirl.build(:user)] }
     
   describe "GET #index" do
     it "assigns all services as @services" do
@@ -39,12 +36,11 @@ describe ServicesController do
 
   describe "GET #new" do
     let(:services) { [FactoryGirl.build(:service)] }
-
     before :each do
       get :new, {}
     end
     it 'redirect to new_user_session_path if user is not logged in' do
-     expect(response).to redirect_to(new_user_session_path)
+      expect(response).to redirect_to(new_user_session_path)
     end
   end
   
@@ -96,9 +92,7 @@ describe ServicesController do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        {description: 'Say all you need to say'}
-      }
+      let(:new_attributes) { {description: 'Say all you need to say'} }
 
       it "updates the requested service" do
         service = Service.create! valid_attributes
@@ -121,9 +115,9 @@ describe ServicesController do
 
     context "with invalid params" do
       it "assigns the service as @service" do
-      service = Service.create! valid_attributes
-      put :update, {:id => service.to_param, :service => invalid_attributes}
-      expect(assigns(:service)).to eq(service)
+        service = Service.create! valid_attributes
+        put :update, {:id => service.to_param, :service => invalid_attributes}
+          expect(assigns(:service)).to eq(service)
       end
 
       it "renders the 'edit' template" do
