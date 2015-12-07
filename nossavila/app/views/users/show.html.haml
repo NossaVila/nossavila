@@ -23,10 +23,23 @@
               %h2= info.title + ":"
             .profilecell-right
               %h2= info.information            
-        .btn
-          %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
-            Adicionar Informação
- 
+        .btn.add-info
+          .add-info-header
+            %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+              Adicionar Informação
+          .add-info-box
+            = form_tag additional_informations_path, method: :post, data: {remote: true} do
+              .profilecell-left
+                = label :additional_information, :title, "Título"
+              .profilecell-right
+                = text_field :additional_information, :title, autofocus: true
+              .profilecell-left
+                = label :additional_information, :information, "Informação"
+              .profilecell-right
+                = text_field :additional_information, :information
+              .profilecell-left
+              .profilecell-right
+                = submit_tag "Adicionar"
   .servicescontainer
     %a{:href => new_service_path, :class => "link"}
       .btn

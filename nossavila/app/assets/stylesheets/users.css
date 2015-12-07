@@ -76,6 +76,7 @@ em, i{
 
 .profile-line{
     width:100%;
+    height:40px;
 }
 
 .profilecell-left, .profilecell-right{
@@ -105,4 +106,12 @@ div.profilecell-right>h2{
     font-size: 15px;
     font-weight:bold;
     margin-left:10px;
+}
+
+.add-info-header{
+    height:40px;
+}
+
+.add-info-box{
+    display: none;
 }
