@@ -33,6 +33,11 @@ pedr = Service.create!(:title => 'Pedreira Artistica',
 moto = Service.create!(:title => 'Disponivel aos fins de semana para fazer entregas', 
             :description => 'Entrego qualquer coisa que possa ser carregada em uma moto na regiao, realizo entregas de artigos maiores tambem dependendo da situacao.', 
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => andersvaldo)
+            
+doceria = Company.create!(:name => "Doceria", :description => "Melhores doces da região. Venha conferir!", :address => "Rua do Amor, nº13", 
+                :cep => "093514800", :cnpj => "39.436.146/0001-10", :phone_number => "13131313", :area_code => "23", :site => "bemcasado.com.br",
+                :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => ariel)
+
 root.services << pintor         
 cons.services << pintor
 root.services << pedr
@@ -42,6 +47,9 @@ edu.services << prof
 edup.services << prof
 root.services << moto
 logs.services << moto
+root.companies << doceria
+doms.companies << doceria
+
 
 categories.each do |category|
     Category.create!(category)

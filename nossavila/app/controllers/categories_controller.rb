@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
+    # save params[:service][:categories] on session
     if(params[:root].nil?)
       @root = Category.find_by(name: "root")
     else
@@ -14,6 +15,6 @@ class CategoriesController < ApplicationController
 
   def show
     id = params[:id]
-    @category = Category.find(id)
+    @category = Category.find_by(id)
   end
 end

@@ -1,0 +1,14 @@
+.companiescontainer{
+    float:left;
+    max-width:70%;
+    min-width:70%;
+}
+
+.companycard{
+    overflow:hidden; 
+    max-height:20%; 
+    background:#F9F9F9;
+    box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+    margin:auto;
+    margin-bottom:3%;
+}

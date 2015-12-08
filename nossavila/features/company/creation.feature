@@ -10,8 +10,8 @@ Feature: register a company
       |Educação Privada|
   
     Given I am a logged in user
-    And I am on the NossaVilla home page
-    And I follow "Criar novo Estabelecimento" 
+    And I am on the new company page
+    And I follow "Novo Estabelecimento" 
     When I fill in "company_name" with "Escola Austen"
     And I fill in "company_description" with "Colégio interno para garotas"
     And I fill in "company_address" with "Rua Chawton, 13"
