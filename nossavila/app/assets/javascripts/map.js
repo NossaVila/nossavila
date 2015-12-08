@@ -1,4 +1,4 @@
-function initialize() {
+function initialize(){
     var mapCanvas = document.getElementById('map');
     var mapOptions = {
         center: new google.maps.LatLng(-23.31, -46.47),
@@ -9,4 +9,3 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
