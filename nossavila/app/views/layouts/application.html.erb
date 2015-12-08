@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'categories', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'services', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'new_services', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'navigation', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'flash', media: 'all', 'data-turbolinks-track' => true %>
@@ -21,11 +22,12 @@
   <div id="wrapper">
     
     <div id="header">
-      <%= render 'layouts/loginbar' %>
+      <div class="navigation"></div>
       <%= render 'layouts/logo' %>
     </div>
     
     <div id="content">
+      <%= render 'layouts/loginbar' %>
       <%= render "shared/flashes/noticepartial" %>
       <%= render "shared/flashes/alertpartial" %>
       

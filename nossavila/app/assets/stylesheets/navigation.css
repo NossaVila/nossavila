@@ -20,7 +20,7 @@ ul.navigation-list li {
   display: inline;  
 }
 
-#navigation {
+.navigation {
     position:fixed;
     top: 0;
     width: 100%;
@@ -41,7 +41,7 @@ ul.navigation-list li {
     border-color:#E5E5E5;
 }
 
-#navigation a {
+.navigation a {
     font-size: 14px;
     padding-left: 15px;
     padding-right: 15px;
@@ -50,6 +50,6 @@ ul.navigation-list li {
     font-weight:bold;
 }
     
-#navigation a:hover{
+.navigation a:hover{
     color: grey;
 }
