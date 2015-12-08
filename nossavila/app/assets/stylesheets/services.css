@@ -45,3 +45,9 @@ div.expand>div.triangle{
     border-right: 5px solid transparent;
     border-top: 5px solid black;
 }
+
+#map{
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+}
