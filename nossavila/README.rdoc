@@ -2,6 +2,7 @@
 
 == Overview
 [![Code Climate](https://codeclimate.com/github/NossaVila/nossavila/badges/gpa.svg)](https://codeclimate.com/github/NossaVila/nossavila)
+
 [![Test Coverage](https://codeclimate.com/github/NossaVila/nossavila/badges/coverage.svg)](https://codeclimate.com/github/NossaVila/nossavila/coverage)
 
 NossaVila é uma plataforma que facilita a integração entre moradores de uma determinada localidade através de troca online de serviços e fornecimento de informações de estabelecimentos da região.

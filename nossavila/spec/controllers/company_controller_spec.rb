@@ -56,7 +56,7 @@ describe CompaniesController, :skip => true do
     context "with valid params" do
       it "creates a new company" do
         expect {
-          root = Category.create!({:name => "root"})
+root = Category.create!({:name => "root"})
           post :create, {:company => valid_attributes }
         }.to change(Company, :count).by(1)
       end

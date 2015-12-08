@@ -8,7 +8,7 @@ describe ServicesController do
   let(:invalid_attributes) { {title: nil, description: nil } }
   let(:valid_session) { {} }
   let(:user) { [FactoryGirl.build(:user)] }
-    
+  
   describe "GET #index" do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
@@ -96,6 +96,7 @@ describe ServicesController do
   end
 
   describe "PUT #update" do
+    root = Category.create!({:name => "root"})
     context "with valid params" do
       let(:new_attributes) { {description: 'Say all you need to say'} }
 

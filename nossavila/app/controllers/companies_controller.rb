@@ -2,23 +2,33 @@
 
 class  CompaniesController < ApplicationController
     def index
-        if params[:category].nil?
-         @companies = Company.all
-        end
-    
+        @categories = []
         unless (params[:category].nil?)
-            @category = Category.find(params[:category])
+        @categories << Category.find(params[:category])
         else
-            @category = Category.find_by(name: "root")
+            unless params[:company].nil? or params[:company][:categories].nil?
+                params[:company][:categories].each do |category|
+                    @categories << Category.find_by(name: category)
+                end
+            else
+                @categories << Category.find_by(name: "root")
+            end
         end
-    
-        @categories = Category.where.not(name: "root")
-        @companies = @category.companies unless(@category.nil?)
+        @navcategories = Category.find_by(name: "root").subcategories
+        @companies = []
+        @categories.each do |category|
+            unless(category.nil?)
+                category.companies.each do |company| 
+                    @companies << company  
+                end
+            end
+        end
     end
+
     
     def show
-    id = params[:id]
-    @company = Company.find(id)
+        id = params[:id]
+        @company = Company.find(id)
     end
     
     def new
