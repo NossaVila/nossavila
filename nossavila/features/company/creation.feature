@@ -9,33 +9,37 @@ Feature: register a company
       |name            |
       |Educação Privada|
   
+    Given root has subcategory "Educação Privada"
     Given I am a logged in user
-    And I am on the new company page
-    And I follow "Novo Estabelecimento" 
+    And I am on the companies page
+    Then I should see "Criar Estabelecimento"
+    And I follow "Criar Estabelecimento" 
     When I fill in "company_name" with "Escola Austen"
     And I fill in "company_description" with "Colégio interno para garotas"
     And I fill in "company_address" with "Rua Chawton, 13"
     And I fill in "company_cep" with "05508-090"
     And I fill in "company_cnpj" with "36909492897"
-    And I fill in "area_code" with "11"
-    And I fill in "phone_number" with "12345678"
-    And I fill in "site" with "www.escolaausten.com"
-    And I check the "Educação Privada" category
-    And I press "Registrar" 
-    Then I should see "Novo estabelecimento cadastrado com sucesso"
+    And I fill in "company_area_code" with "11"
+    And I fill in "company_phone_number" with "12345678"
+    And I fill in "company_site" with "www.escolaausten.com"
+    And I check "Educação Privada" category
+    And I press "Criar" 
+    Then I should see "Novo estabelecimento criado com sucesso"
     And I should see "Escola Austen"
     And I should see "Colégio interno para garotas" 
     And I should see "Rua Chawton, 13"
-    
+
   Scenario: I am not a logged user and I try to create a new service
-    Given I am on the Registrar novo estabelecimento page
+    Given I am on the companies page
+    And I follow "Criar Estabelecimento"
     Then I should see "É necessário estar logado para registrar um estabelecimento"
     And I should be redirected to the user sign in page
     
   Scenario: I am a logged in user and I enter with invalid fields
     Given I am a logged in user
-    And I am on the Registrar novo estabelecimento page
+    And I am on the companies page
+    And I follow "Criar Estabelecimento"
     When I fill in "company_name" with ""
-    And I press "Registrar"
-    And I should see "Falha ao registrar estabelecimento"
-    And I should be redirected to the Registrar novo estabelecimento page
+    And I press "Criar"
+    And I should see "Falha ao criar estabelecimento"
+    And I should be redirected to the new company page

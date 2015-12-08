@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CategoriesController do
     
-    let(:valid_attributes) { {name: 'Transportes', supercategory_id: '1' } }
+    let(:valid_attributes) { {name: 'Transportes'} }
     let(:valid_session) { {} }
     
     describe 'GET index' do
@@ -10,6 +10,7 @@ describe CategoriesController do
             root = Category.create!({:name => "root"})
             category = Category.create! valid_attributes
             root.subcategories << category
+            category.supercategory = root
             get :index, {}, valid_session
             expect(assigns(:categories)).to eq([])
         end
@@ -20,6 +21,7 @@ describe CategoriesController do
             root = Category.create!({:name => "root"})
             category = Category.create! valid_attributes
             root.subcategories << category
+            category.supercategory_id = root.id
             get :show, {:id => category.to_param} , valid_session
             expect(assigns(:category)).to eq(category)
         end

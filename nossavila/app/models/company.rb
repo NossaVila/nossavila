@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
     # estabelecimentos
-    validates :name, length: { in: 2..30 }, presence: true
-    validates :description, length: { in:2..100 }, presence: true
+    validates :name, length: { in: 2..50 }, presence: true
+    validates :description, length: { in:2..200 }, presence: true
     validates :address, length: {minimum: 5}, presence: true
     validates :cep, presence: true, format: { with: /\d{5}-?\d{3}/ }
     validates :cnpj,  uniqueness: true, presence: true

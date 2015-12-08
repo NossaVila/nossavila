@@ -30,6 +30,7 @@
                 %td{:class => "btnnav", :id => "#{cat.name}"}
                   = label :service, :category, cat.name.capitalize
                   = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
+                  # = check_box_tag, "selected[]", cat.id
                   - if(cat.subcategories.any?)
                     .expandible.expand{:id => "#{cat.name}"}
                       .triangle

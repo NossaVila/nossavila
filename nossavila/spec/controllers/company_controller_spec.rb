@@ -1,24 +1,31 @@
 require 'spec_helper'
 
-describe CompaniesController, :skip => true do
+describe CompaniesController do
     
     let(:valid_attributes) {
-    FactoryGirl.build(:company, name: 'Doceria', description: 'compre felicidade') }
+      { name: "Doceria", description: "compre felicidade", address: "Love Street" , cep: "12345678", 
+      cnpj: "18909274000163", area_code: "23", phone_number: "12345678", site:"bemcasados.com" , user_id: '1'} 
+    }
     let(:invalid_attributes) { {title: nil, description: nil } }
     let(:valid_session) { {} }
     let(:user) { [FactoryGirl.build(:user)] }
     
     describe "GET #index" do
         it "assigns all companies as @companies" do
-            company = valid_attributes
-            get :index, {}
-            expect(assigns(:company)).to eq([company])
+            company =  Company.create! valid_attributes
+            root = Category.create(:name => "root")
+            category = Category.create(:name => "Comercio")
+            root.subcategories << category
+            category.supercategory = root
+            category.companies << company
+            get :index, {:category => category.to_param}
+            expect(assigns(:companies)).to eq([company])
         end
     end
     
     describe "GET #show" do
         it "assigns the requested companies as @company" do
-          company = valid_attributes
+          company = Company.create! valid_attributes
           get :show, {:id => company.to_param}, valid_session
           expect(assigns(:company)).to eq(company)
         end
@@ -26,7 +33,7 @@ describe CompaniesController, :skip => true do
     
   describe "GET #new" do
     it "assigns a new company as @company" do
-      company = valid_attributes
+      company = Company.create! valid_attributes
       get :new, {:id => company.to_param}, valid_session
       expect(assigns(:companies)).to eq([company])
       expect(assigns(:company)).to be_a_new(Company)
@@ -37,7 +44,7 @@ describe CompaniesController, :skip => true do
     let(:companies) { [FactoryGirl.build(:company)] }
 
     before :each do
-      get :new, {:id => company.to_param}
+      get :new, {}
     end
     it 'redirect to new_user_session_path if user is not logged in' do
      expect(response).to redirect_to(new_user_session_path)
@@ -46,7 +53,7 @@ describe CompaniesController, :skip => true do
   
   describe "GET #edit" do
     it "assigns the requested company as @company" do
-      company = valid_attributes
+      company =  Company.create! valid_attributes
       get :edit, {:id => company.to_param}
       expect(assigns(:company)).to eq(company)
     end
@@ -56,8 +63,8 @@ describe CompaniesController, :skip => true do
     context "with valid params" do
       it "creates a new company" do
         expect {
-root = Category.create!({:name => "root"})
-          post :create, {:company => valid_attributes }
+          root = Category.create!({:name => "root"})
+          post :create, {:company => valid_attributes }, valid_session
         }.to change(Company, :count).by(1)
       end
 
@@ -93,23 +100,22 @@ root = Category.create!({:name => "root"})
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { description: 'To be or not to be' }
-      }
+        { description: 'To be or not to be' } }
 
       it "updates the requested company" do
-        company = valid_attributes
+        company = Company.create! valid_attributes
         put :update, {:id => company.to_param, :company => new_attributes}
         company.reload
       end
 
       it "assigns the requested company as @company" do
-        company =  valid_attributes
+        company =  Company.create! valid_attributes
         put :update, {:id => company.to_param, :company => valid_attributes}
         expect(assigns(:company)).to eq(company)
       end
 
       it "redirects to the company" do
-        company =  valid_attributes
+        company =  Company.create!valid_attributes
         put :update, {:id => company.to_param, :company => valid_attributes}
         expect(response).to redirect_to(company)
       end
@@ -117,13 +123,13 @@ root = Category.create!({:name => "root"})
 
     context "with invalid params" do
       it "assigns the company as @company" do
-      company =  valid_attributes
+      company =  Company.create! valid_attributes
       put :update, {:id => company.to_param, :company => invalid_attributes}
       expect(assigns(:company)).to eq(company)
       end
 
       it "renders the 'edit' template" do
-        company =  valid_attributes
+        company =  Company.create! valid_attributes
         put :update, {:id => company.to_param, :company => invalid_attributes}
         expect(response).to render_template("edit")
       end
@@ -132,14 +138,14 @@ root = Category.create!({:name => "root"})
 
   describe "DELETE #destroy" do
     it "destroys the requested company" do
-      company =  valid_attributes
+      company = Company.create! valid_attributes
       expect {
         delete :destroy, {:id => company.to_param}
       }.to change(Company, :count).by(-1)
     end
 
     it "redirects to the companies list" do
-      company = valid_attributes
+      company =  Company.create! valid_attributes
       delete :destroy, {:id => company.to_param}
       expect(response).to redirect_to(companies_url)
     end

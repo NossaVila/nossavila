@@ -23,6 +23,7 @@ class ServicesController < ApplicationController
         end
       end
     end
+    @services = @services.uniq
   end
 
   def show

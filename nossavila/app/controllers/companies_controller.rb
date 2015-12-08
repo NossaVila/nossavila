@@ -1,6 +1,8 @@
 # estabelecimentos
 
 class  CompaniesController < ApplicationController
+    include CompaniesHelper
+    
     def index
         @categories = []
         unless (params[:category].nil?)
@@ -23,12 +25,17 @@ class  CompaniesController < ApplicationController
                 end
             end
         end
+        @companies = @companies.uniq
     end
 
     
     def show
         id = params[:id]
-        @company = Company.find(id)
+        @company = Company.find_by(:id => id)
+        rescue ActiveRecord::RecordNotFound  
+            flash[:notice] = "Não foi encontrado esse serviço."
+            flash[:state] = "red"
+            redirect_to index
     end
     
     def new
@@ -44,60 +51,51 @@ class  CompaniesController < ApplicationController
         @company = Company.new
     end
     
-    def create
-        @categories = Category.all
-        @company = Company.new(company_params)
-        begin
-            @company.user = current_user
-            if @company.valid?
-                Category.find_by(name: "root").companies << @company
-            unless(params[:company][:categories].nil?)
-                params[:company][:categories].each do |category|
-                cat = Category.find_by(name: category)
-                cat.companies << @company
-                end
-            end
-            end
-        end
-        flash[:partial] = "noticepartial"
-        if @company.save
-            flash[:state] = "green"
-            flash[:text] = "Novo estabelecimento criado com sucesso"
-            redirect_to company_path(@company)
-        else
-            flash[:state] = "red"
-            flash[:text] = "Falha ao criar estabelecimento"
-            render :action => "new"
-        end
+  def create
+    @categories = Category.all
+    @company = Company.new(company_params)
+    @company.user = current_user
+    if @company.valid?
+      Category.find_by(name: "root").companies << @company
+      category_wrapper_comp(@company, params[:company][:categories])
     end
+    if @company.save
+      flash[:state] = "green"
+      flash[:notice] = "Novo estabelecimento criado com sucesso"
+      redirect_to company_path(@company)
+    else
+      flash[:state] = "red"
+      flash[:notice] = "Falha ao criar estabelecimento"
+      render :action => "new"
+    end
+  end
 
     def edit        
         @company = Company.find params[:id]
         @categories = Category.where.not(name: "root")
     end
     
-    def update
-        flash[:partial] = "noticepartial"
-        @categories = Category.where.not(name: "root")
-        @company = Company.find params[:id]
-    
-        if @company.update_attributes(company_params)
-            flash[:state] = "green"
-            flash[:text] = 'Dados atualizados com sucesso'
-            redirect_to company_path(@company)
-        else 
-            flash[:state] = "red"
-            flash[:text] = 'Falha ao atualizar estabelecimento'
-            render :action => "edit"
-        end
-    end
+   def update
+       @categories = Category.where.not(name: "root")
+       @company = Company.find params[:id]
+       if @company.update_attributes(company_params)
+           category_wrapper_comp(@company, params[:company][:categories])
+           flash[:state] = "green"
+           flash[:notice] = 'Dados atualizados com sucesso'
+           redirect_to company_path(@company)
+       else 
+           flash[:state] = "red"
+           flash[:notice] = 'Falha ao atualizar estabelecimento'
+           render :action => "edit"
+       end
+   end
     
     def destroy
-    @company = Company.find(params[:id])
-    @company.destroy
-    flash[:state] = "green"
-    flash[:text] = 'Estabelecimento removido'
-    redirect_to companies_path
+        @company = Company.find(params[:id])
+        @company.destroy
+        flash[:state] = "green"
+        flash[:text] = 'Estabelecimento removido'
+        redirect_to companies_path
     end
     
     def company_params

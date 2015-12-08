@@ -7,6 +7,7 @@ module NavigationHelpers
     when /^the (NossaVilla )?home\s?page$/ then '/services'
     when /^the services page$/ then '/services'
     when /^the companies page$/ then '/companies'
+    when /^the new company page$/ then 'companies/new'
     when /^the new user page$/ then '/users/sign_up'
     when /^the log in page$/ then '/users/sign_in'
     when /^the user dashboard page for "(.*)"$/ then user_path(User.find_by(:first_name => $1))

@@ -36,7 +36,7 @@ Then(/^I should not see "([^"]*)"$/) do |text|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  click_link(link)
+  (first(:link, link)).click
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
