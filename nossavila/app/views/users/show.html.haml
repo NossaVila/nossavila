@@ -5,41 +5,42 @@
         .profilecell-left
           %h2 Nome:
         .profilecell-right
-          %h2= current_user.first_name
+          %h2= @user.first_name
       .profile-line
         .profilecell-left
           %h2 Sobrenome:
         .profilecell-right
-          %h2= current_user.last_name
+          %h2= @user.last_name
       .profile-line
         .profilecell-left
           %h2 Email:
         .profilecell-right
-          %h2= current_user.email
-      - unless current_user.additional_informations.nil?
-        - current_user.additional_informations.each do |info|
+          %h2= @user.email
+      - unless @user.additional_informations.nil?
+        - @user.additional_informations.each do |info|
           .profile-line
             .profilecell-left
               %h2= info.title + ":"
             .profilecell-right
-              %h2= info.information            
-        .btn.add-info
-          #add-info.add-info-header
-            %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
-              Adicionar Informação
-          .add-info-box
-            = form_tag additional_informations_path, method: :post, data: {remote: true} do
-              .profilecell-left
-                = label :additional_information, :title, "Título"
-              .profilecell-right
-                = text_field :additional_information, :title, autofocus: true
-              .profilecell-left
-                = label :additional_information, :information, "Informação"
-              .profilecell-right
-                = text_field :additional_information, :information
-              .profilecell-left
-              .profilecell-right
-                = submit_tag "Adicionar"
+              %h2= info.information      
+        - if (not current_user.nil?) and current_user == @user       
+          .btn.add-info
+            #add-info.add-info-header
+              %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+                Adicionar Informação
+            .add-info-box
+              = form_tag additional_informations_path(:user => @user), method: :post, data: {remote: true}, id: 'add-info-form' do
+                .profilecell-left
+                  = label :additional_information, :title, "Título"
+                .profilecell-right
+                  = text_field :additional_information, :title, autofocus: true
+                .profilecell-left
+                  = label :additional_information, :information, "Informação"
+                .profilecell-right
+                  = text_field :additional_information, :information
+                .profilecell-left
+                .profilecell-right
+                  = submit_tag "Adicionar"
   .servicescontainer
     %a{:href => new_service_path, :class => "link"}
       .btn

@@ -28,6 +28,10 @@ class ServicesController < ApplicationController
   def show
     id = params[:id]
     @service = Service.find(id)
+    rescue ActiveRecord::RecordNotFound  
+      flash[:notice] = "Não foi encontrado esse serviço."
+      flash[:state] = "red"
+      redirect_to index
   end
   
   def new

@@ -1,0 +1,26 @@
+var el = $('#add-info-form');
+
+<% if @additional_info.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @additional_info.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript( error ) %></li>');
+  <% end %>
+
+  // Display errors on form
+  el.find('.errors').html(errors);
+
+<% else %>
+
+  $('.profilebar').append("<%= escape_javascript( 
+      simple_format( @additional_info.information ) 
+    ) %>");
+
+  // Clear form
+  el.find('input:text,textarea').val('');
+  el.find('.errors').empty();
+  $(".add-info-box").slideToggle(500);
+
+<% end %>

@@ -9,15 +9,17 @@ Feature: User Dashboard
       |name            |
       |Educação Privada|
 
-    Given the following services exist:
-    |title               |
-    |Aulas de Judo       |
-    |Brigadeiros Gourmet |
     
     Given the following users exist:
     |first_name |last_name |cep       |address      |cpf         |email             |password      |password_confirmation |
     |Armando    |Vader     |05508-090 |Rua do Matão |56328230320 |armando@gmail.com |armando1234   |armando1234           |
-    |Ludison    |Solo      |15508-090 |Rua de Matão |56328230320 |ardssdm@gmail.com |armando1234   |armando1234           |
+    |Ludison    |Solo      |15508-090 |Rua de Matão |52346200859 |ardssdm@gmail.com |armando1234   |armando1234           |
+    
+  
+    Given the following services exist:
+    |title               | description |
+    |Brigadeiros Gourmet | Ganhei o Masterchief Junior quando crianca |
+    |Aulas de Judo       | Muitas aulas, sou faixa coral. Treino desde pequeno |
     
     Given I am on the log in page
     And I fill in "user_email" with "armando@gmail.com"
@@ -55,3 +57,16 @@ Feature: User Dashboard
     Then I press "Adicionar"
     Then I should see "Telefone:"
     And I should see "5555555"
+    
+  Scenario: Accessing User profile through a link in his service
+    Given I am not a logged in user
+    Then I am on the log in page
+    And I fill in "user_email" with "armando@gmail.com"
+    And I fill in "user_password" with "ardssdm@gmail.com"
+    Then I press "Login"
+    Given I am on the services page
+    Then I should see "Pintor"
+    Then I follow "Armando"
+    Then I should see "armando@gmail.com"
+    And I should see "Vader"
+    And I should not see "Adicionar Informação"
