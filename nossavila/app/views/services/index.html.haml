@@ -35,5 +35,7 @@
         .servicecard
           %h2{:class => "cardtitle"}= service.title
           %p{:class => "carddescription"}= service.description
-          %a{:href => user_path(service.user)}
-            %h4{:class => "cardowner"}= service.user.first_name
+          - if(!current_user.nil?)
+            %h4{:class => "cardowner", :href => user_path(current_user)}= service.user.first_name
+
+   

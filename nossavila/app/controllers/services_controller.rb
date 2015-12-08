@@ -23,6 +23,14 @@ class ServicesController < ApplicationController
         end
       end
     end
+    
+    if params[:search]
+      @services = Service.search(params[:search]).order("created_at DESC")
+    else
+      @services = Service.order("created_at DESC")
+    end
+  
+  
   end
 
   def show
@@ -31,7 +39,8 @@ class ServicesController < ApplicationController
     rescue ActiveRecord::RecordNotFound  
       flash[:notice] = "Não foi encontrado esse serviço."
       flash[:state] = "red"
-      redirect_to index
+      params[:id] = nil
+      redirect_to services_path
   end
   
   def new
