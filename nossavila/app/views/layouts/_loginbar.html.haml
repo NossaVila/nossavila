@@ -9,6 +9,8 @@
       %li= link_to 'Home', root_url
       %li= link_to 'Serviços', services_path
       %li= link_to 'Estabelecimentos', companies_path
+      - if user_signed_in?
+        %li= link_to 'Perfil', user_path(current_user)
       = render 'devise/menu/registration_items'
       = render 'devise/menu/login_items'
 
