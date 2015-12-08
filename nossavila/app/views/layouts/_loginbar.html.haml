@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #navigation
   #search-wrapper
     %i{:class => "fa fa-search fa-1g", :style => "color:white"}
@@ -9,15 +8,7 @@
     %ul.navigation-list
       %li= link_to 'Home', root_url
       %li= link_to 'Serviços', services_path
-      %li= link_to 'Estabelecimentos', new_category_url
+      %li= link_to 'Estabelecimentos', companies_path
       = render 'devise/menu/registration_items'
       = render 'devise/menu/login_items'
-=======
-%div#navigation
-  %ul.navigation-list
-    %li= link_to 'Home', root_url
-    %li= link_to 'Serviços', services_path
-    %li= link_to 'Estabelecimentos', companies_path
-    = render 'devise/menu/registration_items'
-    = render 'devise/menu/login_items'
->>>>>>> 6b58a39f68f532e4a1071be2ea62448d4af3c87e
+
