@@ -30,7 +30,8 @@ Feature: register a company
     And I should see "Rua Chawton, 13"
 
   Scenario: I am not a logged user and I try to create a new service
-    Given I am on the companies page
+    Given I am not a logged in user
+    And I am on the companies page
     And I follow "Criar Estabelecimento"
     Then I should see "É necessário estar logado para registrar um estabelecimento"
     And I should be redirected to the user sign in page

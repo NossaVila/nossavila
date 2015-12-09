@@ -55,6 +55,8 @@ When(/^(?:|I )check the "([^"]*)" category$/) do |field|
         check("service_categories_educao_pblica")
     elsif field == "Educação Privada"
         check("service_categories_educao_privada")
+    elsif field == "Educação"
+        check("service_categories_educao")
     else
         check(field)
     end

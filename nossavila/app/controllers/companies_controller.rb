@@ -41,9 +41,8 @@ class  CompaniesController < ApplicationController
     def new
         unless(user_signed_in?)
             store_location_for(:user, new_company_path)
-            flash[:partial] = "noticepartial"
             flash[:state] = "red"
-            flash[:text] = "É necessário estar logado para criar um estabelecimento"
+            flash[:notice] = "É necessário estar logado para registrar um estabelecimento"
             redirect_to new_user_session_path
         end
         @categories = Category.where.not(name: "root")

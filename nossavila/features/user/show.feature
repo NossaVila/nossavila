@@ -29,23 +29,25 @@ Feature: User Dashboard
     Then I press "Login"
     Then I should see "Login efetuado com sucesso."
     
-    
     Given I am on the Criar novo serviço page
     When I fill in "service_title" with "Pintor"
     And I fill in "service_description" with "Dez anos de experiencia, faço qualquer textura de parede"
+    And I fill in "service_address" with "Rua da Saudade"
     And I check the "Construção Civil" category
     And I press "Criar"
     Then I should see "Novo serviço criado com sucesso"
+    And I should see "Armando"
     Given I am on the Criar novo serviço page
     When I fill in "service_title" with "Aulas particulares de latim"
-    And I fill in "service_description" with "Descubra o significado das frases que você sempre quis" 
+    And I fill in "service_description" with "Descubra o significado das frases que você sempre quis"
+    And I fill in "service_address" with "Rua da Solidão"
     And I check the "Educação Privada" category
     And I press "Criar"   
  
     
 
   Scenario: I created some services and then I want to see them on my Dashboard
- 
+    
     Given I am on the user dashboard page for "Armando"
     Then I should see "Pintor"
     And I should see "Aulas particulares de latim"
