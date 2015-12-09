@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ServicesController do
   let(:valid_attributes) {
-    {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1' }
+    {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1' , address: "Baker Street"}
   }
   
   let(:invalid_attributes) { {title: nil, description: nil } }

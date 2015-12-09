@@ -15,6 +15,7 @@ Feature: Create services
     And I follow "Criar Serviço" 
     When I fill in "service_title" with "Aulas de canto"
     And I fill in "service_description" with "Aprenda a cantar. Primeira aula gratuita"
+    And I fill in "service_address" with "Rua Sinatra, 13"
     And I check the "Educação Privada" category
     And I press "Criar" 
     Then I should see "Novo serviço criado com sucesso"
