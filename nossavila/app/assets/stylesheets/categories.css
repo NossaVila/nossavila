@@ -11,6 +11,7 @@
 }
 .category-table{
   display: table;
+  /* why 75% width? */
   width: 75%;
   height: 25%;
   /* max-width:1080px; */
@@ -20,7 +21,7 @@
   table-layout:fixed;
 }
 
-.boxes {
+.squares {
   display: table;
   /*width: 75%;*/
   /*height: 25%;*/
@@ -29,52 +30,57 @@
   /*margin:auto;*/
   table-layout:fixed;
 }
-.box-row{
+.square-row{
   display:table-row;
 }
-.box {
+.square {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
   line-height: 10em;
   width:25%;
+  
 }
-h3.box{
-    font-size:28px;
-    font-weight:normal;
-    text-align:center;
+h2.square-h2{
+    text-decoration:none;
     color:#fff;
-    margin:0;
     /*line-height:1;*/
 }
 
-.box1 {
+.square1 {
   /*background: #bd4932;*/
   background: #DA7878;
 }
-.box1:hover{
+.square1:hover{
     background:#A74545;
 }
 
-.box2 {
+.square2 {
   /*background: #105b63;*/
     background: #91DA78;
 }
-.box2:hover{
+.square2:hover{
   background:#5EA745;
 }
 
-.box3 {
+.square3 {
   /*background: #ffd34e;*/
   background: #788ADA;
 }
-.box3:hover{
+.square3:hover{
  background:#4557A7;
 }
 
 @media (max-width: 420px) {
-  .box {
+  .square {
     display: block;
     width: 100%;
   }
+}
+
+a.fill-div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
 }

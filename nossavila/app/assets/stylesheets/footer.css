@@ -2,13 +2,14 @@
     margin:auto;
     padding-top:12px;
     font-size:14px;
-    color:#fff;
+    /* color:#fff; */
+    font-weight:bold;
+    color: #333;
     text-align: center;
 }
 
-
 html, body {
-   font-family: helvetica, arial, verdana;
+   font-family: arial, helvetica, verdana;
    background: #fff; 
    margin:0;
    padding:0;
@@ -37,57 +38,18 @@ html, body {
    text-align:center;
    width:100%;
    
+   /*
+   background:#000;
    -webkit-box-shadow: 0px 0px 8px 0px #000000;
    -moz-box-shadow: 0px 0px 8px 0px #000000;
    box-shadow: 0px 0px 8px 0px #000000;
+   */
+   
+    background-color: #F5F5F5;
+    border-style:solid none none none;
+    border-width:1px;
+    border-color:#E5E5E5;
    
    /*Height of the footer */
    height:40px;   
-   background:#000;
 }
-
-/* sticky footer */
-/*html, body {*/
-/*height: 100%;*/
-/*}*/
-/*#wrapper {*/
-/*min-height: 100%;*/
-/*height: auto !important;*/
-/*height: 100%;*/
-/*margin: 0 auto -4em;*/
-/*}*/
-/*#footer, #push {*/
-/*height: 4em;*/
-/*}*/
-
-
-
-/*footer {*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    bottom: 0;*/
-/*    height: 40px;*/
-/*    width: 100%;*/
-/*    background:#000;*/
-/*    -webkit-box-shadow: 0px 0px 8px 0px #000000;*/
-/*    -moz-box-shadow: 0px 0px 8px 0px #000000;*/
-/*    box-shadow: 0px 0px 8px 0px #000000;*/
-/*}*/
-
-/*other footer*/
-
-/*html, body {*/
-/*    height: 100%;*/
-/*}*/
-
-/*.wrapper {*/
-/*    min-height: 100%;*/
-/*    height: auto;*/
-/*    height: 100%;*/
-    /*margin: 0 auto -142px; */
-    /* the bottom margin is the negative value of the footer's height */
-/*}*/
-/*.footer, .push {*/
-    /*height: 142px; */
-    /* .push must be the same height as .footer */
-/*}*/
