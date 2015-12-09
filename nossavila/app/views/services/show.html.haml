@@ -7,14 +7,9 @@
     
     %script(src  = "https://maps.googleapis.com/maps/api/js")
     - address = @service.address
-<<<<<<< HEAD
     %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map2"}
     %a{:href => user_path(@service.user)}
       %h3{:class => "cardowner user-link"}= @service.user.first_name
-=======
-    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
-    %h3{:class => "cardowner", :href => user_path(@service.user)}= @service.user.first_name
->>>>>>> 748ebd209f7cae11e5fb9c442a0e07f0d501b9f7
 
   - if(current_user == @service.user && user_signed_in?)  
     = link_to 'Editar', edit_service_path(@service)
