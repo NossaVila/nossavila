@@ -23,7 +23,9 @@ class ServicesController < ApplicationController
         end
       end
     end
+    
     @services = @services.uniq
+    
     if params[:search]
       @services = Service.search(params[:search]).order("created_at DESC")
     end

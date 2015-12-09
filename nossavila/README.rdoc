@@ -24,7 +24,7 @@ Funcionalidades:
 == Ficha técnica
 
 * Ruby version: 2.2.2
-* Rais version: 4.2.0
+* Rails version: 4.2.0
 
 == Instalação
 

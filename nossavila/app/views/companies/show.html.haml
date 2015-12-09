@@ -5,8 +5,15 @@
     %h2{:class => "cardtitle"}= @company.name
     %p{:class => "carddescription"}= @company.description
     %h2{:class => "cardtitle"}= @company.address
+<<<<<<< HEAD
     %a{:href => user_path(@company.user)}
       %h3{:class => "cardowner user-link"}= @company.user.first_name
+=======
+    %script(src  = "https://maps.googleapis.com/maps/api/js")
+    - address = @company.address
+    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
+    %h3{:class => "cardowner"}= @company.user.first_name
+>>>>>>> 748ebd209f7cae11e5fb9c442a0e07f0d501b9f7
   
   - if(current_user == @company.user && user_signed_in?)  
     = link_to 'Editar', edit_company_path(@company)
