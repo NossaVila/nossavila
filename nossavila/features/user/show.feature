@@ -61,7 +61,8 @@ Feature: User Dashboard
     And I should see "armando@gmail.com"
 
   Scenario: Adding additional information
-    Given I am on the user dashboard page for "Armando"
+    Given I am on the NossaVilla home page
+    And I follow "Perfil"
     And I should see "Adicionar Informação"
     Then I click "Adicionar Informação"
     Then I fill in "additional_information_title" with "Telefone"

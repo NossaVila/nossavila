@@ -1,6 +1,6 @@
 = Nossa Vila
 
-[![Code Climate](https://codeclimate.com/github/NossaVila/nossavila/badges/gpa.svg)](https://codeclimate.com/github/NossaVila/nossavila)
+[![Code Climate](http://codeclimate.com/github/NossaVila/nossavila/badges/gpa.svg)](http://codeclimate.com/github/NossaVila/nossavila)
 
 
 == Overview

@@ -36,4 +36,4 @@
           %h2{:class => "cardtitle"}= company.name
           %p{:class => "carddescription"}= company.description
           %a{:href => user_path(company.user)}
-            %h4{:class => "cardowner"}= company.user.first_name
+            %h4{:class => "cardowner user-link"}= company.user.first_name

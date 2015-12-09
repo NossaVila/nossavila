@@ -5,7 +5,8 @@
     %h2{:class => "cardtitle"}= @company.name
     %p{:class => "carddescription"}= @company.description
     %h2{:class => "cardtitle"}= @company.address
-    %h3{:class => "cardowner"}= @company.user.first_name
+    %a{:href => user_path(@company.user)}
+      %h3{:class => "cardowner user-link"}= @company.user.first_name
   
   - if(current_user == @company.user && user_signed_in?)  
     = link_to 'Editar', edit_company_path(@company)

@@ -65,21 +65,9 @@ Scenario: filter the services list by category
   And I should not see "Aulas particulares de latim"
   And I should see "Educação"
   And I check the "Educação" category
-  When I click "educaotriangle"
-  And I should see "Educação Pública"
-  And I check the "Educação Privada" category
   And I press "Buscar"
   Then I should see "Aulas particulares de latim"
   And I should see "Aulas de Matemática"
   And I should not see "Pintor"
-  And I should not see "Fotógrafo"
-  And I should not see "Pedreira Artística"
-  When I check the "Educação" category
-  And I click "educaotriangle"
-  When I check the "Educação Pública" category
-  And I press "Buscar"
-  Then I should see "Fotógrafo"
-  And I should not see "Pintor"
-  And I should not see "Aulas particulares de latim"
-  And I should not see "Aulas de Matemáticas"
+  And I should see "Fotógrafo"
   And I should not see "Pedreira Artística"

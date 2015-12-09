@@ -21,7 +21,7 @@
                             %tr
                               %td{:class => "btnnavchild", :id => "#{alpha_numeric_only(subcat.name)}"}
                                 = label :service, :category, subcat.name
-                                = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
+                                = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, nil)
               
   .servicescontainer
     %a{:href => new_service_path, :class => "link"}
@@ -35,7 +35,7 @@
         .servicecard
           %h2{:class => "cardtitle"}= service.title
           %p{:class => "carddescription"}= service.description
-          - if(!current_user.nil?)
-            %h4{:class => "cardowner", :href => user_path(current_user)}= service.user.first_name
+          %a{:href => user_path(service.user)}
+            %h4{:class => "cardowner user-link"}= service.user.first_name
 
    
