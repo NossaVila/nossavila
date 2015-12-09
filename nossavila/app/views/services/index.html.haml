@@ -3,10 +3,10 @@
     #services_filter_nav
       .nav-box
         .nav-box-header
-          %h3.box-header-h3 Filtragem de Buscas
+          %h3.general-box-header-font Filtragem de Buscas
         .nav-box-body
           .nav-refiner-header
-            %h4.nav-box-h4 Categorias
+            %h4.general-box-header-font Categorias
           = form_tag services_path, :method => :get do
             - @navcategories.each do |cat|
               .nav-refiner-link
@@ -20,26 +20,34 @@
                       .nav-refiner-sublink
                         = check_box(:service, :categories, {:multiple => true}, subcat.name, nil)
                         = label :service, :category, subcat.name
-            = submit_tag "Buscar", :class => "clean-gray"
+            = submit_tag "Buscar", :class => "cupid-green"
                 
     #services_tab
       .services-box
         .services-box-header
           .services-box-header-row
             .services-box-title
-              %h3.services-box-title-h3 Serviços
+              %h3.general-box-header-font Serviços
             .services-box-button
               .services-button
-                // %a{:href => new_service_path}
-                %i{:class => "fa fa-plus"}
-                Criar Serviço 
+                %a{:href => new_service_path}
+                  %i{:class => "fa fa-plus"}
+                  Criar Serviço 
     
-        %br
-        - @services.each do |service| 
-          %a{:href => service_path(service)}
-            .servicecard
-              %h2{:class => "cardtitle"}= service.title
-              %p{:class => "carddescription"}= service.description
-              %a{:href => user_path(service.user)} 
-                %h4{:class => "cardowner"}= service.user.first_name
-              // %h4{:class => "cardowner", :href => user_path(current_user)}= service.user.first_name
+        .services-box-body
+          - @services.each do |service| 
+            .services-box-card
+              .services-box-card-header
+                .services-box-card-title
+                  %a{:href => service_path(service)}
+                    %h3= service.title
+                .services-box-card-authorship
+                  por 
+                  %a{:href => user_path(service.user)}
+                    = service.user.first_name
+                  // %h4{:class => "cardowner", :href => user_path(current_user)}= service.user.first_name
+              .services-box-card-description
+                %p= service.description
+              .services-box-card-know-more
+                %p 
+                  %a{:href => service_path(service)} Mais informações.
