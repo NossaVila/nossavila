@@ -112,6 +112,14 @@ div.profilecell-right>h2{
     height:40px;
 }
 
+.add-info{
+    float: left;
+    background:#8B94A8;    
+    width:95%;
+    min-width:40px;
+    max-width:300px;
+}
+
 .add-info-box{
     display: none;
 }
