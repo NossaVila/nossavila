@@ -23,17 +23,23 @@
             = submit_tag "Buscar", :class => "clean-gray"
                 
     #services_tab
-      %a{:href => new_service_path, :class => "link"}
-        .btn
-          %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
-            Criar Serviço 
-  
-      %br
-      - @services.each do |service| 
-        %a{:href => service_path(service)}
-          .servicecard
-            %h2{:class => "cardtitle"}= service.title
-            %p{:class => "carddescription"}= service.description
-            %a{:href => user_path(service.user)} 
-              %h4{:class => "cardowner"}= service.user.first_name
-            // %h4{:class => "cardowner", :href => user_path(current_user)}= service.user.first_name
+      .services-box
+        .services-box-header
+          .services-box-header-row
+            .services-box-title
+              %h3.services-box-title-h3 Serviços
+            .services-box-button
+              .services-button
+                // %a{:href => new_service_path}
+                %i{:class => "fa fa-plus"}
+                Criar Serviço 
+    
+        %br
+        - @services.each do |service| 
+          %a{:href => service_path(service)}
+            .servicecard
+              %h2{:class => "cardtitle"}= service.title
+              %p{:class => "carddescription"}= service.description
+              %a{:href => user_path(service.user)} 
+                %h4{:class => "cardowner"}= service.user.first_name
+              // %h4{:class => "cardowner", :href => user_path(current_user)}= service.user.first_name

@@ -78,21 +78,6 @@ h3.box-header-h3 {
     margin-left:15px;
 }
 
-.nav-box-button {
-    background:#656565;
-    width:100%;
-    color:#fff;
-    font-weight:bold;
-    line-height:2em;
-    /*padding: 5px 10px 5px 10px;*/
-    border:none;
-    text-decoration: none;
-}
-.nav-box-button:hover {
-  background: #4f4f4f;
-  text-decoration: none;
-}
-
 .nav-refiner-link{
     display:block;
     font-weight:normal;
@@ -147,4 +132,86 @@ label[for=service_category]{
     box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; 
 }
 
-/*** tab-code ***/
+/*** services-tab-code ***/
+
+.services-box {
+    display:table;
+    width:100%;
+    /*border-spacing:0 0;*/
+    border-style:solid;
+    border-width:1px;
+    border-color:#D8D8D8;
+}
+h4.services-box-h4{
+    color:#333;
+    font-weight:bold;
+    text-align:center;
+}
+
+.services-box-header {
+    display:table;
+    padding:0;
+    margin:0;
+    border-color:#D8D8D8;
+    border-style:none none solid none;
+    border-width:1px;
+    width:100%;
+}
+.services-box-header-row{
+    width:100%;
+    display:table-row;
+}
+.services-box-title {
+    display:table-cell;
+    width:75%;
+    background:#F5F5F5;
+    /*padding-top:13px;*/
+    /*padding-bottom:13px;*/
+    margin:0;
+    padding:13px;
+    
+    border-color:#D8D8D8;
+    border-style:none solid none none;
+    border-width:1px;
+}
+h3.services-box-title-h3 {
+    color:#333;
+    font-weight:bold;
+    text-align:center;
+}
+.services-box-button {
+    margin:0;
+    display:table-cell;
+    text-decoration:none;
+    text-align:center;
+}
+
+.services-box-body {
+    /*padding:13px;*/
+    background:#fff;
+}
+
+/* Dark Button CSS */
+.services-button {
+   /*padding: 10px 20px 10px 20px;*/
+   padding:13px;
+   font-size: 14px;
+   background: linear-gradient(#464646,#2a2a2a);
+   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+   /*font-family: helvetica neue light, helvetica neue, helvetica, sans-serif;*/
+   color:white;
+   /*font-weight: bold;*/
+   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+   border: 0px;
+}
+
+.services-button:hover {
+   cursor: pointer;
+   background: linear-gradient(#4a4a4a,#2e2e2e);
+}
+
+.services-button:active {
+    background:#5e5e5e;
+   /*background: rgba(0, 0, 0, 0.2); */
+   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.6), 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
