@@ -73,7 +73,8 @@ Feature: User Dashboard
     And I should see "5555555"
     
   Scenario: Accessing User profile through a link in his service
-    Given I am on the services page
+    Given I am not a logged in user
+    And I am on the services page
     Then I should see "Pintor"
     Then I follow "Armando"
     And I should see "Armando"
