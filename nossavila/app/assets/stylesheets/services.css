@@ -51,3 +51,13 @@ div.expand>div.triangle{
     height: 200px;
     margin: 0 auto;
 }
+
+.map2{
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

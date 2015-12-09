@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208123303) do
+ActiveRecord::Schema.define(version: 20151208181304) do
 
   create_table "additional_informations", force: :cascade do |t|
     t.string  "title"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151208123303) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.string   "address"
   end
 
   add_index "services", ["user_id"], name: "index_services_on_user_id"

@@ -13,25 +13,31 @@ logs = Category.create!({:name => "Logística", :supercategory => root})
 trps = Category.create!({:name => "Transporte", :supercategory => root})
 Category.create!({:name => "Alimentação", :supercategory => root})
 Category.create!({:name => "Comércio", :supercategory => root})
+Category.create!({:name => "Entretenimento", :supercategory => root})
 
 pintor = Service.create!(:title => 'Pintor - Disponível 7 dias por semana', 
             :description => 'Dez anos de experienca, faço qualquer textura de parede e até aceito desafios.', 
+            :address => 'Rua Amor 323',
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => alessandro)
 
 jardineiro = Service.create!(:title => 'Jardinaria - Especialista em formas de animais', 
             :description => 'Tenha suas plantas cuidadas pelo jardineiro que deu forma ao jardim do rei Trevis II.', 
+            :address => 'Rua Medo 323',
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => alessandro)
 
 prof = Service.create!(:title => 'Aulas particulares de Latim', 
             :description => 'Finalmente descubra o que significa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".', 
+            :address => 'Rua Vida 323',
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => ariel)
 
 pedr = Service.create!(:title => 'Pedreira Artistica', 
             :description => 'Realizo servicos de construcao civil que demandem mais cuidado e detalhe.', 
+            :address => 'Rua Queijo 323',
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => marcia)
 
 moto = Service.create!(:title => 'Disponivel aos fins de semana para fazer entregas', 
             :description => 'Entrego qualquer coisa que possa ser carregada em uma moto na regiao, realizo entregas de artigos maiores tambem dependendo da situacao.', 
+            :address => 'Rua do matão 323',
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => andersvaldo)
             
 doceria = Company.create!(:name => "Doceria", :description => "Melhores doces da região. Venha conferir!", :address => "Rua do Amor, nº13", 
