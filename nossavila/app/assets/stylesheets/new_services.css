@@ -27,7 +27,9 @@
     display:table-cell;
 }
 
-.box {
+/***** nav-box code *****/
+
+.nav-box {
     display:table;
     width:100%;
     /*border-spacing:0 0;*/
@@ -35,32 +37,31 @@
     border-width:1px;
     border-color:#D8D8D8;
 }
-
-.box-header {
-    background:#F5F5F5;
-    padding:13px;
-    border-color:#D8D8D8;
-    border-style:none none solid none;
-    border-width:1px;
-}
-
-.box-body {
-    /*padding:13px;*/
-    background:#fff;
-}
-
-h3.box-header-h3 {
-    color:#333;
-    font-weight:bold;
-}
-
-h4.box-h4{
+h4.nav-box-h4{
     color:#333;
     font-weight:bold;
     text-align:center;
     
     /*descomente a linha abaixo para o outro estilo*/
     /*margin-left:3.25px;*/
+}
+
+.nav-box-header {
+    background:#F5F5F5;
+    padding:13px;
+    border-color:#D8D8D8;
+    border-style:none none solid none;
+    border-width:1px;
+}
+h3.box-header-h3 {
+    color:#333;
+    font-weight:bold;
+}
+
+
+.nav-box-body {
+    /*padding:13px;*/
+    background:#fff;
 }
 
 .nav-refiner-header {
@@ -72,21 +73,12 @@ h4.box-h4{
     border-width:1px;
 }
 
-ul.box-body{
-    margin-left:15px;
-}
-li.box-body {
-    /*margin:-3px;*/
-    /*padding:-3;*/
-}
-.refiner-link {
+.nav-refiner-sublink {
     margin:0;
-}
-ul.refiner-link {
     margin-left:15px;
 }
 
-.box-button {
+.nav-box-button {
     background:#656565;
     width:100%;
     color:#fff;
@@ -96,16 +88,15 @@ ul.refiner-link {
     border:none;
     text-decoration: none;
 }
-.box-button:hover {
+.nav-box-button:hover {
   background: #4f4f4f;
   text-decoration: none;
 }
 
-.box-row{
+.nav-refiner-link{
     display:block;
     font-weight:normal;
     margin:0;
-    
     /*descomente a linha abaixo para o outro estilo*/
     /*border-style:none none solid none;*/
     /*border-width:1px;*/
@@ -115,3 +106,45 @@ ul.refiner-link {
 label[for=service_category]{
     font-weight:normal;
 }
+
+/* clean gray
+*******************************************************************************/
+.clean-gray {
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 8px 0;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 100%; 
+    
+}
+.clean-gray:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; }
+    .clean-gray:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; 
+}
+
+/*** tab-code ***/

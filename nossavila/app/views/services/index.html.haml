@@ -1,30 +1,26 @@
 #services_container
   #services_table
     #services_filter_nav
-      .box
-        .box-header
+      .nav-box
+        .nav-box-header
           %h3.box-header-h3 Filtragem de Buscas
-        .box-body
-          %ul
-            .nav-refiner-header
-              %h4.box-h4 Categorias
-            = form_tag services_path, :method => :get do
-              - @navcategories.each do |cat|
-                %li
-                  .box-row
-                    = check_box(:service, :categories, {:multiple => true}, cat.name, nil)
-                    = label :service, :category, cat.name.capitalize
-                    - if(cat.subcategories.any?)
-                      .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
-                        #triangle.triangle
-                      .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
-                        %ul.refiner-link
-                          - cat.subcategories.each do |subcat|    
-                            %li
-                              = check_box(:service, :categories, {:multiple => true}, subcat.name, nil)
-                              = label :service, :category, subcat.name
-            .box-button
-              = submit_tag "Buscar", :class => "box-button"
+        .nav-box-body
+          .nav-refiner-header
+            %h4.nav-box-h4 Categorias
+          = form_tag services_path, :method => :get do
+            - @navcategories.each do |cat|
+              .nav-refiner-link
+                = check_box(:service, :categories, {:multiple => true}, cat.name, nil)
+                = label :service, :category, cat.name.capitalize
+                - if(cat.subcategories.any?)
+                  .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
+                    #triangle.triangle
+                  .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
+                    - cat.subcategories.each do |subcat|    
+                      .nav-refiner-sublink
+                        = check_box(:service, :categories, {:multiple => true}, subcat.name, nil)
+                        = label :service, :category, subcat.name
+            = submit_tag "Buscar", :class => "clean-gray"
                 
     #services_tab
       %a{:href => new_service_path, :class => "link"}
