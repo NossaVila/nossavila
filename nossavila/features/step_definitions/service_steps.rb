@@ -5,8 +5,15 @@
 
 Given(/the following services exist:/) do |services_table|
     services_table.hashes.each do |service|
-    Service.create(service)
+      Service.create(service)
     end
+end
+
+Given(/"([^"]*)" is a service of "([^"]*)"/) do |service, user|
+    root = Category.find_by(:name => "root")
+    serv = Service.find_by(:title => service)
+    root.services << serv
+    serv.user = User.find_by(:first_name => user)
 end
 
 # When(/^I should be redirected to the (.+) page$/) do |url|
@@ -48,6 +55,8 @@ When(/^(?:|I )check the "([^"]*)" category$/) do |field|
         check("service_categories_educao_pblica")
     elsif field == "Educação Privada"
         check("service_categories_educao_privada")
+    elsif field == "Educação"
+        check("service_categories_educao")
     else
         check(field)
     end

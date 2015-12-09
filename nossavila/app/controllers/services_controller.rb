@@ -23,11 +23,24 @@ class ServicesController < ApplicationController
         end
       end
     end
+        
+    @services = @services.uniq
+
+    if params[:search]
+      @services = Service.search(params[:search]).order("created_at DESC")
+    end
+  
+  
   end
 
   def show
     id = params[:id]
     @service = Service.find(id)
+    rescue ActiveRecord::RecordNotFound  
+      flash[:notice] = "Não foi encontrado esse serviço."
+      flash[:state] = "red"
+      params[:id] = nil
+      redirect_to services_path
   end
   
   def new
@@ -90,6 +103,6 @@ class ServicesController < ApplicationController
   end
   
   def service_params
-    params.require(:service).permit(:title, :description, :user_id)
+    params.require(:service).permit(:title, :description, :address, :user_id)
   end
 end

@@ -1,5 +1,5 @@
 # nossavila
-
+[![Code Climate](https://codeclimate.com/github/NossaVila/nossavila/badges/gpa.svg)](https://codeclimate.com/github/NossaVila/nossavila)
 ![nossavila logo](https://raw.github.com/NossaVila/nossavila/master/nossavila/app/assets/images/nossavillalogo.gif)
 
 Projeto de Software como Serviço (SaaS) da disciplina de Laboratório de Programação II
@@ -16,6 +16,5 @@ Autores
 - Lucas de Carvalho Dias
 - Larissa de Oliveira Penteado
 - Thais Lima de Sousa
-
 
 Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1418118

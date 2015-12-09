@@ -1,4 +1,4 @@
-if(flash[:partial])
+-if(flash[:partial])
   = render partial: "shared/flashes/#{flash[:partial]}"
 .container.center.card
   %h3{:class => "subtitle"} Novo Estabelecimento
@@ -6,21 +6,21 @@ if(flash[:partial])
   = form_tag companies_path do
     .fieldnewleft
       = label :company, :name, "Nome", :class => "fieldnew"
-      = text_field :company, 'name', :class => "fieldnew", :input_html => { :value =>  @company.name}
+      = text_field :company, 'name', :class => "fieldnew"
       = label :company, :description, "Descrição", :class => "fieldnew"
-      = text_area :company, 'description', :rows => 15, :cols => 40, :class => "fieldnew", :input_html => { :value =>  @company.description}
+      = text_area :company, 'description', :rows => 15, :cols => 40, :class => "fieldnew"
       = label :company, :address, "Endereço", :class => "fieldnew"
-      = text_field :company, 'address', :class => "fieldnew", :input_html => { :value =>  @company.address}
+      = text_field :company, 'address', :class => "fieldnew"
       = label :company, :cep, "CEP", :class => "fieldnew"
-      = text_field :company, 'cep', :class => "fieldnew", :input_html => { :value =>  @company.cep}
+      = text_field :company, 'cep', :class => "fieldnew"
       = label :company, :cnpj, "CNPJ", :class => "fieldnew"
-      = text_field :company, 'cnpj', :class => "fieldnew", :input_html => { :value =>  @company.cnpj}
+      = text_field :company, 'cnpj', :class => "fieldnew"
       = label :company, :phone_number, "Telefone", :class => "fieldnew"
-      = text_field :company, 'phone_number', :class => "fieldnew", :input_html => { :value =>  @company.phone_number}
+      = text_field :company, 'phone_number', :class => "fieldnew"
       = label :company, :area_code, "DDD", :class => "fieldnew"
-      = text_field :company, 'area_code', :class => "fieldnew", :input_html => { :value =>  @company.area_code}
+      = text_field :company, 'area_code', :class => "fieldnew"
       = label :company, :site, "Site", :class => "fieldnew"
-      = text_field :company, 'site', :class => "fieldnew", :input_html => { :value =>  @company.site}
+      = text_field :company, 'site', :class => "fieldnew"
       = submit_tag "Criar", :class => "fieldnew"
       
     .categorylabel

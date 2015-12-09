@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'reset', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'categories', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'companies', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'services', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'new_services', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,6 +15,7 @@
   <%= stylesheet_link_tag    'flash', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'hover', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'footer', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -22,12 +24,12 @@
   <div id="wrapper">
     
     <div id="header">
-      <div class="navigation"></div>
+      <!--<div id="navigation-background"></div>-->
+      <%= render 'layouts/loginbar' %>
       <%= render 'layouts/logo' %>
     </div>
     
     <div id="content">
-      <%= render 'layouts/loginbar' %>
       <%= render "shared/flashes/noticepartial" %>
       <%= render "shared/flashes/alertpartial" %>
       

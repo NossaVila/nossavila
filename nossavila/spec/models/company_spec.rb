@@ -3,7 +3,7 @@ require 'company'
 require 'spec_helper'
 require 'faker'
 
-describe Company, :skip => true do
+describe Company do
     
     it 'is invalid without a name' do
         FactoryGirl.build(:company, name: nil).should_not be_valid

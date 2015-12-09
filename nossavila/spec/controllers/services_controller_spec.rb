@@ -2,13 +2,13 @@ require 'spec_helper'
 
 describe ServicesController do
   let(:valid_attributes) {
-    {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1' }
+    {title: 'Artesanato', description: 'Belos trabalhos feitos artesanalmente', user_id: '1' , address: "Baker Street"}
   }
   
   let(:invalid_attributes) { {title: nil, description: nil } }
   let(:valid_session) { {} }
   let(:user) { [FactoryGirl.build(:user)] }
-    
+  
   describe "GET #index" do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
@@ -96,6 +96,7 @@ describe ServicesController do
   end
 
   describe "PUT #update" do
+    root = Category.create!({:name => "root"})
     context "with valid params" do
       let(:new_attributes) { {description: 'Say all you need to say'} }
 

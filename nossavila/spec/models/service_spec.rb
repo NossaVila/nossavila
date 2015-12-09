@@ -19,6 +19,6 @@ describe Service do
   it 'should set the description correctly' do
     expect(FactoryGirl.create(:service, description:"Tenha sua casa pintada por um renomado pintor do Jabaquara.").description).to eq("Tenha sua casa pintada por um renomado pintor do Jabaquara.")
   end
-  
+
 end
  

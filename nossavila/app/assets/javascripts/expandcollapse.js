@@ -18,8 +18,5 @@ $(document).on('ready page:load', function() {
    $(".add-info-header").click(function(){ 
        $(".add-info-box").slideToggle(500);
    });
-   $('.add-info-tag').bind('ajax:success', function(){
-      alert("Success!");
-   });
 
 });

@@ -1,6 +1,11 @@
 class CategoriesController < ApplicationController
 
   def index
+# how session is suposed to work here??
+#    session[:selected] = params[:service][:categories]
+#    if params[:selected].nil?
+#      params[:selected] = session[:selected]
+#    end
     if(params[:root].nil?)
       @root = Category.find_by(name: "root")
     else
@@ -14,6 +19,6 @@ class CategoriesController < ApplicationController
 
   def show
     id = params[:id]
-    @category = Category.find(id)
+    @category = Category.find_by(:id => id)
   end
 end
