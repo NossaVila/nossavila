@@ -65,7 +65,7 @@ edu.services << prof
 edup.services << prof
 root.services << moto
 logs.services << moto
-trsp.services << moto
+trps.services << moto
 
 root.companies << escola
 edup.companies << escola
