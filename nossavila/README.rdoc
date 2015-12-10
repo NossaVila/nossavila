@@ -10,13 +10,11 @@ Funcionalidades:
 - cadastro de serviços oferecidos à comunidade (escolas, hospitais, etc)
 - busca de serviços
 - busca de informações (endereço e telefone) de estabelecimentos da região
-- avaliação/opinião acerca dos serviços
-- Painel
-- Melhoria do layout da home page
+- Painel que guia o usuário até as informações desejadas
 - Seleção de categorias em camadas
-- Testes do Cucumber
+- Testes do Cucumber e Rspec
 - Filtragem de busca
-- Estabelecimentos (iniciado / implementação parcial)
+- Estabelecimentos
 
 == Ficha técnica
 
@@ -51,5 +49,4 @@ Obs: Assume-se que se tenha a versão do Rails e do Ruby corretas
 
 == Considerações finais
 
- O projeto está na fase 2 de 3.
- Previsão de conclusão: Dez/2015
+ O projeto para a disciplina de Laboratório de Programação foi encerrado em Dez/2015.

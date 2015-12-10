@@ -1,0 +1,22 @@
+Integrantes:    nome   /   nUSP
+
+- Bruno Pasqualotto Cavalar     8941172
+- Felipe Silva Felix            8941092
+- Lucas de Carvalho Dias        8941241
+- Larissa de Oliveira Penteado  8941338
+- Thais Lima de Sousa           8941220
+
+ -  -  -  -  -  Relatório da entrega 3 -  -  -  -  -  
+ 
+- problema para configurar test coverage na integração do Code Climate
+  com o Semaphore. Seguimos todos os passos, o programa passa no code climate,
+  mas não mostra a porcentagem de cobertura.
+
+- prazo apertado e correria de fim de semestre: queríamos ter implementado
+  outras funcionalidades, como sistema de mensagem privada entre usuários e
+  seção de avaliação e comentários para os serviços.
+  
+- problema não consertado: checkboxes do filtro de categorias não permanecem marcadas
+  quando a página é atualizada. Embora tenhamos visto isso em uma das homeworks, nossa
+  view, de conteúdo bem mais complexo, dificultou tal implementação e nossas tentativas
+  não deram certo.

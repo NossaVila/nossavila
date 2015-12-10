@@ -1,0 +1,8 @@
+Funcionalidades implementadas na Entrega 3:
+- cadastro de estabelecimentos da região
+- home page modificada:mostra um botão para serviços oferecidos pelos usuários
+  e outro para estabelecimentos
+- mapa indicando endereço do serviço e estabelecimento
+- dashboard do usuário
+- link para o perfil do oferecedor de um serviço
+- barra de busca
