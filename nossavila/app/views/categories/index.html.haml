@@ -7,7 +7,7 @@
         .square-row
           - slice.each_with_index do |category, j|
             %div{:class => "hvr-shrink square square#{(i+j)%3+1}"}
-              %a{:class => "fill-div", :href => categories_path(:root => category.name)}
+              %a{:class => "fill-div", :href => categories_path(:root => category.name, :type => @type)}
                 %h2.square-h2= category.name.capitalize
   
       // - @categories.each_slice(3).with_index do |slice, i|

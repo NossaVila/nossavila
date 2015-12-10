@@ -1,20 +1,35 @@
 -if(flash[:partial])
   = render partial: "shared/flashes/#{flash[:partial]}"
-.center.container
-  .companycard
-    %h2{:class => "cardtitle"}= @company.name
-    %p{:class => "carddescription"}= @company.description
-    %h2{:class => "cardtitle"}= @company.address
-<<<<<<< HEAD
-    %a{:href => user_path(@company.user)}
-      %h3{:class => "cardowner user-link"}= @company.user.first_name
-=======
-    %script(src  = "https://maps.googleapis.com/maps/api/js")
-    - address = @company.address
-    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
-    %h3{:class => "cardowner"}= @company.user.first_name
->>>>>>> 748ebd209f7cae11e5fb9c442a0e07f0d501b9f7
-  
-  - if(current_user == @company.user && user_signed_in?)  
-    = link_to 'Editar', edit_company_path(@company)
-  = link_to 'Voltar', companies_path
+#general_container
+  #general_content_table
+    #general_card_box_wrapper
+      .general_card_box
+        .general_card_box_header
+          %h3.general-box-header-font{}= @company.name
+        .general_card_box_body
+          %p{:class => "carddescription"}= @company.description
+          - address = "Endereço: " + @company.address
+          %p{:class => "cardaddress"}= address
+          %script(src  = "https://maps.googleapis.com/maps/api/js")
+          - address = @company.address
+          %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
+          //%h3{:class => "cardowner", :href => user_path(@service.user)}= @service.user.first_name
+          %a{:href => user_path(@company.user)}
+            %h3{:class => "cardowner"}= @company.user.first_name
+          %h3{:class => "cardowner"}= "Por:"
+
+          - if(current_user == @company.user && user_signed_in?)  
+            = link_to 'Editar', edit_company_path(@company)
+          = link_to 'Voltar', companies_path
+//.center.container
+//  .companycard
+//    %h2{:class => "cardtitle"}= @company.name
+//    %p{:class => "carddescription"}= @company.description
+//    %h2{:class => "cardtitle"}= @company.address
+//    %script(src  = "https://maps.googleapis.com/maps/api/js")
+//    - address = @company.address
+//    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
+//    %h3{:class => "cardowner"}= @company.user.first_name
+//  - if(current_user == @company.user && user_signed_in?)  
+//    = link_to 'Editar', edit_company_path(@company)
+//  = link_to 'Voltar', companies_path

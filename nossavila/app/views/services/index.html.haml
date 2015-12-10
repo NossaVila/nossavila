@@ -27,7 +27,8 @@
         .services-box-header
           .services-box-header-row
             .services-box-title
-              %h3.general-box-header-font Serviços
+              %h3.general-box-header-font 
+                = link_to "Serviços", services_path
             .services-box-button
               .services-button
                 %a{:href => new_service_path}
@@ -50,36 +51,4 @@
                 %p= service.description
               .services-box-card-know-more
                 %p 
-                  %a{:href => service_path(service)} Mais informações.
-                  
-    // Lucas
-  //             %tr
-  //               %td{:class => "btnnav", :id => "#{alpha_numeric_only(cat.name)}"}
-  //                 = label :service, :category, cat.name.capitalize
-  //                 = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
-  //                 - if(cat.subcategories.any?)
-  //                   .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
-  //                     #triangle.triangle
-  //                   .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
-  //                     %table
-  //                       %tbody
-  //                         - cat.subcategories.each do |subcat|    
-  //                           %tr
-  //                             %td{:class => "btnnavchild", :id => "#{alpha_numeric_only(subcat.name)}"}
-  //                               = label :service, :category, subcat.name
-  //                               = check_box(:service, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
-              
-  // .servicescontainer
-  //   %a{:href => new_service_path, :class => "link"}
-  //     .btn
-  //       %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
-  //         Criar Serviço 
-
-  //   %br
-  //   - @services.each do |service| 
-  //     %a{:href => service_path(service)}
-  //       .servicecard
-  //         %h2{:class => "cardtitle"}= service.title
-  //         %p{:class => "carddescription"}= service.description
-  //         %h4{:class => "cardowner", :href => user_path(service.user)}= service.user.first_name
-   
+                  %a{:href => service_path(service)} Mais informações

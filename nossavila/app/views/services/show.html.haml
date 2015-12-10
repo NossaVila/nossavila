@@ -1,21 +1,38 @@
 -if(flash[:partial])
   = render partial: "shared/flashes/#{flash[:partial]}"
-.center.container
-  .servicecard
-    %h2{:class => "cardtitle"}= @service.title
-    %p{:class => "carddescription"}= @service.description
-    
-    %script(src  = "https://maps.googleapis.com/maps/api/js")
-    - address = @service.address
-<<<<<<< HEAD
-    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map2"}
-    %a{:href => user_path(@service.user)}
-      %h3{:class => "cardowner user-link"}= @service.user.first_name
-=======
-    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
-    %h3{:class => "cardowner", :href => user_path(@service.user)}= @service.user.first_name
->>>>>>> 748ebd209f7cae11e5fb9c442a0e07f0d501b9f7
+#general_container
+  #general_content_table
+    #general_card_box_wrapper
+      .general_card_box
+        .general_card_box_header
+          %h3.general-box-header-font{}= @service.title
+        .general_card_box_body
+          %p{:class => "carddescription"}= @service.description
+          - address = "Endereço: " + @service.address
+          %p{:class => "cardaddress"}= address
+          %script(src  = "https://maps.googleapis.com/maps/api/js")
+          - address = @service.address
+          %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
+          //%h3{:class => "cardowner", :href => user_path(@service.user)}= @service.user.first_name
+          %a{:href => user_path(@service.user)}
+            %h3{:class => "cardowner"}= @service.user.first_name
+          %h3{:class => "cardowner"}= "Por:"
+          - if(current_user == @service.user && user_signed_in?)  
+            = link_to 'Editar', edit_service_path(@service)
+          = link_to 'Voltar', services_path
+        
+//-if(flash[:partial])
+//  = render partial: "shared/flashes/#{flash[:partial]}"
+//.center.container
+//  .servicecard
+//    %h2{:class => "cardtitle"}= @service.title
+//    %p{:class => "carddescription"}= @service.description
+//    %p{:class => "cardaddress"}= @service.address
+//    %script(src  = "https://maps.googleapis.com/maps/api/js")
+//    - address = @service.address
+//    %img{:src => "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&zoom=15&size=200x200&markers=#{address}&sensor=false", :class => "map"}
+//    %h3{:class => "cardowner", :href => user_path(@service.user)}= @service.user.first_name
 
-  - if(current_user == @service.user && user_signed_in?)  
-    = link_to 'Editar', edit_service_path(@service)
-  = link_to 'Voltar', services_path
+//  - if(current_user == @service.user && user_signed_in?)  
+//    = link_to 'Editar', edit_service_path(@service)
+//  = link_to 'Voltar', services_path

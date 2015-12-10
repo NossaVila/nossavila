@@ -7,13 +7,14 @@ root = Category.create!({:name => "root"})
 edu = Category.create!({:name => "educação", :supercategory => root})
 edup = Category.create!({:name => "Educação Privada", :supercategory => edu})
 categories = [{:name => "Educação Pública", :supercategory => edu}, {:name => "lazer", :supercategory => root}]
-cons = Category.create!({:name => "Construção Civil", :supercategory => root})
+cons = Category.create!({:name => "Construção Cívil", :supercategory => root})
 doms = Category.create!({:name => "Doméstico", :supercategory => root})
 logs = Category.create!({:name => "Logística", :supercategory => root})
 trps = Category.create!({:name => "Transporte", :supercategory => root})
 Category.create!({:name => "Alimentação", :supercategory => root})
 Category.create!({:name => "Comércio", :supercategory => root})
-Category.create!({:name => "Entretenimento", :supercategory => root})
+saude = Category.create!({:name => "Saúde", :supercategory => root})
+
 
 pintor = Service.create!(:title => 'Pintor - Disponível 7 dias por semana', 
             :description => 'Dez anos de experienca, faço qualquer textura de parede e até aceito desafios.', 
@@ -40,9 +41,20 @@ moto = Service.create!(:title => 'Disponivel aos fins de semana para fazer entre
             :address => 'Rua do matão 323',
             :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => andersvaldo)
             
-doceria = Company.create!(:name => "Doceria", :description => "Melhores doces da região. Venha conferir!", :address => "Rua do Amor, nº13", 
-                :cep => "093514800", :cnpj => "39.436.146/0001-10", :phone_number => "13131313", :area_code => "23", :site => "bemcasado.com.br",
+doceria = Company.create!(:name => "Doceria", :description => "Melhores doces da região. Venha conferir!", :address => "Rua do Amor 13", 
+                :cep => "093514800", :cnpj => "39.156.146/0001-10", :phone_number => "13131313", :area_code => "23", :site => "bemcasado.com.br",
                 :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => ariel)
+                
+drogaria = Company.create!(:name => "Drogaria SP", :description => "Uma ótima drogaria com um bom preço e atendimento.", :address => "Rua do Matão 34", 
+                :cep => "093514800", :cnpj => "39.112.146/0001-10", :phone_number => "13131313", :area_code => "11", :site => "drogarisp.com.br",
+                :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => marcia)
+hospital = Company.create!(:name => "Hospital N. Senhora das Dores", :description => "Um hospital não tão grande mas muito eficiente.", :address => "Rua da Vida 234", 
+                :cep => "093514800", :cnpj => "39.436.136/0001-10", :phone_number => "13131313", :area_code => "11", :site => "hospital.com.br",
+                :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => marcia)
+escola = Company.create!(:name => "Universidade de São Paulo", :description => "Uma das melhores universidades do mundo, só é meio chata pra passar no vestibular",
+:address => "Cidade universitária SP", :cep => "093514800", :cnpj => "39.426.146/0001-10", :phone_number => "13131313", :area_code => "11", :site => "hospital.com.br",
+                :created_at => Date.new(1822, 01, 01), :updated_at => Date.new(1822, 01, 01), :user => marcia)
+
 
 root.services << pintor         
 cons.services << pintor
@@ -53,8 +65,16 @@ edu.services << prof
 edup.services << prof
 root.services << moto
 logs.services << moto
+trsp.services << moto
+
+root.companies << escola
+edup.companies << escola
 root.companies << doceria
 doms.companies << doceria
+root.companies << drogaria
+saude.companies << drogaria
+root.companies << hospital
+saude.companies << hospital
 
 
 categories.each do |category|

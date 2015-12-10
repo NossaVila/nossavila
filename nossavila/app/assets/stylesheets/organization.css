@@ -1,0 +1,126 @@
+#footer p {
+    margin:auto;
+    padding-top:12px;
+    font-size:14px;
+    /* color:#fff; */
+    font-weight:bold;
+    color: #333;
+    text-align: center;
+}
+
+html, body {
+   font-family: arial, helvetica, verdana;
+   background: #fff; 
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#wrapper {
+   background:#fff;
+   min-height:100%;
+   position:relative;
+}
+#header {
+    /*margin: 0 0 50px;*/
+    /*margin:0;*/
+}
+#content {
+   padding:10px;
+   /*padding-top:0px;*/
+   
+    /*Height of the footer */
+   padding-bottom:80px;
+   /*padding:0;*/
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   text-align:center;
+   width:100%;
+   
+   /*
+   background:#000;
+   -webkit-box-shadow: 0px 0px 8px 0px #000000;
+   -moz-box-shadow: 0px 0px 8px 0px #000000;
+   box-shadow: 0px 0px 8px 0px #000000;
+   */
+   
+    background-color: #F5F5F5;
+    border-style:solid none none none;
+    border-width:1px;
+    border-color:#E5E5E5;
+   
+   /*Height of the footer */
+   height:40px;   
+}
+
+/*** general pages ***/
+
+h2.general-box-header-font {
+    color:#333;
+    font-weight:bold;
+    text-align:center;
+}
+h3.general-box-header-font {
+    color:#333;
+    font-weight:bold;
+    text-align:center;
+}
+h4.general-box-header-font {
+    color:#333;
+    font-weight:bold;
+    text-align:center;
+}
+
+#general_container {
+    width:100%;
+    margin:1% auto 0 auto;
+}
+
+#general_content_table{
+  display: table;
+  width: 75%;
+  height: 25%;
+  /*max-width:1080px;*/
+  max-width:980px;
+  margin:auto;
+  border-spacing:20px 0px; 
+  table-layout:fixed; 
+}
+
+#general_card_box_wrapper{
+    border-spacing:0 0;
+    width:50%;
+    margin:auto;
+    /*display:table-cell;*/
+}
+
+.general_card_box {
+    display:table;
+    width:100%;
+    /*border-spacing:0 0;*/
+    border-style:solid;
+    border-width:1px;
+    border-color:#D8D8D8;
+    /*box-shadow:1px 1px 5px rgba(0, 0, 0, .5);*/
+}
+
+.general_card_box_header {
+    background:#F5F5F5;
+    padding:13px;
+    border-color:#D8D8D8;
+    border-style:none none solid none;
+    border-width:1px;
+}
+
+.general_card_box_body {
+    padding:15px;
+    background:#fff;
+}
+
+.general_card_box a{
+    color:#0066C0;
+}
+.general_card_box a:hover{
+    color:#B12704;
+}

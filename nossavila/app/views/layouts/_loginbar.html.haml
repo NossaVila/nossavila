@@ -1,6 +1,6 @@
 .navigation
   #search-wrapper
-    %i{:class => "fa fa-search fa-1g", :style => "color:white"}
+    %i{:class => "fa fa-search fa-1g", :style => "color:black"}
     = form_tag(services_path, :method => "get", class: "navbar-form", id: "search-form") do
       = text_field_tag :search, params[:search], placeholder: "Busca", :class => "search-box"
   .navigation-list-wrapper      

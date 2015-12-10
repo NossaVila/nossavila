@@ -26,21 +26,6 @@
     /*width:75%;*/
     display:table-cell;
 }
-h2.general-box-header-font {
-    color:#333;
-    font-weight:bold;
-    text-align:center;
-}
-h3.general-box-header-font {
-    color:#333;
-    font-weight:bold;
-    text-align:center;
-}
-h4.general-box-header-font {
-    color:#333;
-    font-weight:bold;
-    text-align:center;
-}
 
 /***** nav-box code *****/
 
@@ -53,14 +38,6 @@ h4.general-box-header-font {
     border-color:#D8D8D8;
     /*box-shadow:1px 1px 5px rgba(0, 0, 0, .5);*/
 }
-h4.nav-box-h4{
-    color:#333;
-    font-weight:bold;
-    text-align:center;
-    
-    /*descomente a linha abaixo para o outro estilo*/
-    /*margin-left:3.25px;*/
-}
 
 .nav-box-header {
     background:#F5F5F5;
@@ -69,12 +46,6 @@ h4.nav-box-h4{
     border-style:none none solid none;
     border-width:1px;
 }
-h3.box-header-h3 {
-    color:#333;
-    text-align:center;
-    font-weight:bold;
-}
-
 
 .nav-box-body {
     /*padding:13px;*/
@@ -165,7 +136,7 @@ label[for=service_category]{
   -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
   box-shadow: inset 0 1px 0 0 #96ca6d;
   color: #fff;
-  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font: bold 12px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
@@ -198,12 +169,6 @@ label[for=service_category]{
     /*border-width:1px;*/
     /*border-color:#D8D8D8;*/
 }
-h4.services-box-h4{
-    color:#333;
-    font-weight:bold;
-    text-align:center;
-}
-
 .services-box-header {
     display:table;
     padding:0;
@@ -227,10 +192,8 @@ h4.services-box-h4{
     border-style:solid none none solid;
     border-width:1px;
 }
-h3.services-box-title-h3 {
-    color:#333;
-    font-weight:bold;
-    text-align:center;
+.services-box-title a:hover{
+    color:grey;
 }
 .services-box-button {
     margin:0;

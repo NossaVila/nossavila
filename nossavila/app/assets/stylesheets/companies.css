@@ -12,3 +12,24 @@
     margin:auto;
     margin-bottom:3%;
 }
+
+.companies-box-title {
+    display:table-cell;
+    width:65%;
+    background:#F5F5F5;
+    /*padding-top:13px;*/
+    /*padding-bottom:13px;*/
+    margin:0;
+    padding:13px;
+    
+    border-color:#D8D8D8;
+    border-style:solid none none solid;
+    border-width:1px;
+}
+.companies-box-title a:hover{
+    color:grey;
+}
+
+label[for=company_category]{
+    font-weight:normal;
+}

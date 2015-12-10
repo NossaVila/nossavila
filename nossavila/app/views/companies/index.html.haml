@@ -1,39 +1,94 @@
-#container
-  .navcontainer
-    %nav
-      = form_tag companies_path, :method => :get do
-        .searchbtn
-          = submit_tag "Buscar"
-        %table
-          %tbody
+#services_container
+  #services_table
+    #services_filter_nav
+      .nav-box
+        .nav-box-header
+          %h3.general-box-header-font Filtragem de Buscas
+        .nav-box-body
+          .nav-refiner-header
+            %h4.general-box-header-font Categorias
+          = form_tag companies_path, :method => :get do
             - @navcategories.each do |cat|
-              %tr
-                %td{:class => "btnnav", :id => "#{alpha_numeric_only(cat.name)}"}
-                  = label :company, :category, cat.name.capitalize
-                  = check_box(:company, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
-                  - if(cat.subcategories.any?)
-                    .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
-                      #triangle.triangle
-                    .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
-                      %table
-                        %tbody
-                          - cat.subcategories.each do |subcat|    
-                            %tr
-                              %td{:class => "btnnavchild", :id => "#{alpha_numeric_only(subcat.name)}"}
-                                = label :company, :category, subcat.name
-                                = check_box(:company, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
+              .nav-refiner-link
+                = check_box(:company, :categories, {:multiple => true}, cat.name, nil)
+                = label :company, :category, cat.name.capitalize
+                - if(cat.subcategories.any?)
+                  .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
+                    #triangle.triangle
+                  .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
+                    - cat.subcategories.each do |subcat|    
+                      .nav-refiner-sublink
+                        = check_box(:company, :categories, {:multiple => true}, subcat.name, nil)
+                        = label :company, :category, subcat.name
+            = submit_tag "Buscar", :class => "cupid-green"
+                
+    #services_tab
+      .services-box
+        .services-box-header
+          .services-box-header-row
+            .companies-box-title
+              %h3.general-box-header-font 
+                = link_to "Estabelecimentos", companies_path
+            .services-box-button
+              .services-button
+                %a{:href => new_company_path}
+                  %i{:class => "fa fa-plus"}
+                  Criar Estabelecimento
+    
+        .services-box-body
+          - @companies.each do |company| 
+            .services-box-card
+              .services-box-card-header
+                .services-box-card-title
+                  %a{:href => company_path(company)}
+                    %h3= company.name
+                .services-box-card-authorship
+                  por 
+                  %a{:href => user_path(company.user)}
+                    = company.user.first_name
+                  // %h4{:class => "cardowner", :href => user_path(current_user)}= company.user.first_name
+              .services-box-card-description
+                %p= company.description
+              .services-box-card-know-more
+                %p 
+                  %a{:href => company_path(company)} Mais informações
+// LUCAS 
+// #container
+//   .navcontainer
+//     %nav
+//       = form_tag companies_path, :method => :get do
+//         .searchbtn
+//           = submit_tag "Buscar"
+//         %table
+//           %tbody
+//             - @navcategories.each do |cat|
+//               %tr
+//                 %td{:class => "btnnav", :id => "#{alpha_numeric_only(cat.name)}"}
+//                   = label :company, :category, cat.name.capitalize
+//                   = check_box(:company, :categories, {:multiple => true, :class => "categorycheckbox"}, cat.name, nil)
+//                   - if(cat.subcategories.any?)
+//                     .expandible.expand{:id => "#{alpha_numeric_only(cat.name)}triangle"}
+//                       #triangle.triangle
+//                     .btnnavchilds{:id => "#{alpha_numeric_only(cat.name)}", :style => "display: none"}
+//                       %table
+//                         %tbody
+//                           - cat.subcategories.each do |subcat|    
+//                             %tr
+//                               %td{:class => "btnnavchild", :id => "#{alpha_numeric_only(subcat.name)}"}
+//                                 = label :company, :category, subcat.name
+//                                 = check_box(:company, :categories, {:multiple => true, :class => "categorycheckbox"}, subcat.name, nil)
               
-  .companiescontainer
-    %a{:href => new_company_path, :class => "link"}
-      .btn
-        %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
-          Criar Estabelecimento 
+//   .companiescontainer
+//     %a{:href => new_company_path, :class => "link"}
+//       .btn
+//         %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+//           Criar Estabelecimento 
          
-  %br
-    - @companies.each do |company| 
-      %a{:href => company_path(company)}
-        .companycard
-          %h2{:class => "cardtitle"}= company.name
-          %p{:class => "carddescription"}= company.description
-          %a{:href => user_path(company.user)}
-            %h4{:class => "cardowner user-link"}= company.user.first_name
+//   %br
+//     - @companies.each do |company| 
+//       %a{:href => company_path(company)}
+//         .companycard
+//           %h2{:class => "cardtitle"}= company.name
+//           %p{:class => "carddescription"}= company.description
+//           %a{:href => user_path(company.user)}
+//             %h4{:class => "cardowner user-link"}= company.user.first_name

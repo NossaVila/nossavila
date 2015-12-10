@@ -140,31 +140,38 @@ nav{
     overflow:hidden; 
     max-height:20%; 
     background:#F9F9F9;
-    box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+   /* box-shadow:1px 1px 5px rgba(0, 0, 0, .5);*/
+    border-color:#D8D8D8;
+    border-style:solid;
+    border-width:1px;
     margin:auto;
     margin-bottom:3%;
 }
 
 .cardtitle{
-    font-family: "Verdana";
+    /*font-family: "Verdana";*/
     padding: 3%;
     text-align:center;
     font-size:28px;
-    font-family:roboto;
     color:#180521;
 }
 
 .carddescription{
-    font-family: "Verdana";
     padding: 3%;
     padding-top: 0%;
     margin-left:2%;
 }
 
 .cardowner{
-    text-align: right;
-    color:#180521;
-    margin:0;
+    float: right;
+/*    text-align: right;*/
+   /* margin:0;*/
+}
+
+.cardaddress{
+    padding: 3%;
+    padding-top: 0%;
+    margin-left:2%;
 }
 
 .fieldnewleft{
@@ -242,4 +249,8 @@ form label{
 
 .user-link:hover{
     color:#678BF0;
+}
+
+.home{
+    max-width:180px;
 }

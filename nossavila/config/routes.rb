@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :services
   resources :companies
   resources :home
-  root 'categories#index'
+  root 'home#index'
 end

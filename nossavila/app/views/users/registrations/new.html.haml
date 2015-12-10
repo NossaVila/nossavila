@@ -1,42 +1,47 @@
-.container.center.card.users_page
-  %h2.subtitle Registre-se
-  %br/
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :first_name
-      = f.text_field :first_name, autofocus: true, :class => "field"
-    .field
-      = f.label :last_name
-      = f.text_field :last_name, :class => "field"
-    .field
-      = f.label :cpf, "CPF"
-      = f.text_field :cpf, :class => "field"
-    .field
-      = f.label :address
-      = f.text_field :address, :class => "field"
-    .field
-      = f.label :cep, "CEP"
-      = f.text_field :cep, :class => "field"
-    .field
-      = f.label :email
-      = f.email_field :email, :class => "field"
-    -# não vamos lidar com username por enquanto
-    -#.field
-    -#  = f.label :username, "Nome de usuário"
-    -#  %br/
-    -#  = f.text_field :username, :class => "field"
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em (no minimo #{@minimum_password_length} caracteres)
-      = f.password_field :password, autocomplete: "off" , :class => "field"
-    .field
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation, autocomplete: "off" , :class => "field"
-    .actions.field
-      = f.submit "Registrar-se", :class => "btn"
-    -# .field
-    -#   %br/
-    -#   %br/
-    -#   = render "users/shared/links"
+#general_container
+  #general_content_table
+    #general_card_box_wrapper
+      .general_card_box
+        .general_card_box_header
+          %h3.general-box-header-font Registre-se
+        .general_card_box_body
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .field
+              = f.label :first_name
+              = f.text_field :first_name, autofocus: true, :class => "field"
+            .field
+              = f.label :last_name
+              = f.text_field :last_name, :class => "field"
+            .field
+              = f.label :cpf, "CPF"
+              = f.text_field :cpf, :class => "field"
+            .field
+              = f.label :address
+              = f.text_field :address, :class => "field"
+            .field
+              = f.label :cep, "CEP"
+              = f.text_field :cep, :class => "field"
+            .field
+              = f.label :email
+              = f.email_field :email, :class => "field"
+            -# não vamos lidar com username por enquanto
+            -#.field
+            -#  = f.label :username, "Nome de usuário"
+            -#  %br/
+            -#  = f.text_field :username, :class => "field"
+            .field
+              = f.label :password
+              - if @minimum_password_length
+                %em (no minimo #{@minimum_password_length} caracteres)
+              = f.password_field :password, autocomplete: "off" , :class => "field"
+            .field
+              = f.label :password_confirmation
+              = f.password_field :password_confirmation, autocomplete: "off" , :class => "field"
+            .actions.field
+              = f.submit "Registrar-se", :class => "green-button"
+            -# .field
+            -#   %br/
+            -#   %br/
+            -#   = render "users/shared/links"
+        

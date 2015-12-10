@@ -1,24 +1,54 @@
-.container.center.card.users_page
-  %h2.subtitle Login
-  %br/
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .fieldnew
-      = f.label :email
-      = f.email_field :email, autofocus: true
-    -# %br/
-    .fieldnew
-      = f.label :password
-      = f.password_field :password, autocomplete: "off"
-    -# %br/
-    -# - if devise_mapping.rememberable?
-    -#   .field
-    -#     .fieldnew
-    -#       = f.check_box :remember_me
-    -#     = f.label :remember_me
-    %br/
-    .actions.fieldnew
-      %br/
-      = f.submit "Login", :class => "btn"   
-  .fieldnew
-    %br/
-    = render "users/shared/links"
+#general_container
+  #general_content_table
+    #general_card_box_wrapper
+      .general_card_box
+        .general_card_box_header
+          %h3.general-box-header-font Login
+        .general_card_box_body
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .fieldnew
+              = f.label :email
+              = f.email_field :email, autofocus: true
+            -# %br/
+            .fieldnew
+              = f.label :password
+              = f.password_field :password, autocomplete: "off"
+            -# %br/
+            -# - if devise_mapping.rememberable?
+            -#   .field
+            -#     .fieldnew
+            -#       = f.check_box :remember_me
+            -#     = f.label :remember_me
+            %br/
+            .actions.fieldnew
+              %br/
+              = f.submit "Login", :class => "green-button"   
+          .fieldnew
+            %br/
+            = render "users/shared/links"
+            %br/
+
+// .container.center.card.users_page
+//   %h2.subtitle Login
+//   %br/
+//   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+//     .fieldnew
+//       = f.label :email
+//       = f.email_field :email, autofocus: true
+//     -# %br/
+//     .fieldnew
+//       = f.label :password
+//       = f.password_field :password, autocomplete: "off"
+//     -# %br/
+//     -# - if devise_mapping.rememberable?
+//     -#   .field
+//     -#     .fieldnew
+//     -#       = f.check_box :remember_me
+//     -#     = f.label :remember_me
+//     %br/
+//     .actions.fieldnew
+//       %br/
+//       = f.submit "Login", :class => "btn"   
+//   .fieldnew
+//     %br/
+//     = render "users/shared/links"
