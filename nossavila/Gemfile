@@ -31,7 +31,7 @@ gem 'cpf_utils'
 # gem 'capistrano-rails', group: :development
 gem 'devise' # Gema para autenticação
 gem 'correios-cep'
-gem "codeclimate-test-reporter", group: :test  
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :test do
   # Easier test writing
