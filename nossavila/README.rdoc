@@ -1,8 +1,5 @@
 = Nossa Vila
 
-[![Code Climate](http://codeclimate.com/github/NossaVila/nossavila/badges/gpa.svg)](http://codeclimate.com/github/NossaVila/nossavila)
-
-
 == Overview
 
 NossaVila é uma plataforma que facilita a integração entre moradores de uma determinada localidade através de troca online de serviços e fornecimento de informações de estabelecimentos da região.
