@@ -5,21 +5,51 @@
         .nav-box-header
           %h3.general-box-header-font Perfil de #{@user.first_name}
         .nav-box-body
-          .profile-line
-            .profilecell-left
-              %h4 Nome:
-            .profilecell-right
-              %h4= @user.first_name
-          .profile-line
-            .profilecell-left
-              %h4 Sobrenome:
-            .profilecell-right
-              %h4= @user.last_name
-          .profile-line
-            .profilecell-left
-              %h4 Email:
-            .profilecell-right
-              %h4= @user.email
+          .profilebar
+            .profile-line
+              .profilecell-left
+                %h4 Nome:
+              .profilecell-right
+                %h4= @user.first_name
+            .profile-line
+              .profilecell-left
+                %h4 Sobrenome:
+              .profilecell-right
+                %h4= @user.last_name
+            .profile-line
+              .profilecell-left
+                %h4 Email:
+              .profilecell-right
+                %h4= @user.email
+                
+            - unless @user.additional_informations.nil?
+              - @user.additional_informations.each do |info|
+                .profile-line
+                  .profilecell-left
+                    %h4= info.title + ":"
+                  .profilecell-right
+                    %h4= info.information      
+                    
+          - if (not current_user.nil?) and current_user == @user       
+            .cupid-green
+              #add-info.add-info-header
+                %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+                Adicionar Informação
+            .add-info-box
+              = form_tag additional_informations_path(:user => @user), method: :post, data: {remote: true}, id: 'add-info-form' do
+                .profile-line
+                  .profilecell-left
+                    = label :additional_information, :title, "Título"
+                  .profilecell-right
+                    = text_field :additional_information, :title, autofocus: true
+                .profile-line
+                  .profilecell-left
+                    = label :additional_information, :information, "Informação"
+                  .profilecell-right
+                    = text_field :additional_information, :information
+                .profile-line
+                  = submit_tag "Adicionar", :class => "cupid-green"
+                      
     #services_tab
       .services-box
         .services-box-header
@@ -50,3 +80,36 @@
               .services-box-card-know-more
                 %p 
                   %a{:href => service_path(service)} Mais informações.
+                  
+//               %h2= info.information      
+//     - if (not current_user.nil?) and current_user == @user       
+//       .btn.add-info
+//         #add-info.add-info-header
+//           %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+//             Adicionar Informação
+//         .add-info-box
+//           = form_tag additional_informations_path(:user => @user), method: :post, data: {remote: true}, id: 'add-info-form' do
+//             .profilecell-left
+//               = label :additional_information, :title, "Título"
+//             .profilecell-right
+//               = text_field :additional_information, :title, autofocus: true
+//             .profilecell-left
+//               = label :additional_information, :information, "Informação"
+//             .profilecell-right
+//               = text_field :additional_information, :information
+//             .profilecell-left
+//             .profilecell-right
+//               = submit_tag "Adicionar"
+//   .servicescontainer
+//     %a{:href => new_service_path, :class => "link"}
+//       .btn
+//         %i{:class => "fa fa-plus fa-1g", :style => "color:white"}
+//           Criar Serviço 
+
+//     %br
+//     - @services.each do |service| 
+//       %a{:href => service_path(service)}
+//         .servicecard
+//           %h2{:class => "cardtitle"}= service.title
+//           %p{:class => "carddescription"}= service.description
+//           %h4{:class => "cardowner"}= service.user.first_name

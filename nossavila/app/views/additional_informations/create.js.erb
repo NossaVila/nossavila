@@ -14,9 +14,8 @@ var el = $('#add-info-form');
 
 <% else %>
 
-  $('.profilebar').append("<%= escape_javascript( 
-      simple_format( @additional_info.information ) 
-    ) %>");
+  $('.profilebar').append("<%= escape_javascript( render :partial => "cell", :locals => {:additional_info => @additional_info}) 
+      %>");
 
   // Clear form
   el.find('input:text,textarea').val('');

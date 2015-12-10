@@ -9,7 +9,12 @@ When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |label, value|
 end
  
 When(/^(?:|I )press "([^"]*)"$/) do |button|
-  click_button(button)
+  # if button == "Adicionar" then
+  #   button = find(:button, button, {})
+  #   page.find(button).trigger(:click)
+  # else
+    click_button(button)
+  # end
 end
 
 When(/^(?:|I )click "([^"]*)"$/) do |link|
