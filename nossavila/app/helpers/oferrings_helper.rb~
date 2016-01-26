@@ -1,0 +1,6 @@
+module CompaniesHelper
+  def toast(color, text)
+
+
+  end
+end

@@ -115,7 +115,7 @@ describe CompaniesController do
       end
 
       it "redirects to the company" do
-        company =  Company.create!valid_attributes
+        company = Company.create!valid_attributes
         put :update, {:id => company.to_param, :company => valid_attributes}
         expect(response).to redirect_to(company)
       end

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
   include ServicesHelper
+  include OferringsHelper
   def index
     @categories = []
     unless (params[:category].nil?)
@@ -35,18 +36,16 @@ class ServicesController < ApplicationController
   def show
     id = params[:id]
     @service = Service.find(id)
-    rescue ActiveRecord::RecordNotFound  
-      flash[:notice] = "Não foi encontrado esse serviço."
-      flash[:state] = "red"
-      params[:id] = nil
-      redirect_to services_path
+  rescue ActiveRecord::RecordNotFound
+    toast("red", "Não foi encontrado esse serviço.")
+    params[:id] = nil
+    redirect_to services_path
   end
   
   def new
     unless(user_signed_in?)
       store_location_for(:user, new_service_path)
-      flash[:notice] = "É necessário estar logado para criar um serviço"
-      flash[:state] = "red"
+      toast("red", "É necessário estar logado para criar um serviço")
       redirect_to new_user_session_path
     end
     @categories = Category.where.not(name: "root")
@@ -63,12 +62,10 @@ class ServicesController < ApplicationController
       category_wrapper(@service, params[:service][:categories])
     end
     if @service.save
-      flash[:state] = "green"
-      flash[:notice] = "Novo serviço criado com sucesso"
+      toast("green", "Novo serviço criado com sucesso")
       redirect_to service_path(@service)
     else
-      flash[:state] = "red"
-      flash[:notice] = "Falha ao criar serviço"
+      toast("red", "Falha ao criar serviço")
       render :action => "new"
     end
   end
@@ -83,12 +80,10 @@ class ServicesController < ApplicationController
     @service = Service.find params[:id]
     if @service.update_attributes(service_params)
       category_wrapper(@service, params[:service][:categories])
-      flash[:state] = "green"
-      flash[:notice] = 'Dados atualizados com sucesso'
+      toast("green", "Dados atualizados com sucesso")
       redirect_to service_path(@service)
     else 
-      flash[:state] = "red"
-      flash[:notice] = 'Falha ao atualizar serviço'
+      toast("red", "Falha ao atualizar serviço")
       render :action => "edit"
     end
   end
@@ -96,8 +91,7 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-    flash[:state] = "green"
-    flash[:notice] = 'Serviço removido'
+    toast("green", "Serviço removido")
     redirect_to services_path
   end
   

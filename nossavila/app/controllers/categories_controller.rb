@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   def index
 # how session is suposed to work here??
 #    session[:selected] = params[:service][:categories]
